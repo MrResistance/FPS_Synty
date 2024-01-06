@@ -88,7 +88,7 @@ public class PlayerInputs : MonoBehaviour
             OnStopMove?.Invoke();
         }
 
-        if (m_primary.action.ReadValue<float>() > 0)
+        if (m_primary.action.phase == InputActionPhase.Performed)
         {
             OnPrimaryPressed?.Invoke();
         }
