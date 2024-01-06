@@ -16,6 +16,7 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private InputActionProperty m_jump;
 
     public event Action<Vector2> OnMove;
+    public event Action OnStopMove;
     public event Action<Vector2> OnLook;
     public event Action OnPrimaryPressed;
     public event Action OnSecondaryPressed;
@@ -73,6 +74,11 @@ public class PlayerInputs : MonoBehaviour
         if (moveInput != Vector2.zero)
         {
             OnMove?.Invoke(moveInput);
+        }
+
+        if (moveInput == Vector2.zero)
+        {
+            OnStopMove?.Invoke();
         }
 
         Vector2 lookInput = m_look.action.ReadValue<Vector2>();
