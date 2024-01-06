@@ -38,6 +38,7 @@ public class PlayerInputs : MonoBehaviour
         m_actionsMap = m_actionAsset.FindActionMap("Actions");
     }
 
+    #region Enabling/Disabling Action Maps
     private void Start()
     {
         m_movementMap.Enable();
@@ -61,15 +62,11 @@ public class PlayerInputs : MonoBehaviour
         m_movementMap.Disable();
         m_actionsMap.Disable();
     }
+    #endregion
 
-    // Update is called once per frame
     void Update()
     {
         HandleInputs();
-    }
-
-    private void LateUpdate()
-    {
         HandleCameraInput();
     }
 

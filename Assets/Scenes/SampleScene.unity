@@ -862,7 +862,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 13, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: lookSmoothTime
-      value: 0.05
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 14, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_Height
