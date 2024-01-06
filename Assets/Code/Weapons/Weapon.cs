@@ -2,13 +2,17 @@ using UnityEngine;
 
 public class Weapon : MonoBehaviour
 {
+    [Header("Weapon Stats")]
+    [SerializeField] private float m_hitForce = 20;
+    [SerializeField] private int m_damage = 10;
+
+    [Header("References")]
     [SerializeField] private Animator m_animator;
     [SerializeField] private ParticleSystem m_muzzleFlashFX;
-    [SerializeField] private Transform m_bulletTrailFX_Position;
     [SerializeField] private GunshotRenderer m_gunshotRenderer;
+    private RaycastHit m_raycastHit;
     public Animator Animator => m_animator;
     public ParticleSystem MuzzleFlashFX => m_muzzleFlashFX;
-    public Transform BulletTrailFX_Position => m_bulletTrailFX_Position;
     #region Event Subscriptions
     private void Start()
     {
@@ -39,7 +43,7 @@ public class Weapon : MonoBehaviour
     public void PlayWeaponFX()
     {
         MuzzleFlashFX?.Play();
-        m_gunshotRenderer.UpdateLinePositions(GetHitPosition());
+        m_gunshotRenderer.UpdateLinePositions(HitCalculation());
     }
     public void ResetTrigger()
     {
@@ -47,11 +51,15 @@ public class Weapon : MonoBehaviour
         m_gunshotRenderer.ClearLine();
     }
 
-    private Vector3 GetHitPosition()
+    private Vector3 HitCalculation()
     {
-        if (Physics.Raycast(m_gunshotRenderer.transform.position, m_gunshotRenderer.transform.forward, out RaycastHit raycastHit))
+        if (Physics.Raycast(m_gunshotRenderer.transform.position, m_gunshotRenderer.transform.forward, out m_raycastHit))
         {
-            return raycastHit.point;
+            if (m_raycastHit.collider.TryGetComponent(out Rigidbody rb))
+            {
+                m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
+            }
+            return m_raycastHit.point;
         }
         else
         {

@@ -9,6 +9,7 @@ public class GunshotRenderer : MonoBehaviour
     }
     public void UpdateLinePositions(Vector3 destination)
     {
+        if (destination == Vector3.zero) return;
         m_lineRenderer.positionCount = 2;
         m_lineRenderer.SetPosition(0, transform.position);
         m_lineRenderer.SetPosition(1, destination);
