@@ -68,6 +68,16 @@ public class PlayerInputs : MonoBehaviour
         HandleInputs();
     }
 
+    private void LateUpdate()
+    {
+        HandleCameraInput();
+    }
+
+    private void HandleCameraInput()
+    {
+        OnLook?.Invoke(m_look.action.ReadValue<Vector2>());
+    }
+
     private void HandleInputs()
     {
         Vector2 moveInput = m_move.action.ReadValue<Vector2>();
@@ -79,12 +89,6 @@ public class PlayerInputs : MonoBehaviour
         if (moveInput == Vector2.zero)
         {
             OnStopMove?.Invoke();
-        }
-
-        Vector2 lookInput = m_look.action.ReadValue<Vector2>();
-        if (lookInput != Vector2.zero)
-        {
-            OnLook?.Invoke(lookInput);
         }
 
         if (m_primary.action.ReadValue<float>() > 0)
