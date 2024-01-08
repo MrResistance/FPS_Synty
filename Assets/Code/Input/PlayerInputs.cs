@@ -15,13 +15,13 @@ public class PlayerInputs : MonoBehaviour
     [SerializeField] private InputActionProperty m_reload;
     [SerializeField] private InputActionProperty m_jump;
 
-    public event Action<Vector2> OnMove;
-    public event Action OnStopMove;
-    public event Action<Vector2> OnLook;
     public event Action OnPrimaryPressed;
     public event Action OnSecondaryPressed;
     public event Action OnReload;
     public event Action OnJump;
+
+    public Vector2 moveInput;
+    public Vector2 lookInput;
 
     public static PlayerInputs Instance { get; private set; }
     private void Awake()
@@ -67,26 +67,12 @@ public class PlayerInputs : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        HandleCameraInput();
-    }
-
-    private void HandleCameraInput()
-    {
-        OnLook?.Invoke(m_look.action.ReadValue<Vector2>());
     }
 
     private void HandleInputs()
     {
-        Vector2 moveInput = m_move.action.ReadValue<Vector2>();
-        if (moveInput != Vector2.zero)
-        {
-            OnMove?.Invoke(moveInput);
-        }
-
-        if (moveInput == Vector2.zero)
-        {
-            OnStopMove?.Invoke();
-        }
+        moveInput = m_move.action.ReadValue<Vector2>();
+        lookInput = m_look.action.ReadValue<Vector2>();
 
         if (m_primary.action.phase == InputActionPhase.Performed)
         {

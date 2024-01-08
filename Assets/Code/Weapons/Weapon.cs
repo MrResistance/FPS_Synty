@@ -40,11 +40,13 @@ public class Weapon : MonoBehaviour
     {
         m_animator.SetTrigger("Fire");
     }
+
     public void PlayWeaponFX()
     {
         MuzzleFlashFX?.Play();
         m_gunshotRenderer.UpdateLinePositions(HitCalculation());
     }
+
     public void ResetTrigger()
     {
         m_animator.ResetTrigger("Fire");
@@ -65,11 +67,5 @@ public class Weapon : MonoBehaviour
         {
             return Vector3.zero;
         }
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

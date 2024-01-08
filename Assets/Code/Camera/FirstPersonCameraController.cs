@@ -15,7 +15,6 @@ public class FirstPersonCameraController : MonoBehaviour
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        PlayerInputs.Instance.OnLook += Look;
         // Initialize the camera to look forward at the start.
         if (m_camera != null)
         {
@@ -27,21 +26,9 @@ public class FirstPersonCameraController : MonoBehaviour
         }
     }
 
-    private void OnEnable()
+    private void LateUpdate()
     {
-        if (PlayerInputs.Instance == null) return;
-        PlayerInputs.Instance.OnLook -= Look;
-        PlayerInputs.Instance.OnLook += Look;
-    }
-
-    private void OnDisable()
-    {
-        PlayerInputs.Instance.OnLook -= Look;
-    }
-
-    private void OnDestroy()
-    {
-        PlayerInputs.Instance.OnLook -= Look;
+        Look(PlayerInputs.Instance.lookInput);
     }
 
     private void Look(Vector2 vector)
