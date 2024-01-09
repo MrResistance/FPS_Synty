@@ -90,8 +90,8 @@ public class PlayerInputs : MonoBehaviour
         }
     }
 
-    [SerializeField] private float m_selectInputCooldown = 0.25f;
-    [SerializeField] private float m_lastTimeSelectInputReceieved;
+    private float m_selectInputCooldown = 0.25f;
+    private float m_lastTimeSelectInputReceieved;
     private void HandleSelectInputs()
     {
         if (Time.time > m_lastTimeSelectInputReceieved + m_selectInputCooldown)
