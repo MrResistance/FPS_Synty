@@ -6,14 +6,18 @@ public class WeaponRig : MonoBehaviour
     [Header("References")]
     [SerializeField] private Weapon m_currentWeapon;
     [SerializeField] private ParticleSystem m_gunshotFX;
+
     [SerializeField] private Camera m_camera;
+    [SerializeField] private float m_ADS_FOV = 30;
+    [SerializeField] private float m_HipFire_FOV = 60;
+    [SerializeField] private float m_transitionDuration = 1.0f; // Duration of the transition in seconds
+    private float m_transitionProgress = 0f; // Progress of the transition
+    private bool m_isAimingDownSight = false;
 
     [SerializeField] private Vector3 m_aimDownSightPosition;
     [SerializeField] private Vector3 m_aimFromHipPosition;
     [SerializeField] private List <Weapon> m_weapons;
-    
-    [SerializeField] private float m_ADS_FOV = 30;
-    [SerializeField] private float m_HipFire_FOV = 60;
+
     #region Event Subscriptions
     private void Start()
     {
@@ -85,12 +89,42 @@ public class WeaponRig : MonoBehaviour
 
     private void AimDownSight()
     {
-        transform.SetLocalPositionAndRotation(m_aimDownSightPosition ,Quaternion.identity);
-        m_camera.fieldOfView = m_ADS_FOV;
+        Debug.Log("Aim Down Sight");
+        m_isAimingDownSight = true;
+        m_transitionProgress = 0f; // Reset progress
     }
+
     private void AimFromHip()
     {
-        transform.SetLocalPositionAndRotation(m_aimFromHipPosition, Quaternion.identity);
-        m_camera.fieldOfView = m_HipFire_FOV;
+        Debug.Log("Aim From Hip");
+        m_isAimingDownSight = false;
+        m_transitionProgress = 0f; // Reset progress
     }
+
+    private void TransitionView()
+    {
+        if (m_transitionProgress < 1.0f)
+        {
+            m_transitionProgress += Time.deltaTime / m_transitionDuration;
+
+            if (m_isAimingDownSight)
+            {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, m_aimDownSightPosition, m_transitionProgress);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.identity, m_transitionProgress);
+                m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_ADS_FOV, m_transitionProgress);
+            }
+            else
+            {
+                transform.localPosition = Vector3.Lerp(transform.localPosition, m_aimFromHipPosition, m_transitionProgress);
+                transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.identity, m_transitionProgress);
+                m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_HipFire_FOV, m_transitionProgress);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        TransitionView();
+    }
+
 }
