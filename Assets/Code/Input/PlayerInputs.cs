@@ -1,10 +1,10 @@
 using System;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
-
     public event Action OnPrimaryPressed;
     public event Action OnSecondaryPressed;
     public event Action OnSecondaryReleased;
@@ -56,6 +56,7 @@ public class PlayerInputs : MonoBehaviour
     void Update()
     {
         HandleInputs();
+        HandleSelectInputs();
     }
 
     private void HandleInputs()
@@ -87,16 +88,27 @@ public class PlayerInputs : MonoBehaviour
         {
             OnJump?.Invoke();
         }
+    }
 
-        if (controls.Actions.Select.ReadValue<float>() > 0)
+    [SerializeField] private float m_selectInputCooldown = 0.25f;
+    [SerializeField] private float m_lastTimeSelectInputReceieved;
+    private void HandleSelectInputs()
+    {
+        if (Time.time > m_lastTimeSelectInputReceieved + m_selectInputCooldown)
         {
-            OnSelect?.Invoke(true);
+            switch (controls.Actions.Select.ReadValue<float>())
+            {
+                case > 0:
+                    OnSelect?.Invoke(true);
+                    m_lastTimeSelectInputReceieved = Time.time;
+                    break;
+                case < 0:
+                    OnSelect?.Invoke(false);
+                    m_lastTimeSelectInputReceieved = Time.time;
+                    break;
+                default:
+                    break;
+            }            
         }
-
-        if (controls.Actions.Select.ReadValue<float>() < 0)
-        {
-            OnSelect?.Invoke(false);
-        }
-
     }
 }
