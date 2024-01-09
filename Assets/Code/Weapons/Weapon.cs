@@ -20,6 +20,7 @@ public class Weapon : MonoBehaviour
     }
     private void OnEnable()
     {
+        Debug.Log(name + " enabled.");
         if (PlayerInputs.Instance == null) return;
         PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
         PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
@@ -27,6 +28,7 @@ public class Weapon : MonoBehaviour
 
     private void OnDisable()
     {
+        Debug.Log(name + " disabled.");
         PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
     }
 

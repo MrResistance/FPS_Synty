@@ -176,6 +176,15 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Select"",
+                    ""type"": ""Value"",
+                    ""id"": ""0d81a0ba-0755-49e9-8977-0f4d8e2c10b0"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -266,6 +275,72 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
                     ""action"": ""Jump"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""Mouse Scroll"",
+                    ""id"": ""0177de5b-5b53-4719-ac37-c219bff5d38b"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""0ad2547d-c392-4fe7-b624-0cb9cc59a4b5"",
+                    ""path"": ""<Mouse>/scroll/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""140d9afe-a0c2-46e2-b989-136a777bda44"",
+                    ""path"": ""<Mouse>/scroll/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""Shoulder Buttons"",
+                    ""id"": ""85dd43b8-e748-46de-8067-19160cb258d1"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""33cf1c76-b26e-4755-8913-4cce894d199c"",
+                    ""path"": ""<Gamepad>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""a232f0b2-3a09-41c2-881b-57612ac601a6"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Select"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -282,6 +357,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         m_Actions_Secondary = m_Actions.FindAction("Secondary", throwIfNotFound: true);
         m_Actions_Reload = m_Actions.FindAction("Reload", throwIfNotFound: true);
         m_Actions_Jump = m_Actions.FindAction("Jump", throwIfNotFound: true);
+        m_Actions_Select = m_Actions.FindAction("Select", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -401,6 +477,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
     private readonly InputAction m_Actions_Secondary;
     private readonly InputAction m_Actions_Reload;
     private readonly InputAction m_Actions_Jump;
+    private readonly InputAction m_Actions_Select;
     public struct ActionsActions
     {
         private @PlayerControls m_Wrapper;
@@ -409,6 +486,7 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         public InputAction @Secondary => m_Wrapper.m_Actions_Secondary;
         public InputAction @Reload => m_Wrapper.m_Actions_Reload;
         public InputAction @Jump => m_Wrapper.m_Actions_Jump;
+        public InputAction @Select => m_Wrapper.m_Actions_Select;
         public InputActionMap Get() { return m_Wrapper.m_Actions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -430,6 +508,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jump.started += instance.OnJump;
             @Jump.performed += instance.OnJump;
             @Jump.canceled += instance.OnJump;
+            @Select.started += instance.OnSelect;
+            @Select.performed += instance.OnSelect;
+            @Select.canceled += instance.OnSelect;
         }
 
         private void UnregisterCallbacks(IActionsActions instance)
@@ -446,6 +527,9 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
             @Jump.started -= instance.OnJump;
             @Jump.performed -= instance.OnJump;
             @Jump.canceled -= instance.OnJump;
+            @Select.started -= instance.OnSelect;
+            @Select.performed -= instance.OnSelect;
+            @Select.canceled -= instance.OnSelect;
         }
 
         public void RemoveCallbacks(IActionsActions instance)
@@ -474,5 +558,6 @@ public partial class @PlayerControls: IInputActionCollection2, IDisposable
         void OnSecondary(InputAction.CallbackContext context);
         void OnReload(InputAction.CallbackContext context);
         void OnJump(InputAction.CallbackContext context);
+        void OnSelect(InputAction.CallbackContext context);
     }
 }

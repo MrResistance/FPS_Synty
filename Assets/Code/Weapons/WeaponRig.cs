@@ -17,6 +17,7 @@ public class WeaponRig : MonoBehaviour
     [SerializeField] private Vector3 m_aimDownSightPosition;
     [SerializeField] private Vector3 m_aimFromHipPosition;
     [SerializeField] private List <Weapon> m_weapons;
+    [SerializeField] private int m_currentWeaponLocation;
 
     #region Event Subscriptions
     private void Start()
@@ -24,6 +25,7 @@ public class WeaponRig : MonoBehaviour
         InitialiseWeapons();
         PlayerInputs.Instance.OnSecondaryPressed += AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased += AimFromHip;
+        PlayerInputs.Instance.OnSelect += SelectWeapon;
     }
     private void OnEnable()
     {
@@ -32,18 +34,22 @@ public class WeaponRig : MonoBehaviour
         PlayerInputs.Instance.OnSecondaryPressed += AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased -= AimFromHip;
         PlayerInputs.Instance.OnSecondaryReleased += AimFromHip;
+        PlayerInputs.Instance.OnSelect -= SelectWeapon;
+        PlayerInputs.Instance.OnSelect += SelectWeapon;
     }
 
     private void OnDisable()
     {
         PlayerInputs.Instance.OnSecondaryPressed -= AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased -= AimFromHip;
+        PlayerInputs.Instance.OnSelect -= SelectWeapon;
     }
 
     private void OnDestroy()
     {
         PlayerInputs.Instance.OnSecondaryPressed -= AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased -= AimFromHip;
+        PlayerInputs.Instance.OnSelect -= SelectWeapon;
     }
     #endregion
 
@@ -54,49 +60,69 @@ public class WeaponRig : MonoBehaviour
             if (transform.GetChild(i).TryGetComponent(out Weapon weapon))
             {
                 m_weapons.Add(weapon);
+                weapon.gameObject.SetActive(false);
             }
         }
 
         if (m_weapons.Count > 0)
         {
             m_currentWeapon = m_weapons[0];
+            m_currentWeapon.gameObject.SetActive(true);
             SetGunshotFX_Parent();
         }
     }
 
     private void SelectWeapon(bool upOrDown)
     {
-        int currentWeaponLocation = m_weapons.IndexOf(m_currentWeapon);
+        if (m_weapons.Count <= 0)
+        {
+            Debug.LogWarning("No weapons available to select.");
+            return;
+        }
+
+        m_currentWeaponLocation = m_weapons.IndexOf(m_currentWeapon);
+        m_currentWeapon.gameObject.SetActive(false);
 
         if (upOrDown)
         {
-            m_currentWeapon = m_weapons[currentWeaponLocation + 1];
+            // Move to the next weapon, wrapping around to the start if at the end
+            m_currentWeaponLocation++;
+            if (m_currentWeaponLocation == m_weapons.Count)
+            {
+                m_currentWeaponLocation = 0;
+            }
         }
         else
         {
-            m_currentWeapon = m_weapons[currentWeaponLocation - 1];
+            // Move to the previous weapon, wrapping around to the end if at the start
+            m_currentWeaponLocation--;
+            if (m_currentWeaponLocation < 0)
+            {
+                m_currentWeaponLocation = m_weapons.Count - 1;
+            }
         }
 
-        SetGunshotFX_Parent();
+        m_currentWeapon = m_weapons[m_currentWeaponLocation];
+        m_currentWeapon.gameObject.SetActive(true);
+        //SetGunshotFX_Parent();
     }
+
 
     private void SetGunshotFX_Parent()
     {
-        m_gunshotFX.transform.SetParent(m_currentWeapon.barrel.transform);
-        m_gunshotFX.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
+        m_gunshotFX?.transform.SetParent(m_currentWeapon.barrel.transform);
+        m_gunshotFX?.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         m_currentWeapon.SetGunshotFX(m_gunshotFX);
     }
 
     private void AimDownSight()
     {
-        Debug.Log("Aim Down Sight");
         m_isAimingDownSight = true;
         m_transitionProgress = 0f; // Reset progress
     }
 
     private void AimFromHip()
     {
-        Debug.Log("Aim From Hip");
         m_isAimingDownSight = false;
         m_transitionProgress = 0f; // Reset progress
     }

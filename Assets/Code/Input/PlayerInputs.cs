@@ -4,25 +4,18 @@ using UnityEngine.InputSystem;
 
 public class PlayerInputs : MonoBehaviour
 {
-    [SerializeField] private InputActionAsset m_actionAsset;
-    [SerializeField] private InputActionMap m_movementMap;
-    [SerializeField] private InputActionMap m_actionsMap;
-
-    [SerializeField] private InputActionProperty m_move;
-    [SerializeField] private InputActionProperty m_look;
-    [SerializeField] private InputActionProperty m_primary;
-    [SerializeField] private InputActionProperty m_secondary;
-    [SerializeField] private InputActionProperty m_reload;
-    [SerializeField] private InputActionProperty m_jump;
 
     public event Action OnPrimaryPressed;
     public event Action OnSecondaryPressed;
     public event Action OnSecondaryReleased;
     public event Action OnReload;
     public event Action OnJump;
+    public event Action<bool> OnSelect;
 
     public Vector2 moveInput;
     public Vector2 lookInput;
+
+    public PlayerControls controls;
 
     public static PlayerInputs Instance { get; private set; }
     private void Awake()
@@ -35,33 +28,28 @@ public class PlayerInputs : MonoBehaviour
         {
             Destroy(this);
         }
-        m_movementMap = m_actionAsset.FindActionMap("Movement");
-        m_actionsMap = m_actionAsset.FindActionMap("Actions");
+        controls = new PlayerControls();
     }
 
     #region Enabling/Disabling Action Maps
     private void Start()
     {
-        m_movementMap.Enable();
-        m_actionsMap.Enable();
+        controls.Enable();
     }
 
     private void OnEnable()
     {
-        m_movementMap.Enable();
-        m_actionsMap.Enable();
+        controls.Enable();
     }
 
     private void OnDisable()
     {
-        m_movementMap.Disable();
-        m_actionsMap.Disable();
+        controls.Disable();
     }
 
     private void OnDestroy()
     {
-        m_movementMap.Disable();
-        m_actionsMap.Disable();
+        controls.Disable();
     }
     #endregion
 
@@ -72,32 +60,43 @@ public class PlayerInputs : MonoBehaviour
 
     private void HandleInputs()
     {
-        moveInput = m_move.action.ReadValue<Vector2>();
-        lookInput = m_look.action.ReadValue<Vector2>();
+        moveInput = controls.Movement.Move.ReadValue<Vector2>();
+        lookInput = controls.Movement.Look.ReadValue<Vector2>();
 
-        if (m_primary.action.phase == InputActionPhase.Performed)
+        if (controls.Actions.Primary.phase == InputActionPhase.Performed)
         {
             OnPrimaryPressed?.Invoke();
         }
 
-        if (m_secondary.action.phase == InputActionPhase.Performed)
+        if (controls.Actions.Secondary.phase == InputActionPhase.Performed)
         {
             OnSecondaryPressed?.Invoke();
         }
         
-        if (!m_secondary.action.IsPressed())
+        if (!controls.Actions.Secondary.IsPressed())
         { 
             OnSecondaryReleased?.Invoke();
         }
 
-        if (m_reload.action.ReadValue<float>() > 0)
+        if (controls.Actions.Reload.ReadValue<float>() > 0)
         {
             OnReload?.Invoke();
         }
 
-        if (m_jump.action.ReadValue<float>() > 0)
+        if (controls.Actions.Jump.ReadValue<float>() > 0)
         {
             OnJump?.Invoke();
         }
+
+        if (controls.Actions.Select.ReadValue<float>() > 0)
+        {
+            OnSelect?.Invoke(true);
+        }
+
+        if (controls.Actions.Select.ReadValue<float>() < 0)
+        {
+            OnSelect?.Invoke(false);
+        }
+
     }
 }
