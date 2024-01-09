@@ -17,6 +17,7 @@ public class PlayerInputs : MonoBehaviour
 
     public event Action OnPrimaryPressed;
     public event Action OnSecondaryPressed;
+    public event Action OnSecondaryReleased;
     public event Action OnReload;
     public event Action OnJump;
 
@@ -79,9 +80,14 @@ public class PlayerInputs : MonoBehaviour
             OnPrimaryPressed?.Invoke();
         }
 
-        if (m_secondary.action.ReadValue<float>() > 0)
+        if (m_secondary.action.phase == InputActionPhase.Performed)
         {
             OnSecondaryPressed?.Invoke();
+        }
+        
+        if (!m_secondary.action.IsPressed())
+        { 
+            OnSecondaryReleased?.Invoke();
         }
 
         if (m_reload.action.ReadValue<float>() > 0)

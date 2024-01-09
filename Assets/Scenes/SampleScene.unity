@@ -213,6 +213,11 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198076924919084778, guid: 0624c6f5a57851d48ba74b4f86ec13d7, type: 3}
   m_PrefabInstance: {fileID: 12006553}
   m_PrefabAsset: {fileID: 0}
+--- !u!20 &161605014 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1285353782, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+  m_PrefabInstance: {fileID: 1766694252320419401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309287836
 GameObject:
   m_ObjectHideFlags: 0
@@ -941,7 +946,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentWeapon: {fileID: 0}
   m_gunshotFX: {fileID: 12006554}
+  m_camera: {fileID: 161605014}
+  m_aimDownSightPosition: {x: 0, y: -0.15, z: 0.5}
+  m_aimFromHipPosition: {x: 0.35, y: -0.25, z: 0.5}
   m_weapons: []
+  m_ADS_FOV: 30
+  m_HipFire_FOV: 60
 --- !u!114 &851154128
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1336,6 +1346,14 @@ PrefabInstance:
     - target: {fileID: 14, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_Center.y
       value: 0.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 784466470, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 784466470, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.25
       objectReference: {fileID: 0}
     - target: {fileID: 189440825121351375, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_Positions.Array.size
