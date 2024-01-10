@@ -17,22 +17,27 @@ public class Weapon : MonoBehaviour
     private void Start()
     {
         PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
+        PlayerInputs.Instance.OnReload += Reload;
     }
     private void OnEnable()
     {
         if (PlayerInputs.Instance == null) return;
         PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
         PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
+        PlayerInputs.Instance.OnReload -= Reload;
+        PlayerInputs.Instance.OnReload += Reload;
     }
 
     private void OnDisable()
     {
         PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+        PlayerInputs.Instance.OnReload -= Reload;
     }
 
     private void OnDestroy()
     {
         PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+        PlayerInputs.Instance.OnReload -= Reload;
     }
     #endregion
 
@@ -52,9 +57,9 @@ public class Weapon : MonoBehaviour
         HitCalculation();
     }
 
-    public void ResetTrigger()
+    public void ResetTrigger(string value)
     {
-        m_animator.ResetTrigger("Fire");
+        m_animator.ResetTrigger(value);
     }
 
     private Vector3 HitCalculation()
@@ -71,5 +76,10 @@ public class Weapon : MonoBehaviour
         {
             return Vector3.zero;
         }
+    }
+
+    public void Reload()
+    {
+        m_animator.SetTrigger("Reload");
     }
 }
