@@ -26,31 +26,69 @@ public class Weapon : MonoBehaviour
     #region Event Subscriptions
     private void Start()
     {
-        PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
+        switch (m_fireMode)
+        {
+            case fireMode.semiAuto:
+                ReceivePrimaryPressedEvents();
+                break;
+            case fireMode.fullAuto:
+                ReceivePrimaryHeldEvents();
+                break;
+        }
         PlayerInputs.Instance.OnReload += Reload;
     }
     private void OnEnable()
     {
         if (PlayerInputs.Instance == null) return;
-        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
-        PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
+        switch (m_fireMode)
+        {
+            case fireMode.semiAuto:
+                ReceivePrimaryPressedEvents();
+                break;
+            case fireMode.fullAuto:
+                ReceivePrimaryHeldEvents();
+                break;
+        }
         PlayerInputs.Instance.OnReload -= Reload;
         PlayerInputs.Instance.OnReload += Reload;
     }
 
     private void OnDisable()
     {
-        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+        StopReceivingPrimaryPressedEvents();
+        StopReceivingPrimaryHeldEvents();
         PlayerInputs.Instance.OnReload -= Reload;
     }
 
     private void OnDestroy()
     {
-        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+        StopReceivingPrimaryPressedEvents();
+        StopReceivingPrimaryHeldEvents();
         PlayerInputs.Instance.OnReload -= Reload;
     }
     #endregion
 
+    public void ReceivePrimaryPressedEvents()
+    {
+        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+        PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
+    }
+
+    public void ReceivePrimaryHeldEvents()
+    {
+        PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
+        PlayerInputs.Instance.OnPrimaryHeld += FireWeapon;
+    }
+
+    public void StopReceivingPrimaryPressedEvents()
+    {
+        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+    }
+
+    public void StopReceivingPrimaryHeldEvents()
+    {
+        PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
+    }
     private void FireWeapon()
     {
         Debug.Log("Fire Weapon: " + gameObject.name);

@@ -23,15 +23,15 @@ public class WeaponRig : MonoBehaviour
     private void Start()
     {
         InitialiseWeapons();
-        PlayerInputs.Instance.OnSecondaryPressed += AimDownSight;
+        PlayerInputs.Instance.OnSecondaryHeld += AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased += AimFromHip;
         PlayerInputs.Instance.OnSelect += SelectWeapon;
     }
     private void OnEnable()
     {
         if (PlayerInputs.Instance == null) return;
-        PlayerInputs.Instance.OnSecondaryPressed -= AimDownSight;
-        PlayerInputs.Instance.OnSecondaryPressed += AimDownSight;
+        PlayerInputs.Instance.OnSecondaryHeld -= AimDownSight;
+        PlayerInputs.Instance.OnSecondaryHeld += AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased -= AimFromHip;
         PlayerInputs.Instance.OnSecondaryReleased += AimFromHip;
         PlayerInputs.Instance.OnSelect -= SelectWeapon;
@@ -40,14 +40,14 @@ public class WeaponRig : MonoBehaviour
 
     private void OnDisable()
     {
-        PlayerInputs.Instance.OnSecondaryPressed -= AimDownSight;
+        PlayerInputs.Instance.OnSecondaryHeld -= AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased -= AimFromHip;
         PlayerInputs.Instance.OnSelect -= SelectWeapon;
     }
 
     private void OnDestroy()
     {
-        PlayerInputs.Instance.OnSecondaryPressed -= AimDownSight;
+        PlayerInputs.Instance.OnSecondaryHeld -= AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased -= AimFromHip;
         PlayerInputs.Instance.OnSelect -= SelectWeapon;
     }

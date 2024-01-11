@@ -1199,7 +1199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 772658072, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 829733808, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked
@@ -1223,7 +1223,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1337573357, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked

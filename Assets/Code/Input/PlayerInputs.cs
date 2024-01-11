@@ -6,7 +6,8 @@ using UnityEngine.InputSystem;
 public class PlayerInputs : MonoBehaviour
 {
     public event Action OnPrimaryPressed;
-    public event Action OnSecondaryPressed;
+    public event Action OnPrimaryHeld;
+    public event Action OnSecondaryHeld;
     public event Action OnSecondaryReleased;
     public event Action OnReload;
     public event Action OnJump;
@@ -58,15 +59,9 @@ public class PlayerInputs : MonoBehaviour
             }
         }
     }
-
-    private void Jump(InputAction.CallbackContext context)
+    private void PrimaryPressed(InputAction.CallbackContext context)
     {
-        OnJump?.Invoke();
-    }
-
-    private void Reload(InputAction.CallbackContext context)
-    {
-        OnReload?.Invoke();
+        OnPrimaryPressed?.Invoke();
     }
 
     private void SecondaryReleased(InputAction.CallbackContext context)
@@ -74,9 +69,14 @@ public class PlayerInputs : MonoBehaviour
         OnSecondaryReleased?.Invoke();
     }
 
-    private void PrimaryPressed(InputAction.CallbackContext context)
+    private void Reload(InputAction.CallbackContext context)
     {
-        OnPrimaryPressed?.Invoke();
+        OnReload?.Invoke();
+    }
+
+    private void Jump(InputAction.CallbackContext context)
+    {
+        OnJump?.Invoke();
     }
 
     #region Enabling/Disabling Action Maps
@@ -111,10 +111,14 @@ public class PlayerInputs : MonoBehaviour
         moveInput = controls.Movement.Move.ReadValue<Vector2>();
         lookInput = controls.Movement.Look.ReadValue<Vector2>();
 
+        if (controls.Actions.Primary.phase == InputActionPhase.Performed)
+        {
+            OnPrimaryHeld?.Invoke();
+        }
 
         if (controls.Actions.Secondary.phase == InputActionPhase.Performed)
         {
-            OnSecondaryPressed?.Invoke();
+            OnSecondaryHeld?.Invoke();
         }
     }
 }
