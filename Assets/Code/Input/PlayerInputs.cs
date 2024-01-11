@@ -29,6 +29,54 @@ public class PlayerInputs : MonoBehaviour
             Destroy(this);
         }
         controls = new PlayerControls();
+
+        controls.Actions.Primary.performed += PrimaryPressed;
+        controls.Actions.Secondary.canceled += SecondaryReleased;
+        controls.Actions.Reload.performed += Reload;
+        controls.Actions.Jump.performed += Jump;
+        controls.Actions.Select.performed += Select;
+    }
+
+    [Header("Settings"), SerializeField] private float m_selectInputCooldown = 0.25f;
+    private float m_lastTimeSelectInputReceieved;
+    private void Select(InputAction.CallbackContext context)
+    {
+        if (Time.time > m_lastTimeSelectInputReceieved + m_selectInputCooldown)
+        {
+            switch (context.ReadValue<float>())
+            {
+                case > 0:
+                    OnSelect?.Invoke(true);
+                    m_lastTimeSelectInputReceieved = Time.time;
+                    break;
+                case < 0:
+                    OnSelect?.Invoke(false);
+                    m_lastTimeSelectInputReceieved = Time.time;
+                    break;
+                default:
+                    break;
+            }
+        }
+    }
+
+    private void Jump(InputAction.CallbackContext context)
+    {
+        OnJump?.Invoke();
+    }
+
+    private void Reload(InputAction.CallbackContext context)
+    {
+        OnReload?.Invoke();
+    }
+
+    private void SecondaryReleased(InputAction.CallbackContext context)
+    {
+        OnSecondaryReleased?.Invoke();
+    }
+
+    private void PrimaryPressed(InputAction.CallbackContext context)
+    {
+        OnPrimaryPressed?.Invoke();
     }
 
     #region Enabling/Disabling Action Maps
@@ -56,7 +104,6 @@ public class PlayerInputs : MonoBehaviour
     void Update()
     {
         HandleInputs();
-        HandleSelectInputs();
     }
 
     private void HandleInputs()
@@ -64,51 +111,10 @@ public class PlayerInputs : MonoBehaviour
         moveInput = controls.Movement.Move.ReadValue<Vector2>();
         lookInput = controls.Movement.Look.ReadValue<Vector2>();
 
-        if (controls.Actions.Primary.phase == InputActionPhase.Performed)
-        {
-            OnPrimaryPressed?.Invoke();
-        }
 
         if (controls.Actions.Secondary.phase == InputActionPhase.Performed)
         {
             OnSecondaryPressed?.Invoke();
-        }
-        
-        if (!controls.Actions.Secondary.IsPressed())
-        { 
-            OnSecondaryReleased?.Invoke();
-        }
-
-        if (controls.Actions.Reload.ReadValue<float>() > 0)
-        {
-            OnReload?.Invoke();
-        }
-
-        if (controls.Actions.Jump.ReadValue<float>() > 0)
-        {
-            OnJump?.Invoke();
-        }
-    }
-
-    private float m_selectInputCooldown = 0.25f;
-    private float m_lastTimeSelectInputReceieved;
-    private void HandleSelectInputs()
-    {
-        if (Time.time > m_lastTimeSelectInputReceieved + m_selectInputCooldown)
-        {
-            switch (controls.Actions.Select.ReadValue<float>())
-            {
-                case > 0:
-                    OnSelect?.Invoke(true);
-                    m_lastTimeSelectInputReceieved = Time.time;
-                    break;
-                case < 0:
-                    OnSelect?.Invoke(false);
-                    m_lastTimeSelectInputReceieved = Time.time;
-                    break;
-                default:
-                    break;
-            }            
         }
     }
 }

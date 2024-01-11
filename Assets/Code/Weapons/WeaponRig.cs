@@ -57,7 +57,7 @@ public class WeaponRig : MonoBehaviour
     {
         for (int i = 0; i < transform.childCount; i++) 
         {
-            if (transform.GetChild(i).TryGetComponent(out Weapon weapon))
+            if (transform.GetChild(i).TryGetComponent(out Weapon weapon) && weapon.WeaponUnlocked)
             {
                 m_weapons.Add(weapon);
                 weapon.gameObject.SetActive(false);
@@ -108,7 +108,6 @@ public class WeaponRig : MonoBehaviour
         m_currentWeapon.gameObject.SetActive(true);
         SetGunshotFX_Parent();
     }
-
 
     private void SetGunshotFX_Parent()
     {
