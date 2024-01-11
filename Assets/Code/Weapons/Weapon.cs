@@ -81,7 +81,7 @@ public class Weapon : MonoBehaviour
     {
         if (Physics.Raycast(m_barrel.transform.position, m_barrel.transform.forward, out m_raycastHit, m_effectiveRange))
         {
-            if (m_raycastHit.collider.TryGetComponent(out Rigidbody rb))
+            if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
             {
                 m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
             }
