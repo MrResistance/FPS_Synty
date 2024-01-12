@@ -20,8 +20,10 @@ public class Weapon : MonoBehaviour
     [Header("References")]
     [SerializeField] private Animator m_animator;
     [SerializeField] private Transform m_barrel;
-    [HideInInspector] public Transform barrel => m_barrel;
+    [HideInInspector] public Transform Barrel => m_barrel;
     [SerializeField] private ParticleSystem m_gunshotFX;
+    [SerializeField] private Transform m_crosshair;
+    [HideInInspector] public Transform Crosshair => m_crosshair;
     private RaycastHit m_raycastHit;
     public Animator Animator => m_animator;
     #region Event Subscriptions
@@ -120,7 +122,13 @@ public class Weapon : MonoBehaviour
 
     private Vector3 HitCalculation()
     {
-        if (Physics.Raycast(m_barrel.transform.position, m_barrel.transform.forward, out m_raycastHit, m_effectiveRange))
+        // Get the center point of the screen
+        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+
+        // Create a ray from the center of the screen
+        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+
+        if (Physics.Raycast(ray, out m_raycastHit, m_effectiveRange))
         {
             Debug.Log("Hit: " + m_raycastHit.collider.name);
             if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
@@ -135,5 +143,5 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    
+
 }

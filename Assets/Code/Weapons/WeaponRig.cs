@@ -67,8 +67,7 @@ public class WeaponRig : MonoBehaviour
         if (m_weapons.Count > 0)
         {
             m_currentWeapon = m_weapons[0];
-            m_currentWeapon.gameObject.SetActive(true);
-            SetGunshotFX_Parent();
+            CurrentWeaponSetup();
         }
     }
 
@@ -104,14 +103,20 @@ public class WeaponRig : MonoBehaviour
         }
 
         m_currentWeapon = m_weapons[m_currentWeaponLocation];
+        CurrentWeaponSetup();
+    }
+
+    private void CurrentWeaponSetup()
+    {
         m_currentWeapon.enabled = true;
         m_currentWeapon.gameObject.SetActive(true);
         SetGunshotFX_Parent();
+        CrosshairManager.Instance.SetCrosshair(m_currentWeapon.Crosshair);
     }
 
     private void SetGunshotFX_Parent()
     {
-        m_gunshotFX?.transform.SetParent(m_currentWeapon.barrel.transform);
+        m_gunshotFX?.transform.SetParent(m_currentWeapon.Barrel.transform);
         m_gunshotFX?.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
         m_currentWeapon.SetGunshotFX(m_gunshotFX);
     }
@@ -130,7 +135,7 @@ public class WeaponRig : MonoBehaviour
     private void Update()
     {
         TransitionView();
-        Debug.DrawRay(m_currentWeapon.barrel.position, m_currentWeapon.barrel.transform.forward * 1000, Color.green);
+        //Debug.DrawRay(m_currentWeapon.barrel.position, m_currentWeapon.barrel.transform.forward * 1000, Color.green);
     }
     private void TransitionView()
     {

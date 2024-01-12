@@ -43,11 +43,11 @@ public class GrenadeLauncher : Weapon
 
     public void LaunchGrenade()
     {
-        var grenade = ObjectPooler.Instance.SpawnFromPool("GrenadeLauncherAmmo", barrel.transform.position, barrel.transform.rotation);
+        var grenade = ObjectPooler.Instance.SpawnFromPool("GrenadeLauncherAmmo", Barrel.transform.position, Barrel.transform.rotation);
         if (grenade.TryGetComponent(out Rigidbody rb))
         {
-            rb.AddForce(barrel.transform.forward * m_grenadeForwardForce, ForceMode.Impulse);
-            rb.AddForce(barrel.transform.up * m_grenadeUpwardForce, ForceMode.Impulse);
+            rb.AddForce(Barrel.transform.forward * m_grenadeForwardForce, ForceMode.Impulse);
+            rb.AddForce(Barrel.transform.up * m_grenadeUpwardForce, ForceMode.Impulse);
         }
     }
 
