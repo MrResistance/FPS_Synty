@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class GrenadeLauncher : Weapon
 {
+    [Header("Grenade Launcher Settings")]
+    [SerializeField] GameObject m_grenadeAmmoPrefab;
     [SerializeField] Transform m_grenadeLauncherCylinder;
     [SerializeField] float m_barrelRotateSpeed = 300f;
     private Quaternion m_targetRotation;
@@ -35,5 +37,15 @@ public class GrenadeLauncher : Weapon
 
         // Optionally, snap to the exact target rotation
         m_grenadeLauncherCylinder.transform.localRotation = m_targetRotation;
+    }
+
+    public void LaunchGrenade()
+    {
+        
+    }
+
+    public void Empty()
+    {
+        //This is an empty function for the sole purpose of extending the fire animation for the grenade launcher
     }
 }
