@@ -127,7 +127,11 @@ public class WeaponRig : MonoBehaviour
         m_isAimingDownSight = false;
         m_transitionProgress = 0f; // Reset progress
     }
-
+    private void Update()
+    {
+        TransitionView();
+        Debug.DrawRay(m_currentWeapon.barrel.position, m_currentWeapon.barrel.transform.forward * 1000, Color.green);
+    }
     private void TransitionView()
     {
         if (m_transitionProgress < 1.0f)
@@ -148,10 +152,4 @@ public class WeaponRig : MonoBehaviour
             }
         }
     }
-
-    private void Update()
-    {
-        TransitionView();
-    }
-
 }
