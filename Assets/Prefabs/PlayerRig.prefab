@@ -4440,7 +4440,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1766694250992511713}
-  - component: {fileID: 1766694250992511712}
   m_Layer: 0
   m_Name: PlayerRig
   m_TagString: Player
@@ -4464,20 +4463,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1766694250992511712
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1766694250992511726}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01c9377e7d0d73b449982cf95cc51239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveInput: {x: 0, y: 0}
-  lookInput: {x: 0, y: 0}
 --- !u!1 &1767403629009923614
 GameObject:
   m_ObjectHideFlags: 0
@@ -5178,12 +5163,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1450328213}
   m_barrel: {fileID: 1781110907}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1450328213}
 --- !u!4 &1771362227726370814 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4973641411836888, guid: e4b5e619f4a1e5844b32eec0d702d1b6, type: 3}
@@ -5293,14 +5279,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
+  m_weaponUnlocked: 1
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1410656332}
   m_barrel: {fileID: 1771596042377301989}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1410656332}
 --- !u!4 &1771058137917525415 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4645375280533522, guid: be20da268d490c44c8460e91a7cd3a44, type: 3}
@@ -5417,12 +5404,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1890487181}
   m_barrel: {fileID: 2117745615}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1890487181}
 --- !u!4 &1771262743648028695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4579582627282152, guid: 6b7a5fffc38c176409283bbcc18eaa23, type: 3}
@@ -5534,12 +5522,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1499393099}
   m_barrel: {fileID: 2097946969}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1499393099}
 --- !u!4 &1771125690808431024 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4717322008598024, guid: 0605ab4140367474f95034dcf2790b07, type: 3}
@@ -5651,12 +5640,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1158403852}
   m_barrel: {fileID: 879104434}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1158403852}
 --- !u!4 &1771149348852846529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4765272294121392, guid: 6993fd0e7237f024e80f00288eb435cd, type: 3}
@@ -5768,12 +5758,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1442006147}
   m_barrel: {fileID: 815723611}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1442006147}
 --- !u!4 &1771205464658250504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4533234680962362, guid: e93050ee6a1feb949b8fdc9a97d295b1, type: 3}
@@ -5885,12 +5876,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1450328213}
   m_barrel: {fileID: 0}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1450328213}
 --- !u!4 &1771238927539447308 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4568900488898732, guid: 6d681d8c0b8ff204ea958a229a248b39, type: 3}
@@ -6002,12 +5994,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1999773745}
   m_barrel: {fileID: 279364334}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1999773745}
 --- !u!4 &1771473247486076227 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4792254929554238, guid: 04e8ca980b4beed48979d827d8250fb4, type: 3}
@@ -6125,14 +6118,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
+  m_weaponUnlocked: 1
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 2000
   m_damage: 10
-  m_effectiveRange: 10
+  m_effectiveRange: 1000
+  m_animator: {fileID: 1246744462}
   m_barrel: {fileID: 1545985550}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1246744462}
 --- !u!4 &1768543415599484557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415442749456168, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
@@ -6244,12 +6238,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1969534029}
   m_barrel: {fileID: 245002621}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1969534029}
 --- !u!4 &1771231129579735330 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4541379704386618, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
@@ -6361,12 +6356,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1495923212}
   m_barrel: {fileID: 1771376473822795531}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1495923212}
 --- !u!4 &1771306289302597319 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4642829035030946, guid: dc24a25ae7542b44ba62b25047680a54, type: 3}
@@ -6483,12 +6479,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1869207068}
   m_barrel: {fileID: 1862561886}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1869207068}
 --- !u!4 &1771128126770495652 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4715436291364968, guid: 246e2fda4167a7f4a9f9417c6bc5193f, type: 3}
@@ -6600,12 +6597,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 125623807}
   m_barrel: {fileID: 1768494652178426057}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 125623807}
 --- !u!4 &1768494652178426057 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4076490363838794, guid: 6745051c9fe818d489695642115ceb0d, type: 3}
@@ -6722,12 +6720,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1332506505}
   m_barrel: {fileID: 449022694}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1332506505}
 --- !u!4 &1768275805499373209 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4119278303340458, guid: ee2cb268404949a4fbaadcf58acb29c5, type: 3}
@@ -6839,12 +6838,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 0
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 100
+  m_animator: {fileID: 477676166}
   m_barrel: {fileID: 2060123841}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 477676166}
+  m_grenadeAmmoPrefab: {fileID: 1405211435293244, guid: fe347a2e8265ecb429049be8492d4ff9, type: 3}
   m_grenadeLauncherCylinder: {fileID: 1771243035763482145}
   m_barrelRotateSpeed: 300
 --- !u!4 &1771243035763482145 stripped
@@ -6963,12 +6964,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1754324178}
   m_barrel: {fileID: 2017965510}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1754324178}
 --- !u!4 &1771481386348197858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4820123757619348, guid: 9ec98e8c57546a746a43196444d9c97f, type: 3}
@@ -7080,12 +7082,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 1
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1789588221}
   m_barrel: {fileID: 1768557262135548867}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1789588221}
 --- !u!4 &1768557262135548867 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400770624131906, guid: f68f19ab55ee89d4bb00eaa083ab7849, type: 3}
@@ -7197,12 +7200,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1446433025}
   m_barrel: {fileID: 0}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1446433025}
 --- !u!4 &1771271617795195933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4606031021586162, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2, type: 3}
@@ -7314,12 +7318,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 1834843706}
   m_barrel: {fileID: 42900735}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 1834843706}
 --- !u!4 &1771361492918265795 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4975201854023254, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
@@ -7431,12 +7436,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
+  m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
+  m_animator: {fileID: 817474728}
   m_barrel: {fileID: 1771552754417044575}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_animator: {fileID: 817474728}
 --- !u!4 &1768612656322097561 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4451754539142778, guid: 0eea16a93a3714247bedd5ce3e43849c, type: 3}
