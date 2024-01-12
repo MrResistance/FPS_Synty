@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
+[SelectionBase]
 public class Weapon : MonoBehaviour
 {
     [Header("Settings")]
@@ -91,7 +92,6 @@ public class Weapon : MonoBehaviour
     }
     private void FireWeapon()
     {
-        Debug.Log("Fire Weapon: " + gameObject.name);
         m_animator.SetTrigger("Fire");
     }
     public void Reload()
@@ -106,8 +106,11 @@ public class Weapon : MonoBehaviour
 
     public void PlayWeaponFX()
     {
-        m_gunshotFX.Play();
-        HitCalculation();
+        m_gunshotFX?.Play();
+        if (m_hitscan)
+        {
+            HitCalculation();
+        }
     }
 
     public void ResetTrigger(string value)
@@ -119,6 +122,7 @@ public class Weapon : MonoBehaviour
     {
         if (Physics.Raycast(m_barrel.transform.position, m_barrel.transform.forward, out m_raycastHit, m_effectiveRange))
         {
+            Debug.Log("Hit: " + m_raycastHit.collider.name);
             if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
             {
                 m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
