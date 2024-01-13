@@ -130,10 +130,13 @@ public class Weapon : MonoBehaviour
 
         if (Physics.Raycast(ray, out m_raycastHit, m_effectiveRange))
         {
-            Debug.Log("Hit: " + m_raycastHit.collider.name);
             if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
             {
                 m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
+            }
+            if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
+            {
+                damageable.LoseHitPoints(m_damage);
             }
             return m_raycastHit.point;
         }

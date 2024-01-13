@@ -243,6 +243,7 @@ GameObject:
   - component: {fileID: 309287838}
   - component: {fileID: 309287837}
   - component: {fileID: 309287841}
+  - component: {fileID: 309287842}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -344,6 +345,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &309287842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 309287836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHitPoints: 5
+  m_currentHitPoints: 0
 --- !u!1 &317113598
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +372,7 @@ GameObject:
   - component: {fileID: 317113600}
   - component: {fileID: 317113599}
   - component: {fileID: 317113603}
+  - component: {fileID: 317113604}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -458,6 +474,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &317113604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 317113598}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHitPoints: 50
+  m_currentHitPoints: 0
 --- !u!1 &353132886
 GameObject:
   m_ObjectHideFlags: 0
@@ -471,6 +501,7 @@ GameObject:
   - component: {fileID: 353132888}
   - component: {fileID: 353132887}
   - component: {fileID: 353132891}
+  - component: {fileID: 353132892}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -572,6 +603,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &353132892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 353132886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHitPoints: 10
+  m_currentHitPoints: 0
 --- !u!4 &436575596 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4926261862933284, guid: 8e8c31f8740134d4086fec064d4245d2, type: 3}
@@ -625,11 +670,11 @@ MonoBehaviour:
   pools:
   - tag: GrenadeLauncherAmmo
     prefab: {fileID: 2687956275971646209, guid: 74abc0698e844b0459f152e57cff2c91, type: 3}
-    size: 20
+    size: 5
     parent: {fileID: 1150680535}
   - tag: SmallExplosion
     prefab: {fileID: 1804206099813350, guid: 5ed0a013702bd9f42847584f2fba7b21, type: 3}
-    size: 20
+    size: 5
     parent: {fileID: 1712805377}
 --- !u!1 &520056253
 GameObject:
@@ -1831,6 +1876,7 @@ GameObject:
   - component: {fileID: 2113078326}
   - component: {fileID: 2113078325}
   - component: {fileID: 2113078329}
+  - component: {fileID: 2113078330}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -1932,6 +1978,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2113078330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2113078324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHitPoints: 100
+  m_currentHitPoints: 0
 --- !u!1 &2140409340
 GameObject:
   m_ObjectHideFlags: 0
@@ -2082,6 +2142,10 @@ PrefabInstance:
       propertyPath: m_crosshair
       value: 
       objectReference: {fileID: 971542231}
+    - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_hitForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_crosshair
       value: 
