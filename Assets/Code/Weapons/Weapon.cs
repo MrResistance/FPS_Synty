@@ -11,7 +11,7 @@ public class Weapon : MonoBehaviour
     public FireMode m_fireMode;
     public enum FireMode { semiAuto, fullAuto }
     public bool WeaponUnlocked => m_weaponUnlocked;
-    public bool Hitscan => m_hitscan;
+    //public bool Hitscan => m_hitscan;
 
     [Header("Stats")]
     [SerializeField] private float m_hitForce = 20;

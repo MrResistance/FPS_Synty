@@ -224,11 +224,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!4 &94313232 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1771575553638233583, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-  m_PrefabInstance: {fileID: 1766694252320419401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &309287836
 GameObject:
   m_ObjectHideFlags: 0
@@ -487,11 +482,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_maxHitPoints: 50
   m_currentHitPoints: 0
---- !u!4 &333413714 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1768336976684700398, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-  m_PrefabInstance: {fileID: 1766694252320419401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &353132886
 GameObject:
   m_ObjectHideFlags: 0
@@ -680,11 +670,10 @@ MonoBehaviour:
     prefab: {fileID: 1804206099813350, guid: 5ed0a013702bd9f42847584f2fba7b21, type: 3}
     size: 5
     parent: {fileID: 1712805377}
---- !u!4 &494422034 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1768614654412536755, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-  m_PrefabInstance: {fileID: 1766694252320419401}
-  m_PrefabAsset: {fileID: 0}
+  - tag: RPG_Rocket
+    prefab: {fileID: 7360916113987056730, guid: d32696b2654562448b8bfd603534e342, type: 3}
+    size: 5
+    parent: {fileID: 1035554985}
 --- !u!1 &520056253
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,11 +772,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520056253}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
---- !u!4 &536123567 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1768549026657401995, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-  m_PrefabInstance: {fileID: 1766694252320419401}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602378142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1129,8 +1113,40 @@ Transform:
   m_Children:
   - {fileID: 1150680535}
   - {fileID: 1712805377}
+  - {fileID: 1035554985}
   m_Father: {fileID: 465967733}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1035554984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1035554985}
+  m_Layer: 0
+  m_Name: RPG_Rockets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1035554985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035554984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1023223980}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1079252174 stripped
 Transform:
@@ -1565,6 +1581,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e8c31f8740134d4086fec064d4245d2, type: 3}
+--- !u!4 &2056978343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1768608485846842542, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+  m_PrefabInstance: {fileID: 1766694252320419401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2106174349 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4340330282522542, guid: 43cecf02ca9a29341aa80150e36f4c3d, type: 3}
@@ -1706,206 +1727,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 153062302, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 333413714}
-    - target: {fileID: 153062302, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 270318460, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 536123567}
-    - target: {fileID: 270318460, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 368421062, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 536123567}
-    - target: {fileID: 368421062, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 395163190, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
     - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 333413714}
-    - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_grenadeUpwardForce
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_grenadeForwardForce
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 478248492, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 478248492, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 481438301, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 333413714}
-    - target: {fileID: 481438301, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 696204254, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 696204254, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_maxReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 696204254, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 696204254, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_currentReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 772658072, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 772658072, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_maxReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 772658072, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_currentReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 829733808, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 873235144, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 873235144, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_maxReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 873235144, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 873235144, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_currentReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 892841228, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 536123567}
-    - target: {fileID: 892841228, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1190155988, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_hitForce
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 494422034}
-    - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_maxReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1246744463, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_currentReserveAmmo
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 1337573357, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 1670637776, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 1670637776, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_maxReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670637776, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1670637776, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_currentReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688404928, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 1688404928, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_maxReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688404928, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1688404928, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_currentReserveAmmo
-      value: 120
-      objectReference: {fileID: 0}
-    - target: {fileID: 1699765675, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 94313232}
-    - target: {fileID: 1699765675, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1715805021, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_crosshair
-      value: 
-      objectReference: {fileID: 536123567}
-    - target: {fileID: 1715805021, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_weaponUnlocked
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2060123841, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.5897
-      objectReference: {fileID: 0}
-    - target: {fileID: 2140409341, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1765760792805666679, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_IsActive
+      propertyPath: m_hitscan
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1765924876784420283, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
-      propertyPath: m_IsActive
-      value: 1
+    - target: {fileID: 743896487, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_hitscan
+      value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 743896487, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_crosshair
+      value: 
+      objectReference: {fileID: 2056978343}
     - target: {fileID: 1766694250992511713, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_RootOrder
       value: 3

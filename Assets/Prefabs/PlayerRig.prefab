@@ -5219,8 +5219,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1450328213}
@@ -5342,8 +5342,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 120
   m_currentReserveAmmo: 120
   m_animator: {fileID: 1410656332}
@@ -5470,8 +5470,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1890487181}
@@ -5593,8 +5593,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1499393099}
@@ -5716,8 +5716,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1158403852}
@@ -5946,8 +5946,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1442006147}
@@ -6069,8 +6069,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1450328213}
@@ -6192,8 +6192,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 120
   m_currentReserveAmmo: 120
   m_animator: {fileID: 1999773745}
@@ -6323,8 +6323,8 @@ MonoBehaviour:
   m_hitForce: 10
   m_damage: 10
   m_effectiveRange: 1000
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 120
   m_currentReserveAmmo: 100
   m_animator: {fileID: 1246744462}
@@ -6446,8 +6446,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1969534029}
@@ -6569,8 +6569,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 120
   m_currentReserveAmmo: 120
   m_animator: {fileID: 1495923212}
@@ -6804,8 +6804,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1869207068}
@@ -6927,8 +6927,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 120
   m_currentReserveAmmo: 120
   m_animator: {fileID: 125623807}
@@ -7055,8 +7055,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1332506505}
@@ -7392,14 +7392,14 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 100
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
+  m_maxClipSize: 6
+  m_currentAmmoInClip: 6
+  m_maxReserveAmmo: 36
+  m_currentReserveAmmo: 18
   m_animator: {fileID: 477676166}
   m_barrel: {fileID: 2060123841}
   m_gunshotFX: {fileID: 217370386187920746}
-  m_crosshair: {fileID: 1771575553638233583}
+  m_crosshair: {fileID: 1768336976684700398}
   m_grenadeAmmoPrefab: {fileID: 1405211435293244, guid: fe347a2e8265ecb429049be8492d4ff9, type: 3}
   m_grenadeLauncherCylinder: {fileID: 1771243035763482145}
   m_grenadeForwardForce: 30
@@ -7632,8 +7632,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1754324178}
@@ -7862,8 +7862,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 120
   m_currentReserveAmmo: 120
   m_animator: {fileID: 1789588221}
@@ -7967,7 +7967,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &478248492
+--- !u!114 &743896487
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7976,7 +7976,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766175115386730771}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5b3dcbbdad88e4d43b34a0a960ff48af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
@@ -7984,15 +7984,15 @@ MonoBehaviour:
   m_fireMode: 0
   m_hitForce: 20
   m_damage: 10
-  m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_effectiveRange: 100
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
-  m_animator: {fileID: 1446433025}
+  m_animator: {fileID: 0}
   m_barrel: {fileID: 0}
-  m_gunshotFX: {fileID: 217370386187920746}
-  m_crosshair: {fileID: 1771575553638233583}
+  m_gunshotFX: {fileID: 0}
+  m_crosshair: {fileID: 0}
 --- !u!4 &1771271617795195933 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4606031021586162, guid: 118c44d3f9a3bcf49a971bc47fc1a5e2, type: 3}
@@ -8108,8 +8108,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 1834843706}
@@ -8231,8 +8231,8 @@ MonoBehaviour:
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
-  MaxClipSize: 30
-  CurrentAmmoInClip: 0
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
   m_maxReserveAmmo: 0
   m_currentReserveAmmo: 0
   m_animator: {fileID: 817474728}
