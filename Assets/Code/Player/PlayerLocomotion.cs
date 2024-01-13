@@ -70,7 +70,6 @@ public class PlayerLocomotion : MonoBehaviour
         var objectsAroundPlayer = Physics.OverlapSphere(transform.position, 0.25f);
         for (int i = 0; i < objectsAroundPlayer.Length; i++)
         {
-            Debug.Log("Object around player: " + objectsAroundPlayer[i].name);
             if (((1 << objectsAroundPlayer[i].gameObject.layer) & m_groundMask) != 0)
             {
                 return true;

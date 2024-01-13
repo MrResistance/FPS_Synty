@@ -1785,15 +1785,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 12, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_groundMask.m_Bits
-      value: 128
+      value: 192
       objectReference: {fileID: 0}
     - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_hitscan
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_gunshotFX
+      value: 
+      objectReference: {fileID: 680365334}
+    - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 696204254, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked
