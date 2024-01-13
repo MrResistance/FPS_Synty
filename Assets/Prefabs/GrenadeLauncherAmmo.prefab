@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2673098391872033959}
   - component: {fileID: 1214745719706146065}
   - component: {fileID: 2445318699660523179}
+  - component: {fileID: 9154970502364564710}
   m_Layer: 0
   m_Name: GrenadeLauncherAmmo
   m_TagString: Untagged
@@ -115,3 +116,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 1
+--- !u!114 &9154970502364564710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687956275971646209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c42d8417f04c3e849a4f00cfbee56bd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_collider: {fileID: 1214745719706146065}
+  m_rb: {fileID: 2445318699660523179}
+  m_renderer: {fileID: 2673098391872033959}

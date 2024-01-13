@@ -59,7 +59,7 @@ public class ObjectPooler : MonoBehaviour
         objectToSpawn.SetActive(true);
         switch (tag)
         {
-            case "Enemy Projectile":
+            case "SmallExplosion":
                 //Do code
                 break;
         }
