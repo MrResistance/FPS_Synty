@@ -1793,7 +1793,7 @@ PrefabInstance:
       objectReference: {fileID: 1538093122}
     - target: {fileID: 743896487, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_maxReserveAmmo
-      value: 5
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 743896487, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_currentAmmoInClip
@@ -1801,7 +1801,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 743896487, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_currentReserveAmmo
-      value: 5
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 772658072, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_weaponUnlocked
