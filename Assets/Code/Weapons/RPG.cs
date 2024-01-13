@@ -1,14 +1,26 @@
+using UnityEngine;
 public class RPG : Weapon
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private GameObject m_visualRocket;
+    [SerializeField] private float m_RocketForwardForce = 50f;
+    public void LaunchRocket()
     {
-        
+        m_visualRocket.SetActive(false);
+        var rocket = ObjectPooler.Instance.SpawnFromPool("RPG_Rocket", m_visualRocket.transform.position, m_visualRocket.transform.rotation);
+        if (rocket.TryGetComponent(out Rigidbody rb))
+        {
+            rb.AddForce(rocket.transform.forward * m_RocketForwardForce, ForceMode.Impulse);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void ReloadComplete()
     {
-        
+        base.ReloadComplete();
+        m_visualRocket.SetActive(true);
+    }
+
+    public void Empty()
+    {
+        //This is an empty function for the sole purpose of extending the fire animation for the RPG
     }
 }

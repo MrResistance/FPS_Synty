@@ -5,10 +5,12 @@ public class Explosive : MonoBehaviour
 {
     [SerializeField] private float m_explosionRadius = 2f;
     [SerializeField] private float m_explosionForce = 100f;
+    [SerializeField] private float m_explosionUpwardForceModifier = 1.5f;
+    [SerializeField] private string m_objectPoolerExplosionTag;
     public event Action OnExplode;
     private void OnCollisionEnter(Collision collision)
     {
-        ObjectPooler.Instance.SpawnFromPool("SmallExplosion", transform.position, transform.rotation);
+        ObjectPooler.Instance.SpawnFromPool(m_objectPoolerExplosionTag, transform.position, transform.rotation);
         if (TryGetComponent(out Rigidbody rb))
         {
             rb.velocity = Vector3.zero;
@@ -25,7 +27,7 @@ public class Explosive : MonoBehaviour
         {
             if (objectsToMove[i].TryGetComponent(out Rigidbody rb))
             {
-                rb.AddExplosionForce(m_explosionForce, transform.position, m_explosionRadius, 1.5f);
+                rb.AddExplosionForce(m_explosionForce, transform.position, m_explosionRadius, m_explosionUpwardForceModifier);
             }
         }
     }

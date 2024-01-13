@@ -157,7 +157,7 @@ public class Weapon : MonoBehaviour
         return 0;
     }
 
-    public void ReloadComplete()
+    public virtual void ReloadComplete()
     {
         m_currentAmmoInClip += m_amountToReload;
         m_amountToReload = 0;
