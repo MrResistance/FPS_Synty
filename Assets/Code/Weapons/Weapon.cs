@@ -20,21 +20,25 @@ public class Weapon : MonoBehaviour
 
     [Header("Ammo")]
     [SerializeField] private int m_maxClipSize = 30;
-    public int MaxClipSize => m_maxClipSize;
     [SerializeField] private int m_currentAmmoInClip;
-    public int CurrentAmmoInClip => m_currentAmmoInClip;
     [SerializeField] private int m_maxReserveAmmo;
     [SerializeField] private int m_currentReserveAmmo;
+
+    //Public accessors
+    public int MaxClipSize => m_maxClipSize;
+    public int CurrentAmmoInClip => m_currentAmmoInClip;
     public int CurrentReserveAmmo => m_currentReserveAmmo;
 
     [Header("References")]
     [SerializeField] private Animator m_animator;
-    public Animator Animator => m_animator;
     [SerializeField] private Transform m_barrel;
-    [HideInInspector] public Transform Barrel => m_barrel;
     [SerializeField] private ParticleSystem m_gunshotFX;
     [SerializeField] private Transform m_crosshair;
-    [HideInInspector] public Transform Crosshair => m_crosshair;
+
+    //Public accessors
+    public Animator Animator => m_animator;
+    public Transform Barrel => m_barrel;
+    public Transform Crosshair => m_crosshair;
 
     private RaycastHit m_raycastHit;
     private int m_amountToReload;
