@@ -26,10 +26,12 @@ public class UI_Manager : MonoBehaviour
         {
             return;
         }
+        WeaponRig.Instance.UpdateAmmoCounter -= SetAmmoCounter;
         WeaponRig.Instance.UpdateAmmoCounter += SetAmmoCounter;
     }
     private void Start()
     {
+        WeaponRig.Instance.UpdateAmmoCounter -= SetAmmoCounter;
         WeaponRig.Instance.UpdateAmmoCounter += SetAmmoCounter;
     }
 
