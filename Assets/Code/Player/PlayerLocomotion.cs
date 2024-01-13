@@ -59,10 +59,8 @@ public class PlayerLocomotion : MonoBehaviour
 
     void Jump()
     {
-        Debug.Log("Jump input");
         if (GroundCheck())
         {
-            Debug.Log("Apply Jump Force");
             m_rb.AddForce(transform.up * m_jumpForce, ForceMode.Impulse);
         }
     }
