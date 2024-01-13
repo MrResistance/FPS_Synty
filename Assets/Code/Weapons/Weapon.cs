@@ -39,7 +39,6 @@ public class Weapon : MonoBehaviour
     private RaycastHit m_raycastHit;
     private int m_amountToReload;
 
-    public event Action<int, int> UpdateAmmoCounter;
     #region Event Subscriptions
     private void Start()
     {
@@ -112,7 +111,7 @@ public class Weapon : MonoBehaviour
         if (m_currentAmmoInClip > 0)
         {
             m_currentAmmoInClip--;
-            //UpdateAmmoCounter?.Invoke(CurrentAmmoInClip, CurrentReserveAmmo);
+            WeaponRig.Instance.UpdateAmmoCounterMethod();
             m_animator.SetTrigger("Fire");
         }
         else
@@ -128,7 +127,7 @@ public class Weapon : MonoBehaviour
             m_currentAmmoInClip = 0;
             LoseReserveAmmo(reloadRequestResult);
             m_amountToReload = reloadRequestResult;
-            //UpdateAmmoCounter?.Invoke(CurrentAmmoInClip, CurrentReserveAmmo);
+            WeaponRig.Instance.UpdateAmmoCounterMethod();
             m_animator.SetTrigger("Reload");
         }
         else
@@ -158,7 +157,7 @@ public class Weapon : MonoBehaviour
     {
         m_currentAmmoInClip += m_amountToReload;
         m_amountToReload = 0;
-        //UpdateAmmoCounter?.Invoke(CurrentAmmoInClip, CurrentReserveAmmo);
+        WeaponRig.Instance.UpdateAmmoCounterMethod();
     }
 
     public void GainReserveAmmo(int amount)

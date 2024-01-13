@@ -23,7 +23,7 @@ public class WeaponRig : MonoBehaviour
     [SerializeField] private List <Weapon> m_weapons;
     [SerializeField] private int m_currentWeaponLocation;
 
-    public event Action<int, int> OnWeaponSwitched;
+    public event Action<int, int> UpdateAmmoCounter;
 
     private void Awake()
     {
@@ -132,7 +132,7 @@ public class WeaponRig : MonoBehaviour
         m_currentWeapon.gameObject.SetActive(true);
         SetGunshotFX_Parent();
         CrosshairManager.Instance.SetCrosshair(m_currentWeapon.Crosshair);
-        OnWeaponSwitched?.Invoke(m_currentWeapon.CurrentAmmoInClip, m_currentWeapon.CurrentReserveAmmo);
+        UpdateAmmoCounterMethod();
     }
 
     private void SetGunshotFX_Parent()
@@ -177,5 +177,10 @@ public class WeaponRig : MonoBehaviour
                 m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_HipFire_FOV, m_transitionProgress);
             }
         }
+    }
+
+    public void UpdateAmmoCounterMethod()
+    {
+        UpdateAmmoCounter?.Invoke(m_currentWeapon.CurrentAmmoInClip, m_currentWeapon.CurrentReserveAmmo);
     }
 }

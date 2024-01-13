@@ -26,21 +26,21 @@ public class UI_Manager : MonoBehaviour
         {
             return;
         }
-        WeaponRig.Instance.OnWeaponSwitched += SetAmmoCounter;
+        WeaponRig.Instance.UpdateAmmoCounter += SetAmmoCounter;
     }
     private void Start()
     {
-        WeaponRig.Instance.OnWeaponSwitched += SetAmmoCounter;
+        WeaponRig.Instance.UpdateAmmoCounter += SetAmmoCounter;
     }
 
     private void OnDisable()
     {
-        WeaponRig.Instance.OnWeaponSwitched -= SetAmmoCounter;
+        WeaponRig.Instance.UpdateAmmoCounter -= SetAmmoCounter;
     }
 
     private void OnDestroy()
     {
-        WeaponRig.Instance.OnWeaponSwitched -= SetAmmoCounter;
+        WeaponRig.Instance.UpdateAmmoCounter -= SetAmmoCounter;
     }
     #endregion
 
