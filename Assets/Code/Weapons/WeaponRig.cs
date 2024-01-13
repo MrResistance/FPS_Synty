@@ -1,10 +1,14 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponRig : MonoBehaviour
 {
+    public static WeaponRig Instance;
+
     [Header("References")]
     [SerializeField] private Weapon m_currentWeapon;
+    public Weapon CurrentWeapon => m_currentWeapon;
     [SerializeField] private ParticleSystem m_gunshotFX;
 
     [SerializeField] private Camera m_camera;
@@ -18,6 +22,22 @@ public class WeaponRig : MonoBehaviour
     [SerializeField] private Vector3 m_aimFromHipPosition;
     [SerializeField] private List <Weapon> m_weapons;
     [SerializeField] private int m_currentWeaponLocation;
+
+    public event Action<int, int> OnWeaponSwitched;
+
+    private void Awake()
+    {
+        #region Singleton
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+        #endregion
+    }
 
     #region Event Subscriptions
     private void Start()
@@ -112,6 +132,7 @@ public class WeaponRig : MonoBehaviour
         m_currentWeapon.gameObject.SetActive(true);
         SetGunshotFX_Parent();
         CrosshairManager.Instance.SetCrosshair(m_currentWeapon.Crosshair);
+        OnWeaponSwitched?.Invoke(m_currentWeapon.CurrentAmmoInClip, m_currentWeapon.CurrentReserveAmmo);
     }
 
     private void SetGunshotFX_Parent()

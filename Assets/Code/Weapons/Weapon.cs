@@ -8,8 +8,8 @@ public class Weapon : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private bool m_weaponUnlocked = false;
     [SerializeField] private bool m_hitscan = true;
-    public fireMode m_fireMode;
-    public enum fireMode { semiAuto, fullAuto }
+    public FireMode m_fireMode;
+    public enum FireMode { semiAuto, fullAuto }
     public bool WeaponUnlocked => m_weaponUnlocked;
     public bool Hitscan => m_hitscan;
 
@@ -17,10 +17,15 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float m_hitForce = 20;
     [SerializeField] private int m_damage = 10;
     [SerializeField] private int m_effectiveRange = 100;
+
+    [Header("Ammo")]
     [SerializeField] private int m_maxClipSize = 30;
-    [SerializeField] private int m_currentClipSize;
+    public int MaxClipSize => m_maxClipSize;
+    [SerializeField] private int m_currentAmmoInClip;
+    public int CurrentAmmoInClip => m_currentAmmoInClip;
     [SerializeField] private int m_maxReserveAmmo;
     [SerializeField] private int m_currentReserveAmmo;
+    public int CurrentReserveAmmo => m_currentReserveAmmo;
 
     [Header("References")]
     [SerializeField] private Animator m_animator;
@@ -30,36 +35,35 @@ public class Weapon : MonoBehaviour
     [SerializeField] private ParticleSystem m_gunshotFX;
     [SerializeField] private Transform m_crosshair;
     [HideInInspector] public Transform Crosshair => m_crosshair;
+
     private RaycastHit m_raycastHit;
     private int m_amountToReload;
 
-    public event Action OnOutOfAmmo;
-    public event Action OnReloading;
-    public event Action OnReloadComplete;
-
+    public event Action<int, int> UpdateAmmoCounter;
     #region Event Subscriptions
     private void Start()
     {
         switch (m_fireMode)
         {
-            case fireMode.semiAuto:
+            case FireMode.semiAuto:
                 ReceivePrimaryPressedEvents();
                 break;
-            case fireMode.fullAuto:
+            case FireMode.fullAuto:
                 ReceivePrimaryHeldEvents();
                 break;
         }
         PlayerInputs.Instance.OnReload += Reload;
+        m_currentAmmoInClip = m_maxClipSize;
     }
     private void OnEnable()
     {
         if (PlayerInputs.Instance == null) return;
         switch (m_fireMode)
         {
-            case fireMode.semiAuto:
+            case FireMode.semiAuto:
                 ReceivePrimaryPressedEvents();
                 break;
-            case fireMode.fullAuto:
+            case FireMode.fullAuto:
                 ReceivePrimaryHeldEvents();
                 break;
         }
@@ -80,7 +84,6 @@ public class Weapon : MonoBehaviour
         StopReceivingPrimaryHeldEvents();
         PlayerInputs.Instance.OnReload -= Reload;
     }
-    #endregion
 
     public void ReceivePrimaryPressedEvents()
     {
@@ -103,24 +106,34 @@ public class Weapon : MonoBehaviour
     {
         PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
     }
+    #endregion
     private void FireWeapon()
     {
-        m_animator.SetTrigger("Fire");
+        if (m_currentAmmoInClip > 0)
+        {
+            m_currentAmmoInClip--;
+            //UpdateAmmoCounter?.Invoke(CurrentAmmoInClip, CurrentReserveAmmo);
+            m_animator.SetTrigger("Fire");
+        }
+        else
+        {
+            //OnOutOfAmmo?.Invoke();
+        }
     }
     public void Reload()
     {
-        int result = ReloadRequest();
-        if (result > 0)
+        int reloadRequestResult = ReloadRequest();
+        if (reloadRequestResult > 0)
         {
-            m_currentClipSize = 0;
-            LoseAmmo(result);
-            m_amountToReload = result;
-            OnReloading?.Invoke();
+            m_currentAmmoInClip = 0;
+            LoseReserveAmmo(reloadRequestResult);
+            m_amountToReload = reloadRequestResult;
+            //UpdateAmmoCounter?.Invoke(CurrentAmmoInClip, CurrentReserveAmmo);
             m_animator.SetTrigger("Reload");
         }
         else
         {
-            OnOutOfAmmo?.Invoke();
+            //OnOutOfAmmoReserve?.Invoke();
         }
     }
 
@@ -143,17 +156,17 @@ public class Weapon : MonoBehaviour
 
     public void ReloadComplete()
     {
-        m_currentClipSize += m_amountToReload;
+        m_currentAmmoInClip += m_amountToReload;
         m_amountToReload = 0;
-        OnReloadComplete?.Invoke();
+        //UpdateAmmoCounter?.Invoke(CurrentAmmoInClip, CurrentReserveAmmo);
     }
 
-    public void GainAmmo(int amount)
+    public void GainReserveAmmo(int amount)
     {
         m_currentReserveAmmo += amount;
     }
 
-    public void LoseAmmo(int amount)
+    public void LoseReserveAmmo(int amount)
     {
         m_currentReserveAmmo -= amount;    
     }
