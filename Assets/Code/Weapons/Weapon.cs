@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -16,16 +17,26 @@ public class Weapon : MonoBehaviour
     [SerializeField] private float m_hitForce = 20;
     [SerializeField] private int m_damage = 10;
     [SerializeField] private int m_effectiveRange = 100;
+    [SerializeField] private int m_maxClipSize = 30;
+    [SerializeField] private int m_currentClipSize;
+    [SerializeField] private int m_maxReserveAmmo;
+    [SerializeField] private int m_currentReserveAmmo;
 
     [Header("References")]
     [SerializeField] private Animator m_animator;
+    public Animator Animator => m_animator;
     [SerializeField] private Transform m_barrel;
     [HideInInspector] public Transform Barrel => m_barrel;
     [SerializeField] private ParticleSystem m_gunshotFX;
     [SerializeField] private Transform m_crosshair;
     [HideInInspector] public Transform Crosshair => m_crosshair;
     private RaycastHit m_raycastHit;
-    public Animator Animator => m_animator;
+    private int m_amountToReload;
+
+    public event Action OnOutOfAmmo;
+    public event Action OnReloading;
+    public event Action OnReloadComplete;
+
     #region Event Subscriptions
     private void Start()
     {
@@ -98,7 +109,53 @@ public class Weapon : MonoBehaviour
     }
     public void Reload()
     {
-        m_animator.SetTrigger("Reload");
+        int result = ReloadRequest();
+        if (result > 0)
+        {
+            m_currentClipSize = 0;
+            LoseAmmo(result);
+            m_amountToReload = result;
+            OnReloading?.Invoke();
+            m_animator.SetTrigger("Reload");
+        }
+        else
+        {
+            OnOutOfAmmo?.Invoke();
+        }
+    }
+
+    private int ReloadRequest()
+    {
+        if (m_currentReserveAmmo == 0)
+        {
+            return 0;
+        }
+        if (m_currentReserveAmmo > 0 && m_currentReserveAmmo < m_maxClipSize)
+        {
+            return m_currentReserveAmmo;
+        }
+        if (m_currentReserveAmmo >= m_maxClipSize)
+        {
+            return m_maxClipSize;
+        }
+        return 0;
+    }
+
+    public void ReloadComplete()
+    {
+        m_currentClipSize += m_amountToReload;
+        m_amountToReload = 0;
+        OnReloadComplete?.Invoke();
+    }
+
+    public void GainAmmo(int amount)
+    {
+        m_currentReserveAmmo += amount;
+    }
+
+    public void LoseAmmo(int amount)
+    {
+        m_currentReserveAmmo -= amount;    
     }
 
     public void SetGunshotFX(ParticleSystem gunshotFX)

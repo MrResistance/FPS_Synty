@@ -2088,7 +2088,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 451427947, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_grenadeForwardForce
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 478248492, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_crosshair
@@ -2189,6 +2189,14 @@ PrefabInstance:
     - target: {fileID: 2060123841, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.5897
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765760792805666679, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765924876784420283, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1766694250992511713, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_RootOrder

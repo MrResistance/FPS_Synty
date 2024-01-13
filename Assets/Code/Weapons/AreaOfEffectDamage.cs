@@ -31,6 +31,7 @@ public class AreaOfEffectDamage : MonoBehaviour
                 }
                 break;
             case areaShape.box:
+                //Implement explosives for boxes potentially
                 //Physics.OverlapBox(transform.position,);
                 break;
         }
