@@ -156,7 +156,6 @@ public class WeaponRig : MonoBehaviour
     private void Update()
     {
         TransitionView();
-        //Debug.DrawRay(m_currentWeapon.barrel.position, m_currentWeapon.barrel.transform.forward * 1000, Color.green);
     }
     private void TransitionView()
     {
