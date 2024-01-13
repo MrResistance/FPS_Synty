@@ -146,6 +146,10 @@ public class Weapon : MonoBehaviour
         {
             return 0;
         }
+        if (m_currentAmmoInClip == m_maxClipSize)
+        {
+            return 0;
+        }
         if (m_currentReserveAmmo > 0 && m_currentReserveAmmo < m_maxClipSize)
         {
             return m_currentReserveAmmo;
