@@ -11,6 +11,8 @@ public class WeaponRig : MonoBehaviour
     public Weapon CurrentWeapon => m_currentWeapon;
 
     [SerializeField] private Camera m_camera;
+    [SerializeField] private Camera m_sniperScopeCamera;
+    [SerializeField] private float m_SniperScope_FOV = 10;
     [SerializeField] private float m_ADS_FOV = 30;
     [SerializeField] private float m_HipFire_FOV = 60;
     [SerializeField] private float m_transitionDuration = 1.0f; // Duration of the transition in seconds
@@ -129,7 +131,16 @@ public class WeaponRig : MonoBehaviour
     {
         m_currentWeapon.enabled = true;
         m_currentWeapon.gameObject.SetActive(true);
-        CrosshairManager.Instance.SetCrosshair(m_currentWeapon.Crosshair);
+        switch (m_currentWeapon.Type)
+        {
+            case Weapon.WeaponType.sniper:
+                CrosshairManager.Instance.DisableCrosshairs();
+                break;
+            default:
+                CrosshairManager.Instance.SetCrosshair(m_currentWeapon.Crosshair);
+                break;
+        }
+
         UpdateAmmoCounterMethod();
     }
 
@@ -158,7 +169,14 @@ public class WeaponRig : MonoBehaviour
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, m_aimDownSightPosition, m_transitionProgress);
                 transform.localRotation = Quaternion.Slerp(transform.localRotation, Quaternion.identity, m_transitionProgress);
-                m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_ADS_FOV, m_transitionProgress);
+                if (m_currentWeapon.Type == Weapon.WeaponType.sniper)
+                {
+                    m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_SniperScope_FOV, m_transitionProgress);
+                }
+                else
+                {
+                    m_camera.fieldOfView = Mathf.Lerp(m_camera.fieldOfView, m_ADS_FOV, m_transitionProgress);
+                }
             }
             else
             {

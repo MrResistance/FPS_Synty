@@ -3,10 +3,15 @@ using UnityEngine;
 [SelectionBase]
 public class Weapon : MonoBehaviour
 {
+    [SerializeField] private WeaponData m_weaponData;
+
     [Header("Settings")]
     [SerializeField] private bool m_weaponUnlocked = false;
     [SerializeField] private bool m_hitscan = true;
-    public FireMode m_fireMode;
+    public WeaponType Type;
+    public enum WeaponType { pistol, submachinegun, machinegun, shotgun, explosive, sniper }
+
+    public FireMode WeaponFireMode;
     public enum FireMode { semiAuto, fullAuto }
     public bool WeaponUnlocked => m_weaponUnlocked;
 
@@ -47,7 +52,16 @@ public class Weapon : MonoBehaviour
     #region Event Subscriptions
     private void Start()
     {
-        switch (m_fireMode)
+        if (m_weaponData != null)
+        {
+            GetWeaponData();
+        }
+        else
+        {
+            Debug.LogWarning("WeaponData not assigned. Weapon Data may be abnormal.");
+        }
+        
+        switch (WeaponFireMode)
         {
             case FireMode.semiAuto:
                 ReceivePrimaryPressedEvents();
@@ -61,8 +75,17 @@ public class Weapon : MonoBehaviour
     }
     private void OnEnable()
     {
+        if (m_weaponData != null)
+        {
+            GetWeaponData();
+        }
+        else
+        {
+            Debug.LogWarning(name + " WeaponData not assigned. Weapon Data may be abnormal.");
+        }
+
         if (PlayerInputs.Instance == null) return;
-        switch (m_fireMode)
+        switch (WeaponFireMode)
         {
             case FireMode.semiAuto:
                 ReceivePrimaryPressedEvents();
@@ -114,6 +137,22 @@ public class Weapon : MonoBehaviour
         PlayerInputs.Instance.OnPrimaryReleased -= StopPlayingWeaponFX;
     }
     #endregion
+
+    private void GetWeaponData()
+    {
+        m_weaponUnlocked = m_weaponData.Unlocked;
+        m_hitscan = m_weaponData.Hitscan;
+        Type = m_weaponData.WeaponType;
+        WeaponFireMode = m_weaponData.FireMode;
+        m_hitForce = m_weaponData.HitForce;
+        m_damage = m_weaponData.Damage;
+        m_effectiveRange = m_weaponData.EffectiveRange;
+        m_fireRateCooldown = m_weaponData.FireRateCooldown;
+        m_maxClipSize = m_weaponData.MaxClipSize;
+        m_currentAmmoInClip = m_weaponData.CurrentAmmoInClip;
+        m_maxReserveAmmo = m_weaponData.MaxReserveAmmo;
+        m_currentReserveAmmo = m_weaponData.CurrentReserveAmmo;
+    }
     private void FireWeapon()
     {
         if (Time.time >= m_lastTimeFired + m_fireRateCooldown)

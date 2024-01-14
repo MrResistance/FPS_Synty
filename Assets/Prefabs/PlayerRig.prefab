@@ -5380,7 +5380,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -5536,7 +5537,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -5681,7 +5683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -5748,11 +5751,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4717322008598024, guid: 0605ab4140367474f95034dcf2790b07, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4717322008598024, guid: 0605ab4140367474f95034dcf2790b07, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.0425
       objectReference: {fileID: 0}
     - target: {fileID: 4717322008598024, guid: 0605ab4140367474f95034dcf2790b07, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5833,7 +5836,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 4
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -6006,7 +6010,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -6433,7 +6438,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 100
   m_damage: 10
   m_effectiveRange: 30
@@ -6635,7 +6641,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -6779,7 +6786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -6931,7 +6939,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 10
   m_damage: 10
   m_effectiveRange: 1000
@@ -6998,7 +7007,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4541379704386618, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.015
       objectReference: {fileID: 0}
     - target: {fileID: 4541379704386618, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7084,7 +7093,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 4
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -7237,7 +7247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -7493,7 +7504,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -7801,7 +7813,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -7974,7 +7987,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -8372,7 +8386,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 100
@@ -8641,7 +8656,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -8985,7 +9001,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 1
-  m_fireMode: 1
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -9158,7 +9175,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 0
   m_hitscan: 0
-  m_fireMode: 0
+  Type: 0
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 100
@@ -9224,11 +9242,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4975201854023254, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4975201854023254, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.06
       objectReference: {fileID: 0}
     - target: {fileID: 4975201854023254, guid: 0dadc2722297b3044b16aa695fd8ee62, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9309,7 +9327,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 4
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10
@@ -9377,11 +9396,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4451754539142778, guid: 0eea16a93a3714247bedd5ce3e43849c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4451754539142778, guid: 0eea16a93a3714247bedd5ce3e43849c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.0225
       objectReference: {fileID: 0}
     - target: {fileID: 4451754539142778, guid: 0eea16a93a3714247bedd5ce3e43849c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9462,7 +9481,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_weaponUnlocked: 1
   m_hitscan: 1
-  m_fireMode: 0
+  Type: 4
+  WeaponFireMode: 0
   m_hitForce: 20
   m_damage: 10
   m_effectiveRange: 10

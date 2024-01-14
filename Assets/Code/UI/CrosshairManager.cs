@@ -33,10 +33,15 @@ public class CrosshairManager : MonoBehaviour
 
     public void SetCrosshair(Transform crosshair)
     {
+        DisableCrosshairs();
+        crosshair.gameObject.SetActive(true);
+    }
+
+    public void DisableCrosshairs()
+    {
         foreach (Transform child in crosshairs)
         {
             child.gameObject.SetActive(false);
         }
-        crosshair.gameObject.SetActive(true);
     }
 }
