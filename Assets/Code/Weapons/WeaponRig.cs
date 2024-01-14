@@ -9,7 +9,6 @@ public class WeaponRig : MonoBehaviour
     [Header("References")]
     [SerializeField] private Weapon m_currentWeapon;
     public Weapon CurrentWeapon => m_currentWeapon;
-    [SerializeField] private ParticleSystem m_gunshotFX;
 
     [SerializeField] private Camera m_camera;
     [SerializeField] private float m_ADS_FOV = 30;
@@ -130,16 +129,8 @@ public class WeaponRig : MonoBehaviour
     {
         m_currentWeapon.enabled = true;
         m_currentWeapon.gameObject.SetActive(true);
-        SetGunshotFX_Parent();
         CrosshairManager.Instance.SetCrosshair(m_currentWeapon.Crosshair);
         UpdateAmmoCounterMethod();
-    }
-
-    private void SetGunshotFX_Parent()
-    {
-        m_gunshotFX?.transform.SetParent(m_currentWeapon.Barrel.transform);
-        m_gunshotFX?.transform.SetLocalPositionAndRotation(Vector3.zero, Quaternion.identity);
-        m_currentWeapon.SetGunshotFX(m_gunshotFX);
     }
 
     private void AimDownSight()

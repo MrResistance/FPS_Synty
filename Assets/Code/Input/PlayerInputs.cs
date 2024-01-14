@@ -6,6 +6,7 @@ public class PlayerInputs : MonoBehaviour
 {
     public event Action OnPrimaryPressed;
     public event Action OnPrimaryHeld;
+    public event Action OnPrimaryReleased;
     public event Action OnSecondaryHeld;
     public event Action OnSecondaryReleased;
     public event Action OnReload;
@@ -31,6 +32,7 @@ public class PlayerInputs : MonoBehaviour
         controls = new PlayerControls();
 
         controls.Actions.Primary.performed += PrimaryPressed;
+        controls.Actions.Primary.canceled += PrimaryReleased;
         controls.Actions.Secondary.canceled += SecondaryReleased;
         controls.Actions.Reload.performed += Reload;
         controls.Actions.Jump.performed += Jump;
@@ -41,7 +43,7 @@ public class PlayerInputs : MonoBehaviour
     private float m_lastTimeSelectInputReceieved;
     private void Select(InputAction.CallbackContext context)
     {
-        if (Time.time > m_lastTimeSelectInputReceieved + m_selectInputCooldown)
+        if (Time.time >= m_lastTimeSelectInputReceieved + m_selectInputCooldown)
         {
             switch (context.ReadValue<float>())
             {
@@ -61,6 +63,12 @@ public class PlayerInputs : MonoBehaviour
     private void PrimaryPressed(InputAction.CallbackContext context)
     {
         OnPrimaryPressed?.Invoke();
+    }
+
+    private void PrimaryReleased(InputAction.CallbackContext context)
+    {
+        Debug.Log("Primary Released");
+        OnPrimaryReleased?.Invoke();
     }
 
     private void SecondaryReleased(InputAction.CallbackContext context)

@@ -1,5 +1,3 @@
-using System;
-using System.Collections;
 using UnityEngine;
 
 [SelectionBase]
@@ -11,12 +9,12 @@ public class Weapon : MonoBehaviour
     public FireMode m_fireMode;
     public enum FireMode { semiAuto, fullAuto }
     public bool WeaponUnlocked => m_weaponUnlocked;
-    //public bool Hitscan => m_hitscan;
 
     [Header("Stats")]
     [SerializeField] private float m_hitForce = 20;
     [SerializeField] private int m_damage = 10;
     [SerializeField] private int m_effectiveRange = 100;
+    [SerializeField] private float m_fireRateCooldown = 0.1f;
 
     [Header("Ammo")]
     [SerializeField] private int m_maxClipSize = 30;
@@ -42,6 +40,9 @@ public class Weapon : MonoBehaviour
 
     private RaycastHit m_raycastHit;
     private int m_amountToReload;
+
+    private float m_lastTimeFired;
+    private bool m_currentlyFiring = false;
 
     #region Event Subscriptions
     private void Start()
@@ -98,6 +99,8 @@ public class Weapon : MonoBehaviour
     {
         PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
         PlayerInputs.Instance.OnPrimaryHeld += FireWeapon;
+        PlayerInputs.Instance.OnPrimaryReleased -= StopPlayingWeaponFX;
+        PlayerInputs.Instance.OnPrimaryReleased += StopPlayingWeaponFX;
     }
 
     public void StopReceivingPrimaryPressedEvents()
@@ -108,21 +111,29 @@ public class Weapon : MonoBehaviour
     public void StopReceivingPrimaryHeldEvents()
     {
         PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
+        PlayerInputs.Instance.OnPrimaryReleased -= StopPlayingWeaponFX;
     }
     #endregion
     private void FireWeapon()
     {
-        if (m_currentAmmoInClip > 0)
+        if (Time.time >= m_lastTimeFired + m_fireRateCooldown)
         {
-            m_currentAmmoInClip--;
-            WeaponRig.Instance.UpdateAmmoCounterMethod();
-            m_animator.SetTrigger("Fire");
-        }
-        else
-        {
-            //OnOutOfAmmo?.Invoke();
+            m_lastTimeFired = Time.time;
+            if (m_currentAmmoInClip > 0)
+            {
+                m_currentAmmoInClip--;
+                WeaponRig.Instance.UpdateAmmoCounterMethod();
+                m_currentlyFiring = true;
+                m_animator.SetTrigger("Fire");
+            }
+            else
+            {
+                StopPlayingWeaponFX();
+                //OnOutOfAmmo?.Invoke();
+            }
         }
     }
+
     public void Reload()
     {
         int reloadRequestResult = ReloadRequest();
@@ -178,18 +189,24 @@ public class Weapon : MonoBehaviour
         m_currentReserveAmmo -= amount;    
     }
 
-    public void SetGunshotFX(ParticleSystem gunshotFX)
-    {
-        m_gunshotFX = gunshotFX;
-    }
-
     public void PlayWeaponFX()
     {
-        m_gunshotFX?.Play();
-        if (m_hitscan)
+        Debug.Log("Play Weapon FX");
+        if (m_currentlyFiring)
         {
-            HitCalculation();
+            m_gunshotFX.Play();
+            if (m_hitscan)
+            {
+                HitCalculation();
+            }
         }
+    }
+
+    private void StopPlayingWeaponFX()
+    {
+        Debug.Log("Stop Firing Weapon");
+        m_currentlyFiring = false;
+        m_gunshotFX.Stop();
     }
 
     public void ResetTrigger(string value)
