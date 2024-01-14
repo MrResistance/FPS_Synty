@@ -6,26 +6,27 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponData m_weaponData;
 
     [Header("Settings")]
-    [SerializeField] private bool m_weaponUnlocked = false;
-    [SerializeField] private bool m_hitscan = true;
-    public WeaponType Type;
+    private bool m_weaponUnlocked = false;
+    public bool WeaponUnlocked => m_weaponUnlocked;
+    private bool m_hitscan = true;
+    [HideInInspector] public WeaponType Type;
     public enum WeaponType { pistol, submachinegun, machinegun, shotgun, explosive, sniper }
 
-    public FireMode WeaponFireMode;
+    [HideInInspector] public FireMode WeaponFireMode;
     public enum FireMode { semiAuto, fullAuto }
-    public bool WeaponUnlocked => m_weaponUnlocked;
+    
 
-    [Header("Stats")]
-    [SerializeField] private float m_hitForce = 20;
-    [SerializeField] private int m_damage = 10;
-    [SerializeField] private int m_effectiveRange = 100;
-    [SerializeField] private float m_fireRateCooldown = 0.1f;
+    //Stats
+    private float m_hitForce = 20;
+    private int m_damage = 10;
+    private int m_effectiveRange = 100;
+    private float m_fireRateCooldown = 0.1f;
 
-    [Header("Ammo")]
-    [SerializeField] private int m_maxClipSize = 30;
-    [SerializeField] private int m_currentAmmoInClip;
-    [SerializeField] private int m_maxReserveAmmo;
-    [SerializeField] private int m_currentReserveAmmo;
+    //Ammo
+    private int m_maxClipSize = 30;
+    private int m_currentAmmoInClip;
+    private int m_maxReserveAmmo;
+    private int m_currentReserveAmmo;
 
     //Public accessors
     public int MaxClipSize => m_maxClipSize;
@@ -58,7 +59,7 @@ public class Weapon : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("WeaponData not assigned. Weapon Data may be abnormal.");
+            Debug.LogWarning(name + " WeaponData not assigned. Weapon Data may be abnormal.");
         }
         
         switch (WeaponFireMode)

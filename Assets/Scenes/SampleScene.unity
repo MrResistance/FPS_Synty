@@ -778,6 +778,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 520056253}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!20 &576300775 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 1766694251813521582, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+  m_PrefabInstance: {fileID: 1766694252320419401}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &602378142
 GameObject:
   m_ObjectHideFlags: 0
@@ -1809,6 +1814,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1860086783}
   m_CullTransparentMesh: 1
+--- !u!1 &1861766371 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1766048661474047612, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+  m_PrefabInstance: {fileID: 1766694252320419401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1861766374 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1969534029, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+  m_PrefabInstance: {fileID: 1766694252320419401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1861766377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1861766371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46a24c9e93811a84dbe9df4e55047958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weaponData: {fileID: 11400000, guid: b405261d9d9d11c44bb798d76f169853, type: 2}
+  m_weaponUnlocked: 1
+  m_hitscan: 1
+  Type: 5
+  WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_fireRateCooldown: 0.1
+  m_maxClipSize: 30
+  m_currentAmmoInClip: 0
+  m_maxReserveAmmo: 0
+  m_currentReserveAmmo: 0
+  m_animator: {fileID: 1861766374}
+  m_barrel: {fileID: 1630105961}
+  m_gunshotFX: {fileID: 1695930604}
+  m_crosshair: {fileID: 0}
+  m_sniperScopeCamera: {fileID: 576300775}
 --- !u!1001 &1928108887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2035,6 +2080,10 @@ PrefabInstance:
       propertyPath: m_weaponData
       value: 
       objectReference: {fileID: 11400000, guid: 53659b506fa87a74baa82d89baa59c9c, type: 2}
+    - target: {fileID: 851154127, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_SniperScope_FOV
+      value: 2.5
+      objectReference: {fileID: 0}
     - target: {fileID: 892841228, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: Type
       value: 5
@@ -2179,5 +2228,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 270318460, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
