@@ -5,10 +5,8 @@ using static Weapon;
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;
-    public bool Unlocked = false;
 
     [Header("Settings")]
-    public bool Hitscan = true;
     public Weapon.WeaponType WeaponType;
     public Weapon.FireMode FireMode;
 

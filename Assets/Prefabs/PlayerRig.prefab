@@ -58,7 +58,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.0941, z: 0.8209}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1771106309468806636}
   m_Father: {fileID: 1771231129579735330}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -190,6 +191,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_currentWeapon: {fileID: 0}
   m_camera: {fileID: 1285353782}
+  m_sniperScopeCamera: {fileID: 0}
+  m_SniperScope_FOV: 2.5
+  m_ADS_Sniper_FOV: 10
   m_ADS_FOV: 30
   m_HipFire_FOV: 60
   m_transitionDuration: 0.05
@@ -5378,18 +5382,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 1
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1450328213}
   m_barrel: {fileID: 1781110907}
   m_gunshotFX: {fileID: 0}
@@ -5535,18 +5531,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 120
-  m_currentReserveAmmo: 120
   m_animator: {fileID: 1410656332}
   m_barrel: {fileID: 1771596042377301989}
   m_gunshotFX: {fileID: 0}
@@ -5681,18 +5669,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 1
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1890487181}
   m_barrel: {fileID: 2117745615}
   m_gunshotFX: {fileID: 0}
@@ -5834,18 +5814,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 1
-  m_hitscan: 1
-  Type: 4
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
+  Type: 5
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1499393099}
   m_barrel: {fileID: 2097946969}
   m_gunshotFX: {fileID: 0}
@@ -6008,18 +5980,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1158403852}
   m_barrel: {fileID: 879104434}
   m_gunshotFX: {fileID: 0}
@@ -6028,6 +5992,109 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 4765272294121392, guid: 6993fd0e7237f024e80f00288eb435cd, type: 3}
   m_PrefabInstance: {fileID: 1766694250785837169}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1766694250795087522
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 245002621}
+    m_Modifications:
+    - target: {fileID: 1095744272416284, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198663731479534, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Name
+      value: FX_Gunshot_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198663731479534, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198663731479534, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1446785646928508, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198348495152892252, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198533653044838976, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: stopAction
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198533653044838976, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 199085081126777832, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199811285553872852, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+--- !u!4 &1771106309468806636 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+  m_PrefabInstance: {fileID: 1766694250795087522}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1893159194122482914 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 198533653044838976, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+  m_PrefabInstance: {fileID: 1766694250795087522}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1766694250798221581
 PrefabInstance:
@@ -6424,7 +6491,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &395163190
+--- !u!114 &1700345039
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6433,21 +6500,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766210315501249122}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9759b4e8b5cc35e43816b40974690528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 11400000, guid: 60d8303341ecbda41833b1e979f68123, type: 2}
+  WeaponUnlocked: 1
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 100
-  m_damage: 10
-  m_effectiveRange: 30
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 100
-  m_currentAmmoInClip: 100
-  m_maxReserveAmmo: 500
-  m_currentReserveAmmo: 500
   m_animator: {fileID: 1442006147}
   m_barrel: {fileID: 815723611}
   m_gunshotFX: {fileID: 6049545743913453068}
@@ -6639,18 +6698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 0
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1450328213}
   m_barrel: {fileID: 0}
   m_gunshotFX: {fileID: 0}
@@ -6784,18 +6835,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 120
-  m_currentReserveAmmo: 120
   m_animator: {fileID: 1999773745}
   m_barrel: {fileID: 279364334}
   m_gunshotFX: {fileID: 0}
@@ -6925,7 +6968,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1246744463
+--- !u!114 &1766694252320419407
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6934,25 +6977,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765924876784420283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 9759b4e8b5cc35e43816b40974690528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 11400000, guid: 9599b5bbf614fef46a6939f7bacb1f5e, type: 2}
+  WeaponUnlocked: 1
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 10
-  m_damage: 10
-  m_effectiveRange: 1000
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 120
-  m_currentReserveAmmo: 100
   m_animator: {fileID: 1246744462}
   m_barrel: {fileID: 1545985550}
   m_gunshotFX: {fileID: 6792108640575744734}
-  m_crosshair: {fileID: 1768614654412536755}
+  m_crosshair: {fileID: 1771575553638233583}
 --- !u!4 &1768543415599484557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415442749456168, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
@@ -7079,7 +7114,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &270318460
+--- !u!114 &1861766377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7088,25 +7123,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1766048661474047612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
+  m_Script: {fileID: 11500000, guid: 46a24c9e93811a84dbe9df4e55047958, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 1
-  m_hitscan: 1
-  Type: 4
+  m_weaponData: {fileID: 11400000, guid: b405261d9d9d11c44bb798d76f169853, type: 2}
+  WeaponUnlocked: 0
+  Type: 5
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1969534029}
   m_barrel: {fileID: 245002621}
-  m_gunshotFX: {fileID: 0}
-  m_crosshair: {fileID: 1768549026657401995}
+  m_gunshotFX: {fileID: 1893159194122482914}
+  m_crosshair: {fileID: 0}
+  m_sniperScopeCamera: {fileID: 1766694251813521582}
 --- !u!4 &1768529051853252668 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4394485430408484, guid: 945e4faa3898cfb4d8a0ae7d2a6266ac, type: 3}
@@ -7245,18 +7273,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 120
-  m_currentReserveAmmo: 120
   m_animator: {fileID: 1495923212}
   m_barrel: {fileID: 1771376473822795531}
   m_gunshotFX: {fileID: 0}
@@ -7502,18 +7522,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 0
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1869207068}
   m_barrel: {fileID: 1862561886}
   m_gunshotFX: {fileID: 0}
@@ -7811,18 +7823,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 120
-  m_currentReserveAmmo: 120
   m_animator: {fileID: 125623807}
   m_barrel: {fileID: 1768494652178426057}
   m_gunshotFX: {fileID: 0}
@@ -7985,18 +7989,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1332506505}
   m_barrel: {fileID: 449022694}
   m_gunshotFX: {fileID: 0}
@@ -8384,18 +8380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5ec2bdcbec03a947998eba863017c29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 0
+  m_weaponData: {fileID: 11400000, guid: 53659b506fa87a74baa82d89baa59c9c, type: 2}
+  WeaponUnlocked: 1
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 100
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 6
-  m_currentAmmoInClip: 6
-  m_maxReserveAmmo: 36
-  m_currentReserveAmmo: 18
   m_animator: {fileID: 477676166}
   m_barrel: {fileID: 2060123841}
   m_gunshotFX: {fileID: 6792108640575744734}
@@ -8654,18 +8642,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1754324178}
   m_barrel: {fileID: 2017965510}
   m_gunshotFX: {fileID: 0}
@@ -8999,18 +8979,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 1
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 120
-  m_currentReserveAmmo: 120
   m_animator: {fileID: 1789588221}
   m_barrel: {fileID: 1768557262135548867}
   m_gunshotFX: {fileID: 0}
@@ -9173,18 +9145,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3dcbbdad88e4d43b34a0a960ff48af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 0
-  m_hitscan: 0
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 100
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 1
-  m_currentAmmoInClip: 1
-  m_maxReserveAmmo: 101
-  m_currentReserveAmmo: 101
   m_animator: {fileID: 1446433025}
   m_barrel: {fileID: 1771267375305457689}
   m_gunshotFX: {fileID: 0}
@@ -9325,18 +9289,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 1
-  m_hitscan: 1
-  Type: 4
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
+  Type: 5
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 1834843706}
   m_barrel: {fileID: 42900735}
   m_gunshotFX: {fileID: 0}
@@ -9479,18 +9435,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponUnlocked: 1
-  m_hitscan: 1
-  Type: 4
+  m_weaponData: {fileID: 0}
+  WeaponUnlocked: 0
+  Type: 5
   WeaponFireMode: 0
-  m_hitForce: 20
-  m_damage: 10
-  m_effectiveRange: 10
-  m_fireRateCooldown: 0.1
-  m_maxClipSize: 30
-  m_currentAmmoInClip: 0
-  m_maxReserveAmmo: 0
-  m_currentReserveAmmo: 0
   m_animator: {fileID: 817474728}
   m_barrel: {fileID: 1771552754417044575}
   m_gunshotFX: {fileID: 0}
@@ -10397,3 +10345,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7e24cce917c2e842acba1ea4786adf7, type: 3}
+--- !u!20 &1766694251813521582 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 9042537914239451532, guid: f7e24cce917c2e842acba1ea4786adf7, type: 3}
+  m_PrefabInstance: {fileID: 7347907965471377698}
+  m_PrefabAsset: {fileID: 0}

@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: SM_Wep_Grenade_Launcher_01
   m_EditorClassIdentifier: 
   WeaponName: Grenade Launcher
-  Unlocked: 0
-  Hitscan: 1
-  WeaponType: 3
+  Unlocked: 1
+  WeaponType: 4
   FireMode: 0
   HitForce: 0
   Damage: 0

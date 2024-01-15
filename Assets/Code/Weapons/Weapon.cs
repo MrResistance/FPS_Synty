@@ -6,9 +6,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private WeaponData m_weaponData;
 
     [Header("Settings")]
-    private bool m_weaponUnlocked = false;
-    public bool WeaponUnlocked => m_weaponUnlocked;
-    private bool m_hitscan = true;
+    public bool WeaponUnlocked;
     [HideInInspector] public WeaponType Type;
     public enum WeaponType { pistol, submachinegun, machinegun, shotgun, explosive, sniper }
 
@@ -17,9 +15,9 @@ public class Weapon : MonoBehaviour
     
 
     //Stats
-    private float m_hitForce = 20;
-    private int m_damage = 10;
-    private int m_effectiveRange = 100;
+    protected float m_hitForce = 20;
+    protected int m_damage = 10;
+    protected int m_effectiveRange = 100;
     private float m_fireRateCooldown = 0.1f;
 
     //Ammo
@@ -44,14 +42,14 @@ public class Weapon : MonoBehaviour
     public Transform Barrel => m_barrel;
     public Transform Crosshair => m_crosshair;
 
-    private RaycastHit m_raycastHit;
+    protected RaycastHit m_raycastHit;
     private int m_amountToReload;
 
     private float m_lastTimeFired;
-    private bool m_currentlyFiring = false;
+    protected bool m_currentlyFiring = false;
 
     #region Event Subscriptions
-    private void Start()
+    protected void Start()
     {
         if (m_weaponData != null)
         {
@@ -74,7 +72,7 @@ public class Weapon : MonoBehaviour
         PlayerInputs.Instance.OnReload += Reload;
         m_currentAmmoInClip = m_maxClipSize;
     }
-    private void OnEnable()
+    protected void OnEnable()
     {
         if (m_weaponData != null)
         {
@@ -99,14 +97,14 @@ public class Weapon : MonoBehaviour
         PlayerInputs.Instance.OnReload += Reload;
     }
 
-    private void OnDisable()
+    protected void OnDisable()
     {
         StopReceivingPrimaryPressedEvents();
         StopReceivingPrimaryHeldEvents();
         PlayerInputs.Instance.OnReload -= Reload;
     }
 
-    private void OnDestroy()
+    protected void OnDestroy()
     {
         StopReceivingPrimaryPressedEvents();
         StopReceivingPrimaryHeldEvents();
@@ -139,10 +137,8 @@ public class Weapon : MonoBehaviour
     }
     #endregion
 
-    private void GetWeaponData()
+    protected void GetWeaponData()
     {
-        m_weaponUnlocked = m_weaponData.Unlocked;
-        m_hitscan = m_weaponData.Hitscan;
         Type = m_weaponData.WeaponType;
         WeaponFireMode = m_weaponData.FireMode;
         m_hitForce = m_weaponData.HitForce;
@@ -154,7 +150,7 @@ public class Weapon : MonoBehaviour
         m_maxReserveAmmo = m_weaponData.MaxReserveAmmo;
         m_currentReserveAmmo = m_weaponData.CurrentReserveAmmo;
     }
-    private void FireWeapon()
+    protected void FireWeapon()
     {
         if (Time.time >= m_lastTimeFired + m_fireRateCooldown)
         {
@@ -191,7 +187,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    private int ReloadRequest()
+    protected int ReloadRequest()
     {
         if (m_currentReserveAmmo == 0)
         {
@@ -229,20 +225,16 @@ public class Weapon : MonoBehaviour
         m_currentReserveAmmo -= amount;    
     }
 
-    public void PlayWeaponFX()
+    public virtual void PlayWeaponFX()
     {
         Debug.Log("Play Weapon FX");
         if (m_currentlyFiring)
         {
             m_gunshotFX.Play();
-            if (m_hitscan)
-            {
-                HitCalculation();
-            }
         }
     }
 
-    private void StopPlayingWeaponFX()
+    protected void StopPlayingWeaponFX()
     {
         Debug.Log("Stop Firing Weapon");
         m_currentlyFiring = false;
@@ -253,32 +245,4 @@ public class Weapon : MonoBehaviour
     {
         m_animator.ResetTrigger(value);
     }
-
-    private Vector3 HitCalculation()
-    {
-        // Get the center point of the screen
-        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
-
-        // Create a ray from the center of the screen
-        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
-
-        if (Physics.Raycast(ray, out m_raycastHit, m_effectiveRange))
-        {
-            if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
-            {
-                m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
-            }
-            if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
-            {
-                damageable.LoseHitPoints(m_damage);
-            }
-            return m_raycastHit.point;
-        }
-        else
-        {
-            return Vector3.zero;
-        }
-    }
-
-
 }

@@ -14,12 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   WeaponName: Pistol
   Unlocked: 1
-  Hitscan: 1
   WeaponType: 0
   FireMode: 0
   HitForce: 10
-  Damage: 0
-  EffectiveRange: 0
+  Damage: 10
+  EffectiveRange: 25
   FireRateCooldown: 0.1
   MaxClipSize: 12
   CurrentAmmoInClip: 12

@@ -44,10 +44,10 @@ public class WeaponRig : MonoBehaviour
     #region Event Subscriptions
     private void Start()
     {
-        InitialiseWeapons();
         PlayerInputs.Instance.OnSecondaryHeld += AimDownSight;
         PlayerInputs.Instance.OnSecondaryReleased += AimFromHip;
         PlayerInputs.Instance.OnSelect += SelectWeapon;
+        InitialiseWeapons();
     }
     private void OnEnable()
     {

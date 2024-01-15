@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: SM_Wep_MachineGun_01
   m_EditorClassIdentifier: 
   WeaponName: M249
-  Unlocked: 0
-  Hitscan: 1
+  Unlocked: 1
   WeaponType: 2
   FireMode: 1
   HitForce: 100
