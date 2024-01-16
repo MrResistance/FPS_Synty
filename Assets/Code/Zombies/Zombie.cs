@@ -6,7 +6,8 @@ public class Zombie : MonoBehaviour
 {
     public enum State { idle, patrol, alert, chase, attack }
     public State m_currentState;
-    public float m_moveSpeed;
+    public float m_runSpeed;
+    public float m_walkSpeed;
     public int m_damage;
 
     [Header("Targeting")]
@@ -34,7 +35,8 @@ public class Zombie : MonoBehaviour
     {
         if (m_zombieData != null)
         {
-            m_moveSpeed = m_zombieData.MoveSpeed;
+            m_runSpeed = m_zombieData.RunSpeed;
+            m_walkSpeed = m_zombieData.WalkSpeed;
             m_damage = m_zombieData.Damage;
             m_patrolRadius = m_zombieData.PatrolRadius;
         }

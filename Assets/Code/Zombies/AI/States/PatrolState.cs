@@ -3,25 +3,30 @@ using UnityEngine;
 public class PatrolState : IState
 {
     private Zombie m_zombie;
+
     public PatrolState(Zombie zombie)
     {
         this.m_zombie = zombie;
     }
+
     public void Enter()
     {
         // code that runs when we first enter the state
-        m_zombie.m_currentState = Zombie.State.patrol;
+        InitialisePatrolSettings();
         GetPatrolPoints();
     }
+
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
         GoToPatrolPoint();
     }
+
     public void Exit()
     {
         // code that runs when we exit the state
+        ClearPatrolPoints();
     }
 
     private void GetPatrolPoints()
@@ -49,22 +54,15 @@ public class PatrolState : IState
 
     private void GoToPatrolPoint()
     {
-        Debug.Log("Remaining distance: " + m_zombie.m_navMeshAgent.remainingDistance);
         if (m_zombie.m_navMeshAgent.remainingDistance <= 0.1)
         {
             m_zombie.Target = GetNextPatrolPoint();
             m_zombie.m_navMeshAgent.SetDestination(m_zombie.Target);
         }
-        else
-        {
-            m_zombie.m_navMeshAgent.speed = m_zombie.m_moveSpeed;
-            m_zombie.m_animator.SetFloat("MoveSpeed", m_zombie.m_moveSpeed);
-        }
     }
 
     private Vector3 GetNextPatrolPoint()
     {
-        Debug.Log("Getting next patrol point...");
         if (m_zombie.m_patrolPoints.Count > 0)
         {
             for (int i = 0; i < m_zombie.m_patrolPoints.Count; i++)
@@ -94,4 +92,17 @@ public class PatrolState : IState
         float randomZ = Random.Range(m_zombie.transform.localPosition.z - 10, m_zombie.transform.localPosition.z + 10);
         return new Vector3(randomX, 0, randomZ);
     }
+
+
+    private void InitialisePatrolSettings()
+    {
+        m_zombie.m_currentState = Zombie.State.patrol;
+        m_zombie.m_navMeshAgent.speed = m_zombie.m_walkSpeed;
+        m_zombie.m_animator.SetFloat("MoveSpeed", m_zombie.m_walkSpeed);
+    }
+    private void ClearPatrolPoints()
+    {
+        m_zombie.m_patrolPoints.Clear();
+    }
+
 }
