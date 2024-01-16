@@ -8,7 +8,7 @@ public class ChaseState : IState
     public void Enter()
     {
         // code that runs when we first enter the state
-        m_zombie.m_currentState = Zombie.State.chase;
+        m_zombie.CurrentState = Zombie.State.chase;
     }
     public void Update()
     {

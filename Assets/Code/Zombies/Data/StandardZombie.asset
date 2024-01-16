@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84fe661ffd968c643a7b390463e0a21f, type: 3}
   m_Name: StandardZombie
   m_EditorClassIdentifier: 
-  MoveSpeed: 2
+  RunSpeed: 1
+  WalkSpeed: 0.5
   Damage: 2
   PatrolRadius: 10

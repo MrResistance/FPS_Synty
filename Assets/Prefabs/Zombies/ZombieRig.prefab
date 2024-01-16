@@ -1,5 +1,85 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &647164485542232723
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4463597593159465991}
+  m_Layer: 9
+  m_Name: AlternativeSkins
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4463597593159465991
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 647164485542232723}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 5433948660488815748}
+  - {fileID: 5433897999859713236}
+  - {fileID: 5437860281615300784}
+  - {fileID: 5433597545493368470}
+  - {fileID: 5437750401848992022}
+  - {fileID: 5434005743042366758}
+  - {fileID: 5434004859244700896}
+  - {fileID: 5437619803518697738}
+  - {fileID: 5437652010867991488}
+  - {fileID: 5433968132177163882}
+  - {fileID: 5437643778217346054}
+  - {fileID: 5437604068069262438}
+  - {fileID: 5437567105566016808}
+  - {fileID: 5437671639596485978}
+  - {fileID: 5433961424330367340}
+  - {fileID: 5437884373544758358}
+  - {fileID: 5434095645971786374}
+  - {fileID: 5433875331893750250}
+  - {fileID: 5437767216150336558}
+  - {fileID: 5434155066745249294}
+  - {fileID: 5437868855542744444}
+  - {fileID: 5433985851108257446}
+  - {fileID: 5437672224629939564}
+  - {fileID: 5437783676483980732}
+  - {fileID: 5433881879950796470}
+  - {fileID: 5434096849544886180}
+  - {fileID: 5433826923624713318}
+  - {fileID: 5433878053278608230}
+  - {fileID: 5437626316570729346}
+  - {fileID: 5433799925200091772}
+  - {fileID: 5434048132824995498}
+  - {fileID: 5434074280112294284}
+  - {fileID: 5434056212200756922}
+  - {fileID: 5433600035079707182}
+  - {fileID: 5434048608293277654}
+  - {fileID: 5433736660374690010}
+  - {fileID: 5437714058590835276}
+  - {fileID: 5438057509164754520}
+  - {fileID: 5434064959959047806}
+  - {fileID: 5433837798516910992}
+  - {fileID: 5438070453059575080}
+  - {fileID: 5433871989323332304}
+  - {fileID: 5437601724015156230}
+  - {fileID: 5438035989413019946}
+  - {fileID: 5434092535844501206}
+  - {fileID: 5433883952407823000}
+  - {fileID: 5433666155026470170}
+  - {fileID: 5437603244452785746}
+  - {fileID: 5437731052806363308}
+  m_Father: {fileID: 5437776920978954732}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5431358039150862540
 GameObject:
   m_ObjectHideFlags: 0
@@ -9,7 +89,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437826774221417264}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +122,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437567105566016808}
   - component: {fileID: 5368498987925038720}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Firefighter_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,13 +136,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431388527261438502}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 16
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368498987925038720
 SkinnedMeshRenderer:
@@ -176,7 +256,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437911323176517230}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ankle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -208,7 +288,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437795713790495236}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -240,7 +320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437638054792260764}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Elbow_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -273,7 +353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434004859244700896}
   - component: {fileID: 5371793687864177524}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Coat_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -287,13 +367,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431404696454534752}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 10
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5371793687864177524
 SkinnedMeshRenderer:
@@ -408,7 +488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5438035989413019946}
   - component: {fileID: 5368764705646438166}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_SummerGirl_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -422,13 +502,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431420403174374986}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 47
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 43
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368764705646438166
 SkinnedMeshRenderer:
@@ -542,7 +622,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433885633845109750}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thumb_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -575,7 +655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434155066745249294}
   - component: {fileID: 5368754982935670134}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Hipster_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -589,13 +669,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431430431342286818}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 23
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368754982935670134
 SkinnedMeshRenderer:
@@ -709,7 +789,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434056175266096322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shoulder_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -741,7 +821,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433935216898836668}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spine_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -773,7 +853,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437634147763113092}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -805,7 +885,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434088525055044242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_04 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -836,7 +916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437840005300532840}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LowerLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -868,7 +948,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437686063424857312}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpperLeg_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +980,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433831846944661176}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -933,7 +1013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433597545493368470}
   - component: {fileID: 5372352896635307678}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_BusinessShirt_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -947,13 +1027,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431499938269874830}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 7
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372352896635307678
 SkinnedMeshRenderer:
@@ -1067,7 +1147,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433608881432317484}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1100,7 +1180,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437884373544758358}
   - component: {fileID: 5368710392091950174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Gangster_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1114,13 +1194,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431526055066871412}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 19
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368710392091950174
 SkinnedMeshRenderer:
@@ -1235,7 +1315,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433881879950796470}
   - component: {fileID: 5372781137109181124}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Jacket_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1249,13 +1329,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431532958395258926}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 28
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372781137109181124
 SkinnedMeshRenderer:
@@ -1370,7 +1450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437619803518697738}
   - component: {fileID: 5372702142282392270}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Daughter_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1384,13 +1464,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431533369064543808}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 11
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372702142282392270
 SkinnedMeshRenderer:
@@ -1504,7 +1584,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437859599053358242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thumb_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1537,7 +1617,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433837798516910992}
   - component: {fileID: 5372409938978244362}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_SchoolGirl_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1551,13 +1631,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431539052326408094}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 43
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 39
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372409938978244362
 SkinnedMeshRenderer:
@@ -1672,7 +1752,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437626316570729346}
   - component: {fileID: 5368770478363906896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Mother_Female_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1686,13 +1766,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431544066555788198}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 32
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368770478363906896
 SkinnedMeshRenderer:
@@ -1806,7 +1886,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437953952445516950}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_03 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1839,7 +1919,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5438057509164754520}
   - component: {fileID: 5372781442915823502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Roadworker_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1853,13 +1933,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431546887979738168}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 41
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 37
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372781442915823502
 SkinnedMeshRenderer:
@@ -1973,7 +2053,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433823792854654822}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Root
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2005,7 +2085,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437873037941644174}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_03 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2038,7 +2118,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433883952407823000}
   - component: {fileID: 5372741244156831474}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Underwear_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2052,13 +2132,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431558305497299768}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 49
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372741244156831474
 SkinnedMeshRenderer:
@@ -2172,7 +2252,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437791537820836622}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2206,7 +2286,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433752633713003942}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Elbow_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2239,7 +2319,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433799925200091772}
   - component: {fileID: 5372596538034575530}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Paramedic_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2253,13 +2333,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431596256923396200}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 33
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 29
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372596538034575530
 SkinnedMeshRenderer:
@@ -2374,7 +2454,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433897999859713236}
   - component: {fileID: 5368508709077070504}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Business_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2388,13 +2468,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431609054280604572}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 5
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368508709077070504
 SkinnedMeshRenderer:
@@ -2509,7 +2589,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434108940271932288}
   - component: {fileID: 5368470074420285832}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_BioHazardSuit_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,7 +2609,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368470074420285832
 SkinnedMeshRenderer:
@@ -2644,7 +2724,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437604068069262438}
   - component: {fileID: 5372734115013074772}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Father_Male_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2658,13 +2738,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431742439035424362}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 15
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372734115013074772
 SkinnedMeshRenderer:
@@ -2778,7 +2858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434124158209534836}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: UpperLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2810,7 +2890,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437715783662941242}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2841,7 +2921,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434030802683595160}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2874,7 +2954,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434048608293277654}
   - component: {fileID: 5372732821039634788}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Punk_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2888,13 +2968,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431946515863842532}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 38
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 34
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372732821039634788
 SkinnedMeshRenderer:
@@ -3008,7 +3088,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434092287427238254}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3040,7 +3120,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433831130641762650}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thumb_03 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3071,7 +3151,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5438027937555589324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hips
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3106,7 +3186,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437603244452785746}
   - component: {fileID: 5372421385540175358}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Bellboy_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3120,13 +3200,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431971608507354408}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 1
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 47
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372421385540175358
 SkinnedMeshRenderer:
@@ -3241,7 +3321,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437672224629939564}
   - component: {fileID: 5371761338480653278}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_HotDogSuit_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3255,13 +3335,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5431984817905928840}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 26
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5371761338480653278
 SkinnedMeshRenderer:
@@ -3375,7 +3455,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433937248020358918}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spine_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3408,7 +3488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433968132177163882}
   - component: {fileID: 5372577954069872342}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_FastfoodWorker_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3422,13 +3502,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432022516462404106}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 13
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372577954069872342
 SkinnedMeshRenderer:
@@ -3543,7 +3623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5438070453059575080}
   - component: {fileID: 5368822769687464376}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_ShopKeeper_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3557,13 +3637,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432033391375186392}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 44
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 40
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368822769687464376
 SkinnedMeshRenderer:
@@ -3678,7 +3758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433875331893750250}
   - component: {fileID: 5368447941237183056}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Grandpa_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3692,13 +3772,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432034651438355730}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 21
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368447941237183056
 SkinnedMeshRenderer:
@@ -3812,7 +3892,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437832588437240030}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyebrows
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3844,10 +3924,10 @@ GameObject:
   m_Component:
   - component: {fileID: 5437776920978954732}
   - component: {fileID: 5347100765326879844}
-  - component: {fileID: 5044828712926391356}
-  - component: {fileID: 4182880112260578498}
+  - component: {fileID: 696613796959254441}
+  - component: {fileID: 4691786420709231075}
   - component: {fileID: 5615791413105996279}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: ZombieRig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3867,56 +3947,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5433823792854654822}
-  - {fileID: 5437603244452785746}
-  - {fileID: 5437731052806363308}
   - {fileID: 5434108940271932288}
-  - {fileID: 5433948660488815748}
-  - {fileID: 5433897999859713236}
-  - {fileID: 5437860281615300784}
-  - {fileID: 5433597545493368470}
-  - {fileID: 5437750401848992022}
-  - {fileID: 5434005743042366758}
-  - {fileID: 5434004859244700896}
-  - {fileID: 5437619803518697738}
-  - {fileID: 5437652010867991488}
-  - {fileID: 5433968132177163882}
-  - {fileID: 5437643778217346054}
-  - {fileID: 5437604068069262438}
-  - {fileID: 5437567105566016808}
-  - {fileID: 5437671639596485978}
-  - {fileID: 5433961424330367340}
-  - {fileID: 5437884373544758358}
-  - {fileID: 5434095645971786374}
-  - {fileID: 5433875331893750250}
-  - {fileID: 5437767216150336558}
-  - {fileID: 5434155066745249294}
-  - {fileID: 5437868855542744444}
-  - {fileID: 5433985851108257446}
-  - {fileID: 5437672224629939564}
-  - {fileID: 5437783676483980732}
-  - {fileID: 5433881879950796470}
-  - {fileID: 5434096849544886180}
-  - {fileID: 5433826923624713318}
-  - {fileID: 5433878053278608230}
-  - {fileID: 5437626316570729346}
-  - {fileID: 5433799925200091772}
-  - {fileID: 5434048132824995498}
-  - {fileID: 5434074280112294284}
-  - {fileID: 5434056212200756922}
-  - {fileID: 5433600035079707182}
-  - {fileID: 5434048608293277654}
-  - {fileID: 5433736660374690010}
-  - {fileID: 5437714058590835276}
-  - {fileID: 5438057509164754520}
-  - {fileID: 5434064959959047806}
-  - {fileID: 5433837798516910992}
-  - {fileID: 5438070453059575080}
-  - {fileID: 5433871989323332304}
-  - {fileID: 5437601724015156230}
-  - {fileID: 5438035989413019946}
-  - {fileID: 5434092535844501206}
-  - {fileID: 5433883952407823000}
-  - {fileID: 5433666155026470170}
+  - {fileID: 7195955072796855070}
+  - {fileID: 4463597593159465991}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3933,7 +3966,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 2ceaed0626b445f43a051c9871084a96, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -3941,41 +3974,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!195 &5044828712926391356
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5432078986586418106}
-  m_Enabled: 1
-  m_AgentTypeID: -1372625422
-  m_Radius: 0.25
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 1.8
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
---- !u!135 &4182880112260578498
-SphereCollider:
+--- !u!136 &696613796959254441
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432078986586418106}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
+  m_Radius: 0.25
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.9, z: 0}
+--- !u!54 &4691786420709231075
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432078986586418106}
   serializedVersion: 2
-  m_Radius: 2.5
-  m_Center: {x: 0, y: 1, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!114 &5615791413105996279
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3988,15 +4016,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b89e0d7bc3f5fb4ea141235018f3ca7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_currentState: 3
-  m_moveSpeed: 0
-  m_damage: 0
-  Target: {fileID: 0}
-  m_patrolRadius: 0
-  m_patrolPoints: []
-  m_zombieData: {fileID: 11400000, guid: a1cbd518ce11daf46a0f06e79660feeb, type: 2}
-  m_animator: {fileID: 5347100765326879844}
-  m_navMeshAgent: {fileID: 5044828712926391356}
+  CurrentState: 0
+  RunSpeed: 0
+  WalkSpeed: 0
+  Damage: 0
+  Target: {x: 0, y: 0, z: 0}
+  PatrolRadius: 10
+  PatrolPoints: []
+  ZombieData: {fileID: 11400000, guid: a1cbd518ce11daf46a0f06e79660feeb, type: 2}
+  Animator: {fileID: 5347100765326879844}
+  NavMeshAgent: {fileID: 6394576481462332066}
+  Rigidbody: {fileID: 4691786420709231075}
 --- !u!1 &5432091034824979182
 GameObject:
   m_ObjectHideFlags: 0
@@ -4007,7 +4037,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437652010867991488}
   - component: {fileID: 5372647319376712320}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Diver_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4021,13 +4051,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432091034824979182}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 12
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372647319376712320
 SkinnedMeshRenderer:
@@ -4141,7 +4171,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437863894715491146}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shoulder_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4173,7 +4203,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434128697601468106}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Spine_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4207,7 +4237,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433609431873235260}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Jaw
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4238,7 +4268,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437884598291867546}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thumb_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4270,7 +4300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434025819201939636}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4302,7 +4332,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437614946528714666}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4334,7 +4364,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433605274190662202}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Clavicle_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4366,7 +4396,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433842803716891676}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_01 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4399,7 +4429,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434095645971786374}
   - component: {fileID: 5372622225556626966}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Grandma_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4413,13 +4443,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432151616173413070}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 20
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372622225556626966
 SkinnedMeshRenderer:
@@ -4533,7 +4563,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433833493426019716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thumb_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4566,7 +4596,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434056212200756922}
   - component: {fileID: 5372301066048521516}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Police_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4580,13 +4610,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432159868823932064}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 36
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 32
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372301066048521516
 SkinnedMeshRenderer:
@@ -4700,7 +4730,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433598848159515322}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Toes_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4731,7 +4761,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437536372211363498}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4763,7 +4793,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434092535844501206}
   - component: {fileID: 5372774025930843758}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Tourist_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4777,13 +4807,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432216552567376012}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 48
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 44
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372774025930843758
 SkinnedMeshRenderer:
@@ -4897,7 +4927,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437602319543250234}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Eyes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4929,7 +4959,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434048132824995498}
   - component: {fileID: 5368741051800475324}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Patient_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4943,13 +4973,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432219470708037372}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 34
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 30
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368741051800475324
 SkinnedMeshRenderer:
@@ -5064,7 +5094,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437643778217346054}
   - component: {fileID: 5372634112126696128}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Father_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5078,13 +5108,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432237957977726618}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 14
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372634112126696128
 SkinnedMeshRenderer:
@@ -5199,7 +5229,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437714058590835276}
   - component: {fileID: 5372258336184584466}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_RiotCop_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5213,13 +5243,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432251844295158874}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 40
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 36
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372258336184584466
 SkinnedMeshRenderer:
@@ -5334,7 +5364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437750401848992022}
   - component: {fileID: 5368709703397562266}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Cheerleader_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5348,13 +5378,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432253234199366098}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 8
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368709703397562266
 SkinnedMeshRenderer:
@@ -5468,7 +5498,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437768940130481904}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Hand_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5502,7 +5532,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434149097712151302}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Finger_04 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5534,7 +5564,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433878053278608230}
   - component: {fileID: 5368791786456587418}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Mother_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5548,13 +5578,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432269765287221482}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 31
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368791786456587418
 SkinnedMeshRenderer:
@@ -5669,7 +5699,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437783676483980732}
   - component: {fileID: 5372276733897895680}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Jacket_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5683,13 +5713,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432285016145327444}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 27
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 23
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372276733897895680
 SkinnedMeshRenderer:
@@ -5804,7 +5834,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437767216150336558}
   - component: {fileID: 5372381129265150518}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Hipster_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5818,13 +5848,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432288288302414014}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 22
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372381129265150518
 SkinnedMeshRenderer:
@@ -5939,7 +5969,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437868855542744444}
   - component: {fileID: 5372729006861610926}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Hobo_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5953,13 +5983,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432302378484498212}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 24
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372729006861610926
 SkinnedMeshRenderer:
@@ -6074,7 +6104,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434096849544886180}
   - component: {fileID: 5368490832663762830}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Jock_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6088,13 +6118,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432302597017592172}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 29
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368490832663762830
 SkinnedMeshRenderer:
@@ -6208,7 +6238,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5437621175827391268}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: LowerLeg_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6241,7 +6271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437731052806363308}
   - component: {fileID: 5372629783718536948}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Biker_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6255,13 +6285,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432327667115636586}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 2
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 48
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372629783718536948
 SkinnedMeshRenderer:
@@ -6376,7 +6406,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433871989323332304}
   - component: {fileID: 5371799695948585034}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_ShopKeeper_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6390,13 +6420,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432331518211653772}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 45
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5371799695948585034
 SkinnedMeshRenderer:
@@ -6511,7 +6541,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433600035079707182}
   - component: {fileID: 5372283288532539580}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Prisinor_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6525,13 +6555,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432337755125740278}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 37
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 33
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372283288532539580
 SkinnedMeshRenderer:
@@ -6645,7 +6675,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434095479149718222}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Toes_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6677,7 +6707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437601724015156230}
   - component: {fileID: 5372660042168219714}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Son_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6691,13 +6721,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432370370135781610}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 46
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 42
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372660042168219714
 SkinnedMeshRenderer:
@@ -6812,7 +6842,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434005743042366758}
   - component: {fileID: 5368463625884774848}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Clown_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6826,13 +6856,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432379248834096150}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 9
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368463625884774848
 SkinnedMeshRenderer:
@@ -6947,7 +6977,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433961424330367340}
   - component: {fileID: 5368453794170216574}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_GamerGirl_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6961,13 +6991,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432393453346094446}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 18
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368453794170216574
 SkinnedMeshRenderer:
@@ -7081,7 +7111,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5434149645449638740}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Clavicle_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7114,7 +7144,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437671639596485978}
   - component: {fileID: 5368853012894188392}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Footballer_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7128,13 +7158,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432398400870918716}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 17
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368853012894188392
 SkinnedMeshRenderer:
@@ -7249,7 +7279,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433826923624713318}
   - component: {fileID: 5372775289055882818}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Military_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7263,13 +7293,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432401923455576084}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 30
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372775289055882818
 SkinnedMeshRenderer:
@@ -7384,7 +7414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434074280112294284}
   - component: {fileID: 5368595795561852572}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Police_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7398,13 +7428,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432412079202389930}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 35
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 31
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368595795561852572
 SkinnedMeshRenderer:
@@ -7518,7 +7548,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433654070212808502}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7552,7 +7582,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433824924790397148}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ball_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7584,7 +7614,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433841590959822756}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: IndexFinger_02 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7617,7 +7647,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5437860281615300784}
   - component: {fileID: 5368745385162459728}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Businessman_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7631,13 +7661,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432465271123783156}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 6
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5368745385162459728
 SkinnedMeshRenderer:
@@ -7752,7 +7782,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5434064959959047806}
   - component: {fileID: 5372407898380805778}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_SchoolBoy_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7766,13 +7796,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432897324175388656}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 42
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 38
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372407898380805778
 SkinnedMeshRenderer:
@@ -7886,7 +7916,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433939955808748218}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ball_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7919,7 +7949,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433666155026470170}
   - component: {fileID: 5372654681291447806}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Underwear_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7933,13 +7963,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432926902840321872}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 50
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 46
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372654681291447806
 SkinnedMeshRenderer:
@@ -8054,7 +8084,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433985851108257446}
   - component: {fileID: 5372711392469903058}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Hoodie_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8068,13 +8098,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432943042015939740}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 25
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372711392469903058
 SkinnedMeshRenderer:
@@ -8189,7 +8219,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433736660374690010}
   - component: {fileID: 5372243546160748540}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Punk_Male_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8203,13 +8233,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5432958889551485004}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 39
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 35
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372243546160748540
 SkinnedMeshRenderer:
@@ -8323,7 +8353,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5438043388865750274}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Ankle_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8355,7 +8385,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5433846235897453170}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Thumb_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8387,7 +8417,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5433948660488815748}
   - component: {fileID: 5372730712276127340}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Zombie_Bride_Female_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8401,13 +8431,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5433017266986993034}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5437776920978954732}
-  m_RootOrder: 4
+  m_Father: {fileID: 4463597593159465991}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!137 &5372730712276127340
 SkinnedMeshRenderer:
@@ -8512,3 +8542,57 @@ SkinnedMeshRenderer:
     m_Center: {x: 0, y: 0.87408054, z: -0.043592148}
     m_Extent: {x: 1.0212042, y: 0.9707413, z: 0.21347183}
   m_DirtyAABB: 0
+--- !u!1 &5562251980122990974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7195955072796855070}
+  - component: {fileID: 6394576481462332066}
+  m_Layer: 9
+  m_Name: NavMeshAgent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7195955072796855070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562251980122990974}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5437776920978954732}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!195 &6394576481462332066
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5562251980122990974}
+  m_Enabled: 1
+  m_AgentTypeID: 0
+  m_Radius: 0.25
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.8
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4

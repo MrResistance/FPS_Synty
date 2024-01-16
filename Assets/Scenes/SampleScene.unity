@@ -2276,6 +2276,10 @@ PrefabInstance:
       propertyPath: WeaponUnlocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1765924876784420283, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1766694250992511713, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -2333,25 +2337,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5044828712926391356, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
-      propertyPath: m_BaseOffset
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044828712926391356, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
-      propertyPath: m_AgentTypeID
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044828712926391356, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
-      propertyPath: m_AngularSpeed
-      value: 360
-      objectReference: {fileID: 0}
-    - target: {fileID: 5044828712926391356, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
-      propertyPath: m_StoppingDistance
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5347100765326879844, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_ApplyRootMotion
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5432078986586418106, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_Name
@@ -2363,7 +2351,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437776920978954732, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.52
+      value: 8.83
       objectReference: {fileID: 0}
     - target: {fileID: 5437776920978954732, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2371,7 +2359,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437776920978954732, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.52
+      value: -2.55
       objectReference: {fileID: 0}
     - target: {fileID: 5437776920978954732, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2402,8 +2390,12 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5615791413105996279, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
-      propertyPath: m_patrolRadius
-      value: 10
+      propertyPath: RotationSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6394576481462332066, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: m_AngularSpeed
+      value: 360
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a72ed690fd4174096b109754b79e35, type: 3}

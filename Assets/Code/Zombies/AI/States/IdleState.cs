@@ -10,15 +10,14 @@ public class IdleState : IState
     public void Enter()
     {
         // code that runs when we first enter the state
-        m_zombie.m_currentState = Zombie.State.idle;
-        m_zombie.m_animator.SetFloat("MoveSpeed", 0);
-        m_zombie.m_navMeshAgent.speed = 0;
+        m_zombie.CurrentState = Zombie.State.idle;
+        m_zombie.Animator.SetFloat("MoveSpeed", 0);
     }
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
-        m_zombie.zombieStateMachine.TransitionTo(m_zombie.zombieStateMachine.patrolState);
+        m_zombie.ZombieStateMachine.TransitionTo(m_zombie.ZombieStateMachine.patrolState);
     }
     public void Exit()
     {

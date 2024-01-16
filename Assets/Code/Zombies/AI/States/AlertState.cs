@@ -8,7 +8,7 @@ public class AlertState : IState
     public void Enter()
     {
         // code that runs when we first enter the state
-        m_zombie.m_currentState = Zombie.State.alert;
+        m_zombie.CurrentState = Zombie.State.alert;
     }
     public void Update()
     {

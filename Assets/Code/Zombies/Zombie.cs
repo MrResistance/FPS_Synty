@@ -2,43 +2,47 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
+[SelectionBase]
 public class Zombie : MonoBehaviour
 {
     public enum State { idle, patrol, alert, chase, attack }
-    public State m_currentState;
-    public float m_runSpeed;
-    public float m_walkSpeed;
-    public int m_damage;
+    public State CurrentState;
+    public float RunSpeed;
+    public float WalkSpeed;
+    public float RotationSpeed = 5f;
+    public int Damage;
 
     [Header("Targeting")]
     [Tooltip("This will usually be the player or a patrol point.")] public Vector3 Target;
-    public float m_patrolRadius = 10;
-    public List<Vector3> m_patrolPoints = new List<Vector3>();
+    public float PatrolRadius = 10;
+    public List<Vector3> PatrolPoints = new List<Vector3>();
 
     [Header("References")]
-    public ZombieData m_zombieData;
-    public Animator m_animator;
-    public NavMeshAgent m_navMeshAgent;
-    public StateMachine zombieStateMachine;
+    public ZombieData ZombieData;
+    public Animator Animator;
+    public NavMeshAgent NavMeshAgent;
+    public Rigidbody Rigidbody;
+    public StateMachine ZombieStateMachine;
 
     private void Start()
     {
         GetZombieData();
-        zombieStateMachine = new StateMachine(this);
-        zombieStateMachine.Initialize(zombieStateMachine.idleState);
+        ZombieStateMachine = new StateMachine(this);
+        ZombieStateMachine.Initialize(ZombieStateMachine.idleState);
     }
     private void Update()
     {
-        zombieStateMachine.Update();
+        ZombieStateMachine.Update();
+        NavMeshAgent.transform.localPosition = Vector3.zero;
     }
     private void GetZombieData()
     {
-        if (m_zombieData != null)
+        if (ZombieData != null)
         {
-            m_runSpeed = m_zombieData.RunSpeed;
-            m_walkSpeed = m_zombieData.WalkSpeed;
-            m_damage = m_zombieData.Damage;
-            m_patrolRadius = m_zombieData.PatrolRadius;
+            RunSpeed = ZombieData.RunSpeed;
+            WalkSpeed = ZombieData.WalkSpeed;
+            Damage = ZombieData.Damage;
+            PatrolRadius = ZombieData.PatrolRadius;
         }
         else
         {
@@ -49,6 +53,6 @@ public class Zombie : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(transform.position, m_patrolRadius);
+        Gizmos.DrawWireSphere(transform.position, PatrolRadius);
     }
 }
