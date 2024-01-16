@@ -67,7 +67,6 @@ public class PlayerInputs : MonoBehaviour
 
     private void PrimaryReleased(InputAction.CallbackContext context)
     {
-        Debug.Log("Primary Released");
         OnPrimaryReleased?.Invoke();
     }
 

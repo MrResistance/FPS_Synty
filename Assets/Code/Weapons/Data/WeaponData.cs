@@ -1,7 +1,7 @@
 using UnityEngine;
 using static Weapon;
 
-[CreateAssetMenu(fileName = "NewWeapon", menuName = "WeaponMenu/NewWeapon", order = 1)]
+[CreateAssetMenu(fileName = "New Weapon", menuName = "Weapon Menu/New Weapon", order = 1)]
 public class WeaponData : ScriptableObject
 {
     public string WeaponName;

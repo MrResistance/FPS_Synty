@@ -3844,6 +3844,9 @@ GameObject:
   m_Component:
   - component: {fileID: 5437776920978954732}
   - component: {fileID: 5347100765326879844}
+  - component: {fileID: 5044828712926391356}
+  - component: {fileID: 4182880112260578498}
+  - component: {fileID: 5615791413105996279}
   m_Layer: 0
   m_Name: ZombieRig
   m_TagString: Untagged
@@ -3927,7 +3930,7 @@ Animator:
   m_GameObject: {fileID: 5432078986586418106}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: b20a3c10714a6ac439af479e3273de65, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2ceaed0626b445f43a051c9871084a96, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -3938,6 +3941,62 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!195 &5044828712926391356
+NavMeshAgent:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432078986586418106}
+  m_Enabled: 1
+  m_AgentTypeID: -1372625422
+  m_Radius: 0.25
+  m_Speed: 3.5
+  m_Acceleration: 8
+  avoidancePriority: 50
+  m_AngularSpeed: 120
+  m_StoppingDistance: 0
+  m_AutoTraverseOffMeshLink: 1
+  m_AutoBraking: 1
+  m_AutoRepath: 1
+  m_Height: 1.8
+  m_BaseOffset: 0
+  m_WalkableMask: 4294967295
+  m_ObstacleAvoidanceType: 4
+--- !u!135 &4182880112260578498
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432078986586418106}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 2.5
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!114 &5615791413105996279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5432078986586418106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b89e0d7bc3f5fb4ea141235018f3ca7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_currentState: 3
+  m_moveSpeed: 0
+  m_damage: 0
+  Target: {fileID: 0}
+  m_patrolRadius: 0
+  m_patrolPoints: []
+  m_zombieData: {fileID: 11400000, guid: a1cbd518ce11daf46a0f06e79660feeb, type: 2}
+  m_animator: {fileID: 5347100765326879844}
+  m_navMeshAgent: {fileID: 5044828712926391356}
 --- !u!1 &5432091034824979182
 GameObject:
   m_ObjectHideFlags: 0

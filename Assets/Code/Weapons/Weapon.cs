@@ -227,7 +227,6 @@ public class Weapon : MonoBehaviour
 
     public virtual void PlayWeaponFX()
     {
-        Debug.Log("Play Weapon FX");
         if (m_currentlyFiring)
         {
             m_gunshotFX.Play();
@@ -236,7 +235,6 @@ public class Weapon : MonoBehaviour
 
     protected void StopPlayingWeaponFX()
     {
-        Debug.Log("Stop Firing Weapon");
         m_currentlyFiring = false;
         m_gunshotFX.Stop();
     }
