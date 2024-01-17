@@ -10,6 +10,7 @@ public class WeaponRig : MonoBehaviour
     [SerializeField] private Weapon m_currentWeapon;
     public Weapon CurrentWeapon => m_currentWeapon;
 
+    [Header("Camera Settings")]
     [SerializeField] private Camera m_camera;
     [SerializeField] private Camera m_sniperScopeCamera;
     [SerializeField] private float m_SniperScope_FOV = 5;
@@ -22,7 +23,9 @@ public class WeaponRig : MonoBehaviour
 
     [SerializeField] private Vector3 m_aimDownSightPosition;
     [SerializeField] private Vector3 m_aimFromHipPosition;
-    [SerializeField] private List <Weapon> m_weapons;
+
+    [Header("Current Weapons List")]
+    [SerializeField] private List<Weapon> m_weapons;
     [SerializeField] private int m_currentWeaponLocation;
 
     public event Action<int, int> UpdateAmmoCounter;
@@ -77,7 +80,7 @@ public class WeaponRig : MonoBehaviour
 
     private void InitialiseWeapons()
     {
-        for (int i = 0; i < transform.childCount; i++) 
+        for (int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).TryGetComponent(out Weapon weapon) && weapon.WeaponUnlocked)
             {
@@ -193,6 +196,9 @@ public class WeaponRig : MonoBehaviour
 
     public void UpdateAmmoCounterMethod()
     {
-        UpdateAmmoCounter?.Invoke(m_currentWeapon.CurrentAmmoInClip, m_currentWeapon.CurrentReserveAmmo);
+        if (m_currentWeapon != null)
+        {
+            UpdateAmmoCounter?.Invoke(m_currentWeapon.CurrentAmmoInClip, m_currentWeapon.CurrentReserveAmmo);
+        }
     }
 }

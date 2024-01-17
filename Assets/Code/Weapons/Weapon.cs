@@ -12,7 +12,6 @@ public class Weapon : MonoBehaviour
 
     [HideInInspector] public FireMode WeaponFireMode;
     public enum FireMode { semiAuto, fullAuto }
-    
 
     //Stats
     protected float m_hitForce = 20;
@@ -53,7 +52,7 @@ public class Weapon : MonoBehaviour
     {
         if (m_weaponData != null)
         {
-            GetWeaponData();
+            GetWeaponData(true);
         }
         else
         {
@@ -70,13 +69,12 @@ public class Weapon : MonoBehaviour
                 break;
         }
         PlayerInputs.Instance.OnReload += Reload;
-        m_currentAmmoInClip = m_maxClipSize;
     }
     protected void OnEnable()
     {
         if (m_weaponData != null)
         {
-            GetWeaponData();
+            GetWeaponData(false);
         }
         else
         {
@@ -137,7 +135,7 @@ public class Weapon : MonoBehaviour
     }
     #endregion
 
-    protected void GetWeaponData()
+    protected void GetWeaponData(bool start)
     {
         Type = m_weaponData.WeaponType;
         WeaponFireMode = m_weaponData.FireMode;
@@ -146,9 +144,18 @@ public class Weapon : MonoBehaviour
         m_effectiveRange = m_weaponData.EffectiveRange;
         m_fireRateCooldown = m_weaponData.FireRateCooldown;
         m_maxClipSize = m_weaponData.MaxClipSize;
-        m_currentAmmoInClip = m_weaponData.CurrentAmmoInClip;
         m_maxReserveAmmo = m_weaponData.MaxReserveAmmo;
-        m_currentReserveAmmo = m_weaponData.CurrentReserveAmmo;
+
+        if (start)
+        {
+            m_currentAmmoInClip = m_weaponData.CurrentAmmoInClip;
+            m_currentReserveAmmo = m_weaponData.CurrentReserveAmmo;
+        }
+
+        if (WeaponRig.Instance != null)
+        {
+            WeaponRig.Instance.UpdateAmmoCounterMethod();
+        }
     }
     protected void FireWeapon()
     {
@@ -178,7 +185,6 @@ public class Weapon : MonoBehaviour
             m_currentAmmoInClip = 0;
             LoseReserveAmmo(reloadRequestResult);
             m_amountToReload = reloadRequestResult;
-            WeaponRig.Instance.UpdateAmmoCounterMethod();
             m_animator.SetTrigger("Reload");
         }
         else

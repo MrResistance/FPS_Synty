@@ -1129,7 +1129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5601671069136308364, guid: 15585b8b637f6c84ebbc6b91d32243b7, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15585b8b637f6c84ebbc6b91d32243b7, type: 3}
@@ -2288,6 +2288,14 @@ PrefabInstance:
       propertyPath: WeaponUnlocked
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1765636600524846412, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765882570568930526, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1765924876784420283, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2339,6 +2347,14 @@ PrefabInstance:
     - target: {fileID: 1766694250992511726, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_Name
       value: PlayerRig
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766694251813521582, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 759
+      objectReference: {fileID: 0}
+    - target: {fileID: 1767499702250670270, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
@@ -2407,7 +2423,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6394576481462332066, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_AngularSpeed
-      value: 360
+      value: 120
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
