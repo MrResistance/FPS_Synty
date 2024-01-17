@@ -182,8 +182,16 @@ public class Weapon : MonoBehaviour
         int reloadRequestResult = ReloadRequest();
         if (reloadRequestResult > 0)
         {
+            if (!GameSettings.Instance.RealisticReloadingAmmoCount)
+            {
+                LoseReserveAmmo(reloadRequestResult - m_currentAmmoInClip);
+            }
+            else
+            {
+                LoseReserveAmmo(reloadRequestResult);
+            }
+
             m_currentAmmoInClip = 0;
-            LoseReserveAmmo(reloadRequestResult);
             m_amountToReload = reloadRequestResult;
             m_animator.SetTrigger("Reload");
         }
@@ -197,19 +205,22 @@ public class Weapon : MonoBehaviour
     {
         if (m_currentReserveAmmo == 0)
         {
-            return 0;
+            return 0; //If the player has no reserve ammo, they can't reload
         }
         if (m_currentAmmoInClip == m_maxClipSize)
         {
-            return 0;
+            return 0; //If the weapon is already fully loaded, they can't reload
         }
         if (m_currentReserveAmmo > 0 && m_currentReserveAmmo < m_maxClipSize)
         {
-            return m_currentReserveAmmo;
+            return m_currentReserveAmmo; 
+            //If the player has reserve ammo, but the reserve ammo is less
+            //than the max clip size then return whatever's there in reserve
         }
         if (m_currentReserveAmmo >= m_maxClipSize)
         {
             return m_maxClipSize;
+            //If the player has more than or equal to the max clip size, return the max
         }
         return 0;
     }
