@@ -166,6 +166,7 @@ public class Weapon : MonoBehaviour
         if (WeaponRig.Instance != null)
         {
             WeaponRig.Instance.UpdateAmmoCounterMethod();
+            WeaponRig.Instance.AudioSource.PlayOneShot(m_cockWeapon[Random.Range(0, m_cockWeapon.Count)]);
         }
     }
     protected void RequestFire()

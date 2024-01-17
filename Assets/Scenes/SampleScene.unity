@@ -2655,6 +2655,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_dryFire.Array.data[0]
       value: 
       objectReference: {fileID: 8300000, guid: 2cee6393880ef4842a1b24b9252514bb, type: 3}
@@ -2722,6 +2726,34 @@ PrefabInstance:
       propertyPath: m_insertMag.Array.data[4]
       value: 
       objectReference: {fileID: 8300000, guid: 19a70d2df7fd11940bb4db77877517ca, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d9f952ac41d7e44090d00b4da88a3b9, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: c3791d32f8cd3534ea4e03ce8cfdf4b2, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8f51a5a84d9e814a9f77d0379a478fe, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0616372a5aff45e4db997d8c8e53b4a5, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: 1cb0bd86a704dab4cb7044a2d4085a0f, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 0240db25219637947a1e4e7eafa4209b, type: 3}
+    - target: {fileID: 1766694252320419407, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+      propertyPath: m_cockWeapon.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c7a5f99c4011e849b024fc4bde2a8e4, type: 3}
     - target: {fileID: 1768543415599484557, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
