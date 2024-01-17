@@ -202,6 +202,7 @@ public class Weapon : MonoBehaviour
                 LoseReserveAmmo(reloadRequestResult);
             }
 
+            WeaponRig.Instance.AudioSource.PlayOneShot(m_ejectMag[Random.Range(0, m_ejectMag.Count)]);
             m_currentAmmoInClip = 0;
             m_amountToReload = reloadRequestResult;
             m_animator.SetTrigger("Reload");
@@ -240,6 +241,7 @@ public class Weapon : MonoBehaviour
     {
         m_currentAmmoInClip += m_amountToReload;
         m_amountToReload = 0;
+        WeaponRig.Instance.AudioSource.PlayOneShot(m_insertMag[Random.Range(0, m_insertMag.Count)]);
         WeaponRig.Instance.UpdateAmmoCounterMethod();
     }
 
