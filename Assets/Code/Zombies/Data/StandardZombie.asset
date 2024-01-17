@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RunSpeed: 1
   WalkSpeed: 0.5
+  RotationSpeed: 0.1
   Damage: 2
   PatrolRadius: 10

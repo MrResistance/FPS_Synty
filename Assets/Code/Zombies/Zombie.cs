@@ -42,6 +42,7 @@ public class Zombie : MonoBehaviour
             RunSpeed = ZombieData.RunSpeed;
             WalkSpeed = ZombieData.WalkSpeed;
             Damage = ZombieData.Damage;
+            RotationSpeed = ZombieData.RotationSpeed;
             PatrolRadius = ZombieData.PatrolRadius;
         }
         else
