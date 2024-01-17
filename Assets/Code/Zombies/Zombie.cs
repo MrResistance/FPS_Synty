@@ -10,12 +10,18 @@ public class Zombie : MonoBehaviour
     public float RunSpeed;
     public float WalkSpeed;
     public float RotationSpeed = 5f;
+    [Tooltip("Smaller value is quicker.")]public float AttackSpeed = 1f;
     public int Damage;
 
     [Header("Targeting")]
+    public LayerMask DetectionLayer;
     [Tooltip("This will usually be the player or a patrol point.")] public Vector3 Target;
+    public Transform TargetTransform;
+    public float DetectionRadius = 15;
     public float PatrolRadius = 10;
     public List<Vector3> PatrolPoints = new List<Vector3>();
+    
+
 
     [Header("References")]
     public ZombieData ZombieData;
@@ -34,6 +40,10 @@ public class Zombie : MonoBehaviour
     {
         ZombieStateMachine.Update();
         NavMeshAgent.transform.localPosition = Vector3.zero;
+        if (TargetTransform != null)
+        {
+            Target = TargetTransform.position;
+        }
     }
     private void GetZombieData()
     {
@@ -55,5 +65,7 @@ public class Zombie : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, PatrolRadius);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawWireSphere(transform.position, DetectionRadius);
     }
 }

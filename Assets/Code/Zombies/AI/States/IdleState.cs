@@ -23,9 +23,4 @@ public class IdleState : IState
     {
         // code that runs when we exit the state
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-
-    }
 }

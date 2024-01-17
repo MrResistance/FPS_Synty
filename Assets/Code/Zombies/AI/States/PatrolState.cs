@@ -21,7 +21,7 @@ public class PatrolState : IState
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
-        MoveTowardsCurrentTarget();
+        WalkTowardsCurrentTarget();
         RotateTowardsTarget();
     }
 
@@ -52,7 +52,7 @@ public class PatrolState : IState
         }
     }
 
-    private void MoveTowardsCurrentTarget()
+    private void WalkTowardsCurrentTarget()
     {
         m_zombie.Animator.SetFloat("MoveSpeed", m_zombie.WalkSpeed, 0.2f, Time.deltaTime);
 
@@ -100,7 +100,6 @@ public class PatrolState : IState
         float randomZ = Random.Range(m_zombie.transform.localPosition.z - 10, m_zombie.transform.localPosition.z + 10);
         return new Vector3(randomX, 0, randomZ);
     }
-
 
     private void InitialisePatrolSettings()
     {

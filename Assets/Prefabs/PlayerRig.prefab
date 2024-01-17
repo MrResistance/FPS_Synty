@@ -6002,7 +6002,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1095744272416284, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1198663731479534, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
       propertyPath: m_Name
@@ -6010,7 +6010,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1198663731479534, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1198663731479534, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
       propertyPath: m_IsActive
@@ -6018,7 +6018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1446785646928508, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
       propertyPath: m_Layer
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4702343032138574, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
       propertyPath: m_RootOrder
@@ -6873,7 +6873,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1508934165754910, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1631334149416130, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
       propertyPath: m_Layer
@@ -7127,7 +7127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponData: {fileID: 11400000, guid: b405261d9d9d11c44bb798d76f169853, type: 2}
-  WeaponUnlocked: 0
+  WeaponUnlocked: 1
   Type: 5
   WeaponFireMode: 0
   m_animator: {fileID: 1969534029}
@@ -9145,8 +9145,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b3dcbbdad88e4d43b34a0a960ff48af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponData: {fileID: 0}
-  WeaponUnlocked: 0
+  m_weaponData: {fileID: 11400000, guid: 84c75de0f57502d438a7dff21ab36ba1, type: 2}
+  WeaponUnlocked: 1
   Type: 0
   WeaponFireMode: 0
   m_animator: {fileID: 1446433025}
@@ -10295,6 +10295,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1768529051853252668}
     m_Modifications:
+    - target: {fileID: 9042537914239451532, guid: f7e24cce917c2e842acba1ea4786adf7, type: 3}
+      propertyPath: m_CullingMask.m_Bits
+      value: 759
+      objectReference: {fileID: 0}
     - target: {fileID: 9042537914239451533, guid: f7e24cce917c2e842acba1ea4786adf7, type: 3}
       propertyPath: m_RootOrder
       value: 0
