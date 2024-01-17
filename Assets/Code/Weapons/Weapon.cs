@@ -122,27 +122,27 @@ public class Weapon : MonoBehaviour
 
     public void ReceivePrimaryPressedEvents()
     {
-        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
-        PlayerInputs.Instance.OnPrimaryPressed += FireWeapon;
+        PlayerInputs.Instance.OnPrimaryPressed -= RequestFire;
+        PlayerInputs.Instance.OnPrimaryPressed += RequestFire;
     }
 
     public void ReceivePrimaryHeldEvents()
     {
-        PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
-        PlayerInputs.Instance.OnPrimaryHeld += FireWeapon;
-        PlayerInputs.Instance.OnPrimaryReleased -= StopPlayingWeaponFX;
-        PlayerInputs.Instance.OnPrimaryReleased += StopPlayingWeaponFX;
+        PlayerInputs.Instance.OnPrimaryHeld -= RequestFire;
+        PlayerInputs.Instance.OnPrimaryHeld += RequestFire;
+        PlayerInputs.Instance.OnPrimaryReleased -= StopFire;
+        PlayerInputs.Instance.OnPrimaryReleased += StopFire;
     }
 
     public void StopReceivingPrimaryPressedEvents()
     {
-        PlayerInputs.Instance.OnPrimaryPressed -= FireWeapon;
+        PlayerInputs.Instance.OnPrimaryPressed -= RequestFire;
     }
 
     public void StopReceivingPrimaryHeldEvents()
     {
-        PlayerInputs.Instance.OnPrimaryHeld -= FireWeapon;
-        PlayerInputs.Instance.OnPrimaryReleased -= StopPlayingWeaponFX;
+        PlayerInputs.Instance.OnPrimaryHeld -= RequestFire;
+        PlayerInputs.Instance.OnPrimaryReleased -= StopFire;
     }
     #endregion
 
@@ -168,21 +168,20 @@ public class Weapon : MonoBehaviour
             WeaponRig.Instance.UpdateAmmoCounterMethod();
         }
     }
-    protected void FireWeapon()
+    protected void RequestFire()
     {
-        if (Time.time >= m_lastTimeFired + m_fireRateCooldown)
+        if (Time.time >= m_lastTimeFired + m_fireRateCooldown && !m_currentlyFiring)
         {
             m_lastTimeFired = Time.time;
             if (m_currentAmmoInClip > 0)
             {
-                m_currentAmmoInClip--;
-                WeaponRig.Instance.UpdateAmmoCounterMethod();
                 m_currentlyFiring = true;
                 m_animator.SetTrigger("Fire");
             }
             else
             {
-                StopPlayingWeaponFX();
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_dryFire[Random.Range(0, m_dryFire.Count)]);
+                //StopPlayingWeaponFX();
                 //OnOutOfAmmo?.Invoke();
             }
         }
@@ -255,16 +254,18 @@ public class Weapon : MonoBehaviour
         m_currentReserveAmmo -= amount;    
     }
 
-    public virtual void PlayWeaponFX()
+    public virtual void Fire()
     {
         if (m_currentlyFiring)
         {
+            m_currentAmmoInClip--;
+            WeaponRig.Instance.UpdateAmmoCounterMethod();
             WeaponRig.Instance.AudioSource.PlayOneShot(m_fire[Random.Range(0, m_fire.Count)]);
             m_gunshotFX.Play();
         }
     }
 
-    protected void StopPlayingWeaponFX()
+    protected void StopFire()
     {
         m_currentlyFiring = false;
         m_gunshotFX.Stop();

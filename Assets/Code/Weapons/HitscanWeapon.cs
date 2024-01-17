@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class HitscanWeapon : Weapon
 {
-    public override void PlayWeaponFX()
+    public override void Fire()
     {
-        base.PlayWeaponFX();
+        base.Fire();
         if (m_currentlyFiring)
         {
             HitCalculation();
