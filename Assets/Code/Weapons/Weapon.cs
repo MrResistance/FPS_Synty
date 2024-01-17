@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 [SelectionBase]
@@ -29,6 +30,16 @@ public class Weapon : MonoBehaviour
     public int MaxClipSize => m_maxClipSize;
     public int CurrentAmmoInClip => m_currentAmmoInClip;
     public int CurrentReserveAmmo => m_currentReserveAmmo;
+
+    [Header("Audio")]
+    [SerializeField] private List<AudioClip> m_cockWeapon;
+    [SerializeField] private List<AudioClip> m_dryFire;
+    [SerializeField] private List<AudioClip> m_ejectMag;
+    [SerializeField] private List<AudioClip> m_insertMag;
+    [SerializeField] private List<AudioClip> m_safetySwitch;
+    [SerializeField] private List<AudioClip> m_fire;
+    [SerializeField] private List<AudioClip> m_slide;
+
 
     [Header("References")]
     [SerializeField] private Animator m_animator;
@@ -246,6 +257,7 @@ public class Weapon : MonoBehaviour
     {
         if (m_currentlyFiring)
         {
+            WeaponRig.Instance.AudioSource.PlayOneShot(m_fire[Random.Range(0, m_fire.Count)]);
             m_gunshotFX.Play();
         }
     }

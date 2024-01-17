@@ -9,6 +9,7 @@ public class WeaponRig : MonoBehaviour
     [Header("References")]
     [SerializeField] private Weapon m_currentWeapon;
     public Weapon CurrentWeapon => m_currentWeapon;
+    public AudioSource AudioSource;
 
     [Header("Camera Settings")]
     [SerializeField] private Camera m_camera;
