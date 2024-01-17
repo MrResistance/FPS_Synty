@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using static Weapon;
 
@@ -21,4 +22,13 @@ public class WeaponData : ScriptableObject
     public int CurrentAmmoInClip;
     public int MaxReserveAmmo;
     public int CurrentReserveAmmo;
+
+    [Header("Audio")]
+    public List<AudioClip> CockWeapon_SFX;
+    public List<AudioClip> DryFire_SFX;
+    public List<AudioClip> EjectMag_SFX;
+    public List<AudioClip> InsertMag_SFX;
+    public List<AudioClip> SafetySwitch_SFX;
+    public List<AudioClip> Fire_SFX;
+    public List<AudioClip> Slide_SFX;
 }

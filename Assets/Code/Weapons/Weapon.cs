@@ -157,6 +157,16 @@ public class Weapon : MonoBehaviour
         m_maxClipSize = m_weaponData.MaxClipSize;
         m_maxReserveAmmo = m_weaponData.MaxReserveAmmo;
 
+        //Audio
+        m_cockWeapon = m_weaponData.CockWeapon_SFX;
+        m_dryFire = m_weaponData.DryFire_SFX;
+        m_ejectMag = m_weaponData.EjectMag_SFX;
+        m_insertMag = m_weaponData.InsertMag_SFX;
+        m_safetySwitch = m_weaponData.SafetySwitch_SFX;
+        m_fire = m_weaponData.Fire_SFX;
+        m_slide = m_weaponData.Slide_SFX;
+
+
         if (start)
         {
             m_currentAmmoInClip = m_weaponData.CurrentAmmoInClip;
@@ -182,8 +192,6 @@ public class Weapon : MonoBehaviour
             else
             {
                 WeaponRig.Instance.AudioSource.PlayOneShot(m_dryFire[Random.Range(0, m_dryFire.Count)]);
-                //StopPlayingWeaponFX();
-                //OnOutOfAmmo?.Invoke();
             }
         }
     }

@@ -13,8 +13,6 @@ MonoBehaviour:
   m_Name: SM_Wep_Sniper_01
   m_EditorClassIdentifier: 
   WeaponName: Sniper Rifle
-  Unlocked: 1
-  Hitscan: 1
   WeaponType: 5
   FireMode: 0
   HitForce: 100
@@ -25,3 +23,29 @@ MonoBehaviour:
   CurrentAmmoInClip: 5
   MaxReserveAmmo: 30
   CurrentReserveAmmo: 25
+  CockWeapon_SFX:
+  - {fileID: 8300000, guid: 6bc79dc5f520ed0479a4a86d5786d8b3, type: 3}
+  - {fileID: 8300000, guid: 7831b70984edbe942b8e6ce598bf4b47, type: 3}
+  - {fileID: 8300000, guid: 52107b889c70f484280a59ff1fbfe660, type: 3}
+  - {fileID: 8300000, guid: f2cf82c524753e341bbb6d2f9f5f82f6, type: 3}
+  DryFire_SFX:
+  - {fileID: 8300000, guid: 78b476f01f9f21c4196c4d07e639ad65, type: 3}
+  - {fileID: 8300000, guid: 0bc462adc0d3fa449b9dbbff2d38cb9b, type: 3}
+  EjectMag_SFX:
+  - {fileID: 8300000, guid: 096877fde09817f4e84c5b38a6d7fbcf, type: 3}
+  - {fileID: 8300000, guid: 344c06a2c68e1de4a83a570fb553d99b, type: 3}
+  - {fileID: 8300000, guid: 4b57f5adfedc91945914928dfbef13ed, type: 3}
+  - {fileID: 8300000, guid: 4203b691633387c42a3bace59227e367, type: 3}
+  InsertMag_SFX:
+  - {fileID: 8300000, guid: 53ecf83c26f9b424a8404571819fb5e0, type: 3}
+  - {fileID: 8300000, guid: 4098dad578a04e64abeec7bfb4d497cf, type: 3}
+  - {fileID: 8300000, guid: 51c33ce26d0662c42b9ec8c3905d07e4, type: 3}
+  - {fileID: 8300000, guid: 8128bae123c81114898fc3ffcea2e8b3, type: 3}
+  - {fileID: 8300000, guid: 9d15843f56dee8f4ea0ef1a8771d9231, type: 3}
+  SafetySwitch_SFX: []
+  Fire_SFX:
+  - {fileID: 8300000, guid: 220800bb5f88bdc4ebf005d29704e9c6, type: 3}
+  - {fileID: 8300000, guid: 5e53b3b425023b44a9733f7491b7e6b2, type: 3}
+  - {fileID: 8300000, guid: 082aa52a909dc8c4da4be3b54218b872, type: 3}
+  - {fileID: 8300000, guid: 09283693d0ecbec4e9932b4c89129e39, type: 3}
+  Slide_SFX: []
