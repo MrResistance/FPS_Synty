@@ -25,10 +25,16 @@ public class HitscanWeapon : Weapon
             {
                 m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
             }
-            if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
+            
+            if (m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
+            {
+                damageableBodyPart.LoseHitPoints(m_damage);
+            }
+            else if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
             {
                 damageable.LoseHitPoints(m_damage);
             }
+
             return m_raycastHit.point;
         }
         else
