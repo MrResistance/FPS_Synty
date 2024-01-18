@@ -20,8 +20,6 @@ public class Zombie : MonoBehaviour
     public float DetectionRadius = 15;
     public float PatrolRadius = 10;
     public List<Vector3> PatrolPoints = new List<Vector3>();
-    
-
 
     [Header("References")]
     public ZombieData ZombieData;
@@ -61,11 +59,14 @@ public class Zombie : MonoBehaviour
         }
     }
 
+    public void DealDamage()
+    {
+        
+    }
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, PatrolRadius);
-        Gizmos.color = Color.cyan;
-        Gizmos.DrawWireSphere(transform.position, DetectionRadius);
     }
 }

@@ -2850,6 +2850,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1214645290, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: m_maxHitPoints
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 1214645290, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: m_currentHitPoints
+      value: 100000
+      objectReference: {fileID: 0}
     - target: {fileID: 1290785896, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_Layer
       value: 10

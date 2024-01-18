@@ -176,7 +176,10 @@ public class Weapon : MonoBehaviour
         if (WeaponRig.Instance != null)
         {
             WeaponRig.Instance.UpdateAmmoCounterMethod();
-            WeaponRig.Instance.AudioSource.PlayOneShot(m_cockWeapon[Random.Range(0, m_cockWeapon.Count)]);
+            if (m_cockWeapon.Count > 0)
+            {
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_cockWeapon[Random.Range(0, m_cockWeapon.Count)]);
+            }
         }
     }
     protected void RequestFire()
@@ -210,7 +213,11 @@ public class Weapon : MonoBehaviour
                 LoseReserveAmmo(reloadRequestResult);
             }
 
-            WeaponRig.Instance.AudioSource.PlayOneShot(m_ejectMag[Random.Range(0, m_ejectMag.Count)]);
+            if (m_ejectMag.Count > 0)
+            {
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_ejectMag[Random.Range(0, m_ejectMag.Count)]);
+            }
+            
             m_currentAmmoInClip = 0;
             m_amountToReload = reloadRequestResult;
             m_animator.SetTrigger("Reload");
@@ -249,7 +256,12 @@ public class Weapon : MonoBehaviour
     {
         m_currentAmmoInClip += m_amountToReload;
         m_amountToReload = 0;
-        WeaponRig.Instance.AudioSource.PlayOneShot(m_insertMag[Random.Range(0, m_insertMag.Count)]);
+
+        if (m_insertMag.Count > 0)
+        {
+            WeaponRig.Instance.AudioSource.PlayOneShot(m_insertMag[Random.Range(0, m_insertMag.Count)]);
+        }
+        
         WeaponRig.Instance.UpdateAmmoCounterMethod();
     }
 
@@ -269,7 +281,12 @@ public class Weapon : MonoBehaviour
         {
             m_currentAmmoInClip--;
             WeaponRig.Instance.UpdateAmmoCounterMethod();
-            WeaponRig.Instance.AudioSource.PlayOneShot(m_fire[Random.Range(0, m_fire.Count)]);
+
+            if (m_fire.Count > 0)
+            {
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_fire[Random.Range(0, m_fire.Count)]);
+            }
+            
             m_gunshotFX.Play();
         }
     }
