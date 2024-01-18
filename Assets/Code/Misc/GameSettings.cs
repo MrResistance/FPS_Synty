@@ -8,6 +8,8 @@ public class GameSettings : MonoBehaviour
         "\n\nWhen set to false, when reloading, whatever's left in their current clip moves to their reserve ammo.")]
     public bool RealisticReloadingAmmoCount = false;
 
+    public LayerMask DamageableLayer;
+
     private void Awake()
     {
         if (Instance == null)

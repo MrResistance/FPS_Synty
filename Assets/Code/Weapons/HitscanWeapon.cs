@@ -19,7 +19,7 @@ public class HitscanWeapon : Weapon
         // Create a ray from the center of the screen
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
 
-        if (Physics.Raycast(ray, out m_raycastHit, m_effectiveRange))
+        if (Physics.Raycast(ray, out m_raycastHit, m_effectiveRange, GameSettings.Instance.DamageableLayer))
         {
             if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
             {
@@ -29,12 +29,12 @@ public class HitscanWeapon : Weapon
             if (m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
             {
                 damageableBodyPart.LoseHitPoints(m_damage);
-                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.collider.transform.position, m_raycastHit.collider.transform.rotation);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.transform.position, m_raycastHit.transform.rotation);
             }
             else if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
             {
                 damageable.LoseHitPoints(m_damage);
-                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.collider.transform.position, m_raycastHit.collider.transform.rotation);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.transform.position, m_raycastHit.transform.rotation);
             }
 
             return m_raycastHit.point;
