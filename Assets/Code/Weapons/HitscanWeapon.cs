@@ -29,10 +29,12 @@ public class HitscanWeapon : Weapon
             if (m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
             {
                 damageableBodyPart.LoseHitPoints(m_damage);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.collider.transform.position, m_raycastHit.collider.transform.rotation);
             }
             else if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
             {
                 damageable.LoseHitPoints(m_damage);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.collider.transform.position, m_raycastHit.collider.transform.rotation);
             }
 
             return m_raycastHit.point;

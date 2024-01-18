@@ -698,6 +698,10 @@ MonoBehaviour:
     prefab: {fileID: 163066, guid: 53777b8572d1e7242bc90044f62667ce, type: 3}
     size: 5
     parent: {fileID: 1712805377}
+  - tag: BloodSplatterSmall
+    prefab: {fileID: 1026642433091512, guid: ed67c2cb8e3a7fb418c6fbb1b001dce2, type: 3}
+    size: 10
+    parent: {fileID: 1091992166}
 --- !u!1 &520056253
 GameObject:
   m_ObjectHideFlags: 0
@@ -1355,6 +1359,7 @@ Transform:
   - {fileID: 1150680535}
   - {fileID: 1712805377}
   - {fileID: 1035554985}
+  - {fileID: 1091992166}
   m_Father: {fileID: 465967733}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1394,6 +1399,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4313176750508668, guid: bb91bd02237ba1e4fbeaf696ffe8fa38, type: 3}
   m_PrefabInstance: {fileID: 646410032}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1091992165
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1091992166}
+  m_Layer: 0
+  m_Name: BloodSplatterSmall
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1091992166
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1091992165}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1023223980}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1115853535
 PrefabInstance:
   m_ObjectHideFlags: 0
