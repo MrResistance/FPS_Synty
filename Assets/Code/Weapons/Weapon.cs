@@ -192,7 +192,7 @@ public class Weapon : MonoBehaviour
                 m_currentlyFiring = true;
                 m_animator.SetTrigger("Fire");
             }
-            else
+            else if (m_dryFire.Count > 0)
             {
                 WeaponRig.Instance.AudioSource.PlayOneShot(m_dryFire[Random.Range(0, m_dryFire.Count)]);
             }
