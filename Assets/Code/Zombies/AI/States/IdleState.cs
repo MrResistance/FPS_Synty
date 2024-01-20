@@ -17,6 +17,7 @@ public class IdleState : IState
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
+        
         m_zombie.ZombieStateMachine.TransitionTo(m_zombie.ZombieStateMachine.patrolState);
     }
     public void Exit()

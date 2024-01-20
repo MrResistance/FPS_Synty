@@ -2262,6 +2262,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1772984203 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1766093108697678690, guid: 620b0ea4ccd453c4e85598685c7251f2, type: 3}
+  m_PrefabInstance: {fileID: 1766694252320419401}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1772984210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1772984203}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_maxHitPoints: 100
+  m_currentHitPoints: 100
 --- !u!1 &1860086783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2852,11 +2871,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1214645290, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_maxHitPoints
-      value: 10000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1214645290, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_currentHitPoints
-      value: 100000
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1290785896, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_Layer
@@ -2973,6 +2992,18 @@ PrefabInstance:
     - target: {fileID: 5437776920978954732, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615791413105996279, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: DamageHitboxSize.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615791413105996279, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: DamageHitboxSize.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5615791413105996279, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: DamageHitboxSize.z
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 76a72ed690fd4174096b109754b79e35, type: 3}

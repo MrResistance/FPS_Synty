@@ -17,6 +17,12 @@ public class Detection : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-
+        int layer = 1 << other.gameObject.layer;
+        if ((m_zombie.DetectionLayer.value & layer) != 0)
+        {
+            m_zombie.TargetTransform = null;
+            m_zombie.Target = m_zombie.transform.position;
+            m_zombie.ZombieStateMachine.TransitionTo(m_zombie.ZombieStateMachine.alertState);
+        }
     }
 }

@@ -11,6 +11,7 @@ public class ChaseState : IState
     {
         // code that runs when we first enter the state
         m_zombie.CurrentState = Zombie.State.chase;
+        m_zombie.Animator.ResetTrigger("Attack");
     }
     public void Update()
     {
@@ -39,6 +40,6 @@ public class ChaseState : IState
     {
         m_zombie.NavMeshAgent.enabled = true;
         m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
-        m_zombie.transform.rotation = Quaternion.Slerp(m_zombie.transform.rotation, m_zombie.NavMeshAgent.transform.rotation, m_zombie.RotationSpeed / Time.deltaTime);
+        m_zombie.transform.LookAt(m_zombie.Target, Vector3.up);
     }
 }

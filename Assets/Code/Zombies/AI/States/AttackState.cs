@@ -12,20 +12,21 @@ public class AttackState : IState
     public void Enter()
     {
         // code that runs when we first enter the state
-        Debug.Log("Entering Attack State");
         m_zombie.CurrentState = Zombie.State.attack;
-        //m_zombie.Animator.SetTrigger("Attack");
+        m_zombie.Animator.SetFloat("MoveSpeed", 0);
     }
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
-        m_zombie.Animator.SetFloat("MoveSpeed", 0, 0.2f, Time.deltaTime);
+        
 
         if (m_zombie.NavMeshAgent.remainingDistance >= 1.5f)
         {
             m_zombie.ZombieStateMachine.TransitionTo(m_zombie.ZombieStateMachine.chaseState);
+            return;
         }
+        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
         RotateTowardsTarget();
         AttackTarget();
     }
@@ -36,10 +37,8 @@ public class AttackState : IState
 
     private void AttackTarget()
     {
-        Debug.Log("Requesting attack target");
         if (Time.time >= m_lastTimeAttacked + m_zombie.AttackSpeed)
         {
-            Debug.Log("Attack request granted");
             m_lastTimeAttacked = Time.time;
             m_zombie.Animator.SetTrigger("Attack");
         }
@@ -47,8 +46,6 @@ public class AttackState : IState
 
     private void RotateTowardsTarget()
     {
-        m_zombie.NavMeshAgent.enabled = true;
-        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
-        m_zombie.transform.rotation = Quaternion.Slerp(m_zombie.transform.rotation, m_zombie.NavMeshAgent.transform.rotation, m_zombie.RotationSpeed / Time.deltaTime);
+        m_zombie.transform.LookAt(m_zombie.Target, Vector3.up);
     }
 }
