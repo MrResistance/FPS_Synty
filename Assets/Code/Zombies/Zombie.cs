@@ -12,6 +12,7 @@ public class Zombie : MonoBehaviour
     public float RotationSpeed = 5f;
     [Tooltip("Smaller value is quicker.")]public float AttackSpeed = 1f;
     public int Damage;
+    public List<Damageable> objectsToDamage;
 
     [Header("Targeting")]
     public LayerMask DetectionLayer;
@@ -61,9 +62,23 @@ public class Zombie : MonoBehaviour
 
     public void DealDamage()
     {
-        
+        if (objectsToDamage.Count <= 0)
+        {
+            return;
+        }
+        for (int i = 0; i < objectsToDamage.Count; i++)
+        {
+            if (objectsToDamage[i].TryGetComponent(out Damageable damageable))
+            {
+                damageable.LoseHitPoints(Damage);
+            }
+        }
     }
 
+    public void ResetTrigger(string triggerName)
+    {
+        Animator.ResetTrigger(triggerName);
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;
