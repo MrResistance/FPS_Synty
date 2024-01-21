@@ -22,23 +22,53 @@ public class Zombie : MonoBehaviour
     public float PatrolRadius = 10;
     public List<Vector3> PatrolPoints = new List<Vector3>();
 
+    [Header("Audio")]
+    public AudioSource AudioSource;
+    public List<AudioClip> GroanSFX;
+    public List<AudioClip> AttackSFX;
+    public List<AudioClip> HurtSFX;
+    public List<AudioClip> DeathSFX;
+
     [Header("References")]
     public ZombieData ZombieData;
     public Animator Animator;
     public NavMeshAgent NavMeshAgent;
     public Rigidbody Rigidbody;
     public StateMachine ZombieStateMachine;
+    public Damageable Damageable;
 
     private void Start()
     {
         GetZombieData();
         ZombieStateMachine = new StateMachine(this);
         ZombieStateMachine.Initialize(ZombieStateMachine.idleState);
+        Damageable.OnDeath += Die;
     }
+    private void OnEnable()
+    {
+        Damageable.OnDeath += Die;
+    }
+    private void OnDisable()
+    {
+        Damageable.OnDeath -= Die;
+    }
+    private void OnDestroy()
+    {
+        Damageable.OnDeath -= Die;
+    }
+    private void Die()
+    {
+        Animator.enabled = false;
+        NavMeshAgent.enabled = false;
+    }
+
     private void Update()
     {
-        ZombieStateMachine.Update();
-        NavMeshAgent.transform.localPosition = Vector3.zero;
+        if (NavMeshAgent.enabled)
+        {
+            ZombieStateMachine.Update();
+            NavMeshAgent.transform.localPosition = Vector3.zero;
+        }
         if (TargetTransform != null)
         {
             Target = TargetTransform.position;
@@ -79,6 +109,43 @@ public class Zombie : MonoBehaviour
     {
         Animator.ResetTrigger(triggerName);
     }
+
+    #region Audio
+
+    public void PlayGroanSFX()
+    {
+        if (GroanSFX.Count > 0)
+        {
+            AudioSource.PlayOneShot(GroanSFX[Random.Range(0, GroanSFX.Count)]);
+        }
+    }
+
+    public void PlayAttackSFX()
+    {
+        if (AttackSFX.Count > 0)
+        {
+            AudioSource.PlayOneShot(AttackSFX[Random.Range(0, AttackSFX.Count)]);
+        }
+    }
+
+    public void PlayHurtSFX()
+    {
+        if (HurtSFX.Count > 0)
+        {
+            AudioSource.PlayOneShot(HurtSFX[Random.Range(0, HurtSFX.Count)]);
+        }
+    }
+
+    public void PlayDeathSFX()
+    {
+        if (DeathSFX.Count > 0)
+        {
+            AudioSource.PlayOneShot(DeathSFX[Random.Range(0, DeathSFX.Count)]);
+        }
+    }
+
+    #endregion
+
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.yellow;

@@ -37,6 +37,6 @@ public class Damageable : MonoBehaviour
     private void Die()
     {
         OnDeath?.Invoke();
-        gameObject.SetActive(false);
+        //gameObject.SetActive(false);
     }
 }

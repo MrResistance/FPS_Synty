@@ -17,7 +17,7 @@ MonoBehaviour:
   FireMode: 0
   HitForce: 10
   Damage: 2
-  EffectiveRange: 25
+  EffectiveRange: 250
   FireRateCooldown: 0.1
   MaxClipSize: 12
   CurrentAmmoInClip: 12
