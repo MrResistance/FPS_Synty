@@ -16,4 +16,5 @@ MonoBehaviour:
   WalkSpeed: 0.5
   RotationSpeed: 0.0001
   Damage: 2
+  MaxHitPoints: 25
   PatrolRadius: 10

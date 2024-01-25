@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHitPoints: 5
+  m_maxHitPoints: 0
   m_currentHitPoints: 0
 --- !u!1 &317113598
 GameObject:
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHitPoints: 50
+  m_maxHitPoints: 0
   m_currentHitPoints: 0
 --- !u!1 &353132886
 GameObject:
@@ -629,7 +629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHitPoints: 10
+  m_maxHitPoints: 0
   m_currentHitPoints: 0
 --- !u!4 &436575596 stripped
 Transform:
@@ -2279,8 +2279,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHitPoints: 100
-  m_currentHitPoints: 100
+  m_maxHitPoints: 0
+  m_currentHitPoints: 0
 --- !u!1 &1860086783
 GameObject:
   m_ObjectHideFlags: 0
@@ -2558,7 +2558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36a1303611532f64a8e4e4dac9bcdf5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_maxHitPoints: 100
+  m_maxHitPoints: 0
   m_currentHitPoints: 0
 --- !u!1001 &854752986013749675
 PrefabInstance:
@@ -2891,6 +2891,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1214645290, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
+      propertyPath: m_currentHitPoints
+      value: 1000000
+      objectReference: {fileID: 0}
     - target: {fileID: 696613796959254441, guid: 76a72ed690fd4174096b109754b79e35, type: 3}
       propertyPath: m_Enabled
       value: 1
