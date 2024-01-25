@@ -10,11 +10,11 @@ public class Zombie : MonoBehaviour
     public float RunSpeed;
     public float WalkSpeed;
     public float RotationSpeed = 5f;
-    [Tooltip("Smaller value is quicker.")]public float AttackSpeed = 1f;
+    [Tooltip("Smaller value is quicker.")] public float AttackSpeed = 1f;
+    public int MaxHitPoints;
     public int Damage;
     public List<Damageable> objectsToDamage;
 
-    [Header("Targeting")]
     public LayerMask DetectionLayer;
     [Tooltip("This will usually be the player or a patrol point.")] public Vector3 Target;
     public Transform TargetTransform;
@@ -30,11 +30,11 @@ public class Zombie : MonoBehaviour
     public List<AudioClip> DeathSFX;
 
     [Header("References")]
+    [HideInInspector] public StateMachine ZombieStateMachine;
     public ZombieData ZombieData;
     public Animator Animator;
     public NavMeshAgent NavMeshAgent;
     public Rigidbody Rigidbody;
-    public StateMachine ZombieStateMachine;
     public Damageable Damageable;
 
     private void Start()
@@ -42,6 +42,8 @@ public class Zombie : MonoBehaviour
         GetZombieData();
         ZombieStateMachine = new StateMachine(this);
         ZombieStateMachine.Initialize(ZombieStateMachine.idleState);
+        Damageable.SetMaxHitPoints(MaxHitPoints);
+        Damageable.GainHitPoints(MaxHitPoints);
         Damageable.OnDeath += Die;
     }
     private void OnEnable()
@@ -83,6 +85,7 @@ public class Zombie : MonoBehaviour
             Damage = ZombieData.Damage;
             RotationSpeed = ZombieData.RotationSpeed;
             PatrolRadius = ZombieData.PatrolRadius;
+            MaxHitPoints = ZombieData.MaxHitPoints;
         }
         else
         {

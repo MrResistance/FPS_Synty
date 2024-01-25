@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Damageable : MonoBehaviour
 {
-    [Header("Settings")]
     [SerializeField] private int m_maxHitPoints;
     [SerializeField] private int m_currentHitPoints;
 
@@ -13,6 +12,12 @@ public class Damageable : MonoBehaviour
     {
         m_currentHitPoints = m_maxHitPoints;
     }
+
+    public void SetMaxHitPoints(int amount)
+    {
+        m_maxHitPoints = amount;
+    }
+
     public void GainHitPoints(int amount)
     {
         m_currentHitPoints += amount;

@@ -386,14 +386,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.033333335
-    functionName: Fire
+    functionName: Shoot
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.06666667
-    functionName: StopFire
+    functionName: StopShooting
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -401,7 +401,7 @@ AnimationClip:
     messageOptions: 0
   - time: 0.06666667
     functionName: ResetTrigger
-    data: Fire
+    data: Shoot
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0

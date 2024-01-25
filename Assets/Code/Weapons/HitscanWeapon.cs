@@ -1,17 +1,27 @@
 using UnityEngine;
 
-public class HitscanWeapon : Weapon
+public class HitscanWeapon : MonoBehaviour
 {
-    public override void Fire()
-    {
-        base.Fire();
-        if (m_currentlyFiring)
-        {
-            HitCalculation();
-        }
-    }
+    [SerializeField] private Weapon m_weapon;
 
-    private Vector3 HitCalculation()
+    private void Start()
+    {
+        m_weapon.OnShoot += HitCalculation;
+    }
+    private void OnEnable()
+    {
+        m_weapon.OnShoot -= HitCalculation;
+        m_weapon.OnShoot += HitCalculation;
+    }
+    private void OnDisable()
+    {
+        m_weapon.OnShoot -= HitCalculation;
+    }
+    private void OnDestroy()
+    {
+        m_weapon.OnShoot -= HitCalculation;
+    }
+    private void HitCalculation()
     {
         // Get the center point of the screen
         Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
@@ -19,29 +29,23 @@ public class HitscanWeapon : Weapon
         // Create a ray from the center of the screen
         Ray ray = Camera.main.ScreenPointToRay(screenCenter);
 
-        if (Physics.Raycast(ray, out m_raycastHit, m_effectiveRange, GameSettings.Instance.DamageableLayer))
+        if (Physics.Raycast(ray, out m_weapon.m_raycastHit, m_weapon.m_effectiveRange, GameSettings.Instance.DamageableLayer))
         {
-            if (m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
+            if (m_weapon.m_raycastHit.collider.TryGetComponent<Rigidbody>(out _))
             {
-                m_raycastHit.rigidbody.AddExplosionForce(m_hitForce, m_raycastHit.point, 1);
+                m_weapon.m_raycastHit.rigidbody.AddExplosionForce(m_weapon.m_hitForce, m_weapon.m_raycastHit.point, 1);
             }
             
-            if (m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
+            if (m_weapon.m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
             {
-                damageableBodyPart.LoseHitPoints(m_damage);
-                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.point, m_raycastHit.transform.rotation);
+                damageableBodyPart.LoseHitPoints(m_weapon.m_damage);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_weapon.m_raycastHit.point, m_weapon.m_raycastHit.transform.rotation);
             }
-            else if (m_raycastHit.collider.TryGetComponent(out Damageable damageable))
+            else if (m_weapon.m_raycastHit.collider.TryGetComponent(out Damageable damageable))
             {
-                damageable.LoseHitPoints(m_damage);
-                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_raycastHit.point, m_raycastHit.transform.rotation);
+                damageable.LoseHitPoints(m_weapon.m_damage);
+                ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_weapon.m_raycastHit.point, m_weapon.m_raycastHit.transform.rotation);
             }
-
-            return m_raycastHit.point;
-        }
-        else
-        {
-            return Vector3.zero;
         }
     }
 }

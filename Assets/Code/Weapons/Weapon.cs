@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -15,9 +16,9 @@ public class Weapon : MonoBehaviour
     public enum FireMode { semiAuto, fullAuto }
 
     //Stats
-    protected float m_hitForce = 20;
-    protected int m_damage = 10;
-    protected int m_effectiveRange = 100;
+    public float m_hitForce = 20;
+    public int m_damage = 10;
+    public int m_effectiveRange = 100;
     private float m_fireRateCooldown = 0.1f;
 
     //Ammo
@@ -37,7 +38,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] private List<AudioClip> m_ejectMag;
     [SerializeField] private List<AudioClip> m_insertMag;
     [SerializeField] private List<AudioClip> m_safetySwitch;
-    [SerializeField] private List<AudioClip> m_fire;
+    [SerializeField] private List<AudioClip> m_shot;
     [SerializeField] private List<AudioClip> m_slide;
 
 
@@ -52,11 +53,13 @@ public class Weapon : MonoBehaviour
     public Transform Barrel => m_barrel;
     public Transform Crosshair => m_crosshair;
 
-    protected RaycastHit m_raycastHit;
+    public RaycastHit m_raycastHit;
     private int m_amountToReload;
 
     private float m_lastTimeFired;
-    protected bool m_currentlyFiring = false;
+    protected bool m_currentlyShooting = false;
+
+    public event Action OnShoot;
 
     #region Event Subscriptions
     protected void Start()
@@ -122,27 +125,27 @@ public class Weapon : MonoBehaviour
 
     public void ReceivePrimaryPressedEvents()
     {
-        PlayerInputs.Instance.OnPrimaryPressed -= RequestFire;
-        PlayerInputs.Instance.OnPrimaryPressed += RequestFire;
+        PlayerInputs.Instance.OnPrimaryPressed -= RequestShot;
+        PlayerInputs.Instance.OnPrimaryPressed += RequestShot;
     }
 
     public void ReceivePrimaryHeldEvents()
     {
-        PlayerInputs.Instance.OnPrimaryHeld -= RequestFire;
-        PlayerInputs.Instance.OnPrimaryHeld += RequestFire;
-        PlayerInputs.Instance.OnPrimaryReleased -= StopFire;
-        PlayerInputs.Instance.OnPrimaryReleased += StopFire;
+        PlayerInputs.Instance.OnPrimaryHeld -= RequestShot;
+        PlayerInputs.Instance.OnPrimaryHeld += RequestShot;
+        PlayerInputs.Instance.OnPrimaryReleased -= StopShooting;
+        PlayerInputs.Instance.OnPrimaryReleased += StopShooting;
     }
 
     public void StopReceivingPrimaryPressedEvents()
     {
-        PlayerInputs.Instance.OnPrimaryPressed -= RequestFire;
+        PlayerInputs.Instance.OnPrimaryPressed -= RequestShot;
     }
 
     public void StopReceivingPrimaryHeldEvents()
     {
-        PlayerInputs.Instance.OnPrimaryHeld -= RequestFire;
-        PlayerInputs.Instance.OnPrimaryReleased -= StopFire;
+        PlayerInputs.Instance.OnPrimaryHeld -= RequestShot;
+        PlayerInputs.Instance.OnPrimaryReleased -= StopShooting;
     }
     #endregion
 
@@ -163,7 +166,7 @@ public class Weapon : MonoBehaviour
         m_ejectMag = m_weaponData.EjectMag_SFX;
         m_insertMag = m_weaponData.InsertMag_SFX;
         m_safetySwitch = m_weaponData.SafetySwitch_SFX;
-        m_fire = m_weaponData.Fire_SFX;
+        m_shot = m_weaponData.Fire_SFX;
         m_slide = m_weaponData.Slide_SFX;
 
 
@@ -178,30 +181,16 @@ public class Weapon : MonoBehaviour
             WeaponRig.Instance.UpdateAmmoCounterMethod();
             if (m_cockWeapon.Count > 0)
             {
-                WeaponRig.Instance.AudioSource.PlayOneShot(m_cockWeapon[Random.Range(0, m_cockWeapon.Count)]);
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_cockWeapon[UnityEngine.Random.Range(0, m_cockWeapon.Count)]);
             }
         }
     }
-    protected void RequestFire()
-    {
-        if (Time.time >= m_lastTimeFired + m_fireRateCooldown && !m_currentlyFiring)
-        {
-            m_lastTimeFired = Time.time;
-            if (m_currentAmmoInClip > 0)
-            {
-                m_currentlyFiring = true;
-                m_animator.SetTrigger("Fire");
-            }
-            else if (m_dryFire.Count > 0)
-            {
-                WeaponRig.Instance.AudioSource.PlayOneShot(m_dryFire[Random.Range(0, m_dryFire.Count)]);
-            }
-        }
-    }
+    
 
+    #region Reloading
     public void Reload()
     {
-        int reloadRequestResult = ReloadRequest();
+        int reloadRequestResult = RequestReload();
         if (reloadRequestResult > 0)
         {
             if (!GameSettings.Instance.RealisticReloadingAmmoCount)
@@ -215,7 +204,7 @@ public class Weapon : MonoBehaviour
 
             if (m_ejectMag.Count > 0)
             {
-                WeaponRig.Instance.AudioSource.PlayOneShot(m_ejectMag[Random.Range(0, m_ejectMag.Count)]);
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_ejectMag[UnityEngine.Random.Range(0, m_ejectMag.Count)]);
             }
             
             m_currentAmmoInClip = 0;
@@ -228,7 +217,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    protected int ReloadRequest()
+    protected int RequestReload()
     {
         if (m_currentReserveAmmo == 0)
         {
@@ -259,12 +248,12 @@ public class Weapon : MonoBehaviour
 
         if (m_insertMag.Count > 0)
         {
-            WeaponRig.Instance.AudioSource.PlayOneShot(m_insertMag[Random.Range(0, m_insertMag.Count)]);
+            WeaponRig.Instance.AudioSource.PlayOneShot(m_insertMag[UnityEngine.Random.Range(0, m_insertMag.Count)]);
         }
         
         WeaponRig.Instance.UpdateAmmoCounterMethod();
     }
-
+    #endregion
     public void GainReserveAmmo(int amount)
     {
         m_currentReserveAmmo += amount;
@@ -275,27 +264,46 @@ public class Weapon : MonoBehaviour
         m_currentReserveAmmo -= amount;    
     }
 
-    public virtual void Fire()
+    #region Shooting
+    public virtual void Shoot()
     {
-        if (m_currentlyFiring)
+        if (m_currentlyShooting)
         {
             m_currentAmmoInClip--;
             WeaponRig.Instance.UpdateAmmoCounterMethod();
 
-            if (m_fire.Count > 0)
+            OnShoot?.Invoke();
+
+            if (m_shot.Count > 0)
             {
-                WeaponRig.Instance.AudioSource.PlayOneShot(m_fire[Random.Range(0, m_fire.Count)]);
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_shot[UnityEngine.Random.Range(0, m_shot.Count)]);
             }
             
             m_gunshotFX.Play();
         }
     }
-
-    protected void StopFire()
+    protected void RequestShot()
     {
-        m_currentlyFiring = false;
+        if (Time.time >= m_lastTimeFired + m_fireRateCooldown && !m_currentlyShooting)
+        {
+            m_lastTimeFired = Time.time;
+            if (m_currentAmmoInClip > 0)
+            {
+                m_currentlyShooting = true;
+                m_animator.SetTrigger("Shoot");
+            }
+            else if (m_dryFire.Count > 0)
+            {
+                WeaponRig.Instance.AudioSource.PlayOneShot(m_dryFire[UnityEngine.Random.Range(0, m_dryFire.Count)]);
+            }
+        }
+    }
+    protected void StopShooting()
+    {
+        m_currentlyShooting = false;
         m_gunshotFX.Stop();
     }
+    #endregion
 
     public void ResetTrigger(string value)
     {

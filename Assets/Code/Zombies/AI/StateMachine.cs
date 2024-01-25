@@ -13,13 +13,13 @@ public class StateMachine
     public void Initialize(IState startingState)
     {
         CurrentState = startingState;
-        startingState.Enter();
+        CurrentState.Enter();
     }
     public void TransitionTo(IState nextState)
     {
         CurrentState.Exit();
         CurrentState = nextState;
-        nextState.Enter();
+        CurrentState.Enter();
     }
     public void Update()
     {
