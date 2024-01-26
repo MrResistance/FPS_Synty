@@ -36,9 +36,9 @@ public class HitscanWeapon : MonoBehaviour
                 m_weapon.m_raycastHit.rigidbody.AddExplosionForce(m_weapon.m_hitForce, m_weapon.m_raycastHit.point, 1);
             }
             
-            if (m_weapon.m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
+            if (m_weapon.m_raycastHit.collider.TryGetComponent(out DamageableChild damageableChild))
             {
-                damageableBodyPart.LoseHitPoints(m_weapon.m_damage, damageableBodyPart.transform.InverseTransformPoint(m_weapon.m_raycastHit.point));
+                damageableChild.LoseHitPoints(m_weapon.m_damage, damageableChild.transform.InverseTransformPoint(m_weapon.m_raycastHit.point));
                 ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_weapon.m_raycastHit.point, m_weapon.m_raycastHit.transform.rotation);
             }
             else if (m_weapon.m_raycastHit.collider.TryGetComponent(out Damageable damageable))

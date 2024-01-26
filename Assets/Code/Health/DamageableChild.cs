@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class DamageableBodyPart : MonoBehaviour
+public class DamageableChild : MonoBehaviour
 {
     [SerializeField] private Damageable m_damageable;
     [SerializeField] private int m_damageModifier = 1;
