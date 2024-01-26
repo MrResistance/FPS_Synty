@@ -8,4 +8,9 @@ public class DamageableBodyPart : MonoBehaviour
     {
         m_damageable.LoseHitPoints(damage * m_damageModifier);
     }
+    public void LoseHitPoints(int damage, Vector3 hitPosition)
+    {
+        m_damageable.LoseHitPoints(damage * m_damageModifier);
+        m_damageable.HitPosition = hitPosition;
+    }
 }

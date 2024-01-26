@@ -15,9 +15,10 @@ public class Zombie : MonoBehaviour
     public int Damage;
     public List<Damageable> objectsToDamage;
 
-    public LayerMask DetectionLayer;
+    [Header("Targeting")]
     [Tooltip("This will usually be the player or a patrol point.")] public Vector3 Target;
     public Transform TargetTransform;
+    public LayerMask DetectionLayer;
     public float DetectionRadius = 15;
     public float PatrolRadius = 10;
     public List<Vector3> PatrolPoints = new List<Vector3>();
@@ -30,12 +31,12 @@ public class Zombie : MonoBehaviour
     public List<AudioClip> DeathSFX;
 
     [Header("References")]
-    [HideInInspector] public StateMachine ZombieStateMachine;
     public ZombieData ZombieData;
     public Animator Animator;
     public NavMeshAgent NavMeshAgent;
     public Rigidbody Rigidbody;
     public Damageable Damageable;
+    [HideInInspector] public StateMachine ZombieStateMachine;
 
     private void Start()
     {
@@ -44,24 +45,59 @@ public class Zombie : MonoBehaviour
         ZombieStateMachine.Initialize(ZombieStateMachine.idleState);
         Damageable.SetMaxHitPoints(MaxHitPoints);
         Damageable.GainHitPoints(MaxHitPoints);
-        Damageable.OnDeath += Die;
+        Damageable.OnDeath += RequestDeath;
+        Damageable.OnHit += RequestHit;
     }
+
     private void OnEnable()
     {
-        Damageable.OnDeath += Die;
+        Damageable.OnDeath += RequestDeath;
     }
     private void OnDisable()
     {
-        Damageable.OnDeath -= Die;
+        Damageable.OnDeath -= RequestDeath;
     }
     private void OnDestroy()
     {
-        Damageable.OnDeath -= Die;
+        Damageable.OnDeath -= RequestDeath;
     }
-    private void Die()
+
+    private void RequestDeath()
     {
-        Animator.enabled = false;
-        NavMeshAgent.enabled = false;
+        Animator.SetBool("Dead", true);
+    }
+    private void RequestHit()
+    {
+        if (Damageable.HitPosition.x.CompareTo(0) > Damageable.HitPosition.z.CompareTo(0))
+        {
+            if (Damageable.HitPosition.x > 0)
+            {
+                Animator.Play("GetHitLightRightZombie");
+            }
+            else
+            {
+                Animator.Play("GetHitLightLeftZombie");
+            }
+        }
+        else
+        {
+            if (Damageable.HitPosition.z > 0)
+            {
+                Animator.Play("GetHitLightFrontZombie");
+            }
+            else
+            {
+                Animator.Play("GetHitLightBackZombie");
+            }
+        }
+    }
+    public void Die()
+    {
+        if (Animator.GetBool("Dead"))
+        {
+            Animator.enabled = false;
+            NavMeshAgent.enabled = false;
+        }
     }
 
     private void Update()
@@ -153,5 +189,7 @@ public class Zombie : MonoBehaviour
     {
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireSphere(transform.position, PatrolRadius);
+        Gizmos.color = Color.cyan;
+        Gizmos.DrawLine(transform.position, Target);
     }
 }

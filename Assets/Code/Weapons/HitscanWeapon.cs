@@ -38,12 +38,13 @@ public class HitscanWeapon : MonoBehaviour
             
             if (m_weapon.m_raycastHit.collider.TryGetComponent(out DamageableBodyPart damageableBodyPart))
             {
-                damageableBodyPart.LoseHitPoints(m_weapon.m_damage);
+                damageableBodyPart.LoseHitPoints(m_weapon.m_damage, damageableBodyPart.transform.InverseTransformPoint(m_weapon.m_raycastHit.point));
                 ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_weapon.m_raycastHit.point, m_weapon.m_raycastHit.transform.rotation);
             }
             else if (m_weapon.m_raycastHit.collider.TryGetComponent(out Damageable damageable))
             {
                 damageable.LoseHitPoints(m_weapon.m_damage);
+                damageable.HitPosition = damageable.transform.InverseTransformPoint(m_weapon.m_raycastHit.point);
                 ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_weapon.m_raycastHit.point, m_weapon.m_raycastHit.transform.rotation);
             }
         }

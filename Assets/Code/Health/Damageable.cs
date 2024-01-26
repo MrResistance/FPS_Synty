@@ -5,9 +5,12 @@ public class Damageable : MonoBehaviour
 {
     [SerializeField] private int m_maxHitPoints;
     [SerializeField] private int m_currentHitPoints;
+    public int CurrentHitPoints => m_currentHitPoints;
 
-    public event Action<int> OnHitPointsChange;
+    public event Action OnHit;
     public event Action OnDeath;
+
+    public Vector3 HitPosition;
     private void Start()
     {
         m_currentHitPoints = m_maxHitPoints;
@@ -25,7 +28,7 @@ public class Damageable : MonoBehaviour
         {
             m_currentHitPoints = m_maxHitPoints;
         }
-        OnHitPointsChange?.Invoke(m_currentHitPoints);
+        OnHit?.Invoke();
     }
 
     public void LoseHitPoints(int amount)
@@ -34,14 +37,8 @@ public class Damageable : MonoBehaviour
         if (m_currentHitPoints <= 0)
         {
             m_currentHitPoints = 0;
-            Die();
+            OnDeath?.Invoke();
         }
-        OnHitPointsChange?.Invoke(m_currentHitPoints);
-    }
-
-    private void Die()
-    {
-        OnDeath?.Invoke();
-        //gameObject.SetActive(false);
+        OnHit?.Invoke();
     }
 }
