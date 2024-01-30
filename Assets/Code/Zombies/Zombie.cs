@@ -45,27 +45,23 @@ public class Zombie : MonoBehaviour
         ZombieStateMachine.Initialize(ZombieStateMachine.idleState);
         Damageable.SetMaxHitPoints(MaxHitPoints);
         Damageable.GainHitPoints(MaxHitPoints);
-        Damageable.OnDeath += RequestDeath;
+        Damageable.OnDeath += Die;
         Damageable.OnHit += RequestHit;
     }
 
     private void OnEnable()
     {
-        Damageable.OnDeath += RequestDeath;
+        Damageable.OnDeath += Die;
     }
     private void OnDisable()
     {
-        Damageable.OnDeath -= RequestDeath;
+        Damageable.OnDeath -= Die;
     }
     private void OnDestroy()
     {
-        Damageable.OnDeath -= RequestDeath;
+        Damageable.OnDeath -= Die;
     }
 
-    private void RequestDeath()
-    {
-        Animator.SetBool("Dead", true);
-    }
     private void RequestHit()
     {
         if (Damageable.HitPosition.x.CompareTo(0) > Damageable.HitPosition.z.CompareTo(0))
@@ -91,13 +87,12 @@ public class Zombie : MonoBehaviour
             }
         }
     }
+
     public void Die()
     {
-        if (Animator.GetBool("Dead"))
-        {
-            Animator.enabled = false;
-            NavMeshAgent.enabled = false;
-        }
+        Rigidbody.AddForceAtPosition(Damageable.HitPosition * 5f, Damageable.HitPosition, ForceMode.Impulse);
+        Animator.enabled = false;
+        NavMeshAgent.enabled = false;
     }
 
     private void Update()
