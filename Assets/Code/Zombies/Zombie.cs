@@ -90,7 +90,7 @@ public class Zombie : MonoBehaviour
 
     public void Die()
     {
-        Rigidbody.AddForceAtPosition(Damageable.HitPosition * 5f, Damageable.HitPosition, ForceMode.Impulse);
+        Rigidbody.AddForceAtPosition(Damageable.HitPosition * 10f, Damageable.HitPosition, ForceMode.Impulse);
         Animator.enabled = false;
         NavMeshAgent.enabled = false;
     }

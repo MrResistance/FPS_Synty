@@ -190,6 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_currentWeapon: {fileID: 0}
+  AudioSource: {fileID: 0}
   m_camera: {fileID: 1285353782}
   m_sniperScopeCamera: {fileID: 0}
   m_SniperScope_FOV: 2.5
@@ -5145,6 +5146,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199115488141885032, guid: 0e56aef02a6fcc6408400ea7c75e13a7, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0e56aef02a6fcc6408400ea7c75e13a7, type: 3}
 --- !u!4 &632984778801642191 stripped
@@ -5235,6 +5240,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199090720937877538, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 199330513609412702, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5243,6 +5252,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199592190327692758, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
     - target: {fileID: 199636261051362214, guid: 20f6e929a1aba9a4691c344f454ab272, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -5386,6 +5399,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1450328213}
   m_barrel: {fileID: 1781110907}
   m_gunshotFX: {fileID: 0}
@@ -5535,6 +5558,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1410656332}
   m_barrel: {fileID: 1771596042377301989}
   m_gunshotFX: {fileID: 0}
@@ -5673,6 +5706,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1890487181}
   m_barrel: {fileID: 2117745615}
   m_gunshotFX: {fileID: 0}
@@ -5818,6 +5861,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 5
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1499393099}
   m_barrel: {fileID: 2097946969}
   m_gunshotFX: {fileID: 0}
@@ -5984,6 +6037,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1158403852}
   m_barrel: {fileID: 879104434}
   m_gunshotFX: {fileID: 0}
@@ -6084,6 +6147,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199811285553872852, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
 --- !u!4 &1771106309468806636 stripped
@@ -6503,14 +6570,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9759b4e8b5cc35e43816b40974690528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponData: {fileID: 11400000, guid: 60d8303341ecbda41833b1e979f68123, type: 2}
-  WeaponUnlocked: 1
-  Type: 0
-  WeaponFireMode: 0
-  m_animator: {fileID: 1442006147}
-  m_barrel: {fileID: 815723611}
-  m_gunshotFX: {fileID: 6049545743913453068}
-  m_crosshair: {fileID: 1771575553638233583}
+  m_weapon: {fileID: 0}
 --- !u!4 &1771205464658250504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4533234680962362, guid: e93050ee6a1feb949b8fdc9a97d295b1, type: 3}
@@ -6702,6 +6762,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1450328213}
   m_barrel: {fileID: 0}
   m_gunshotFX: {fileID: 0}
@@ -6839,6 +6909,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1999773745}
   m_barrel: {fileID: 279364334}
   m_gunshotFX: {fileID: 0}
@@ -6980,14 +7060,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9759b4e8b5cc35e43816b40974690528, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_weaponData: {fileID: 11400000, guid: 9599b5bbf614fef46a6939f7bacb1f5e, type: 2}
-  WeaponUnlocked: 1
-  Type: 0
-  WeaponFireMode: 0
-  m_animator: {fileID: 1246744462}
-  m_barrel: {fileID: 1545985550}
-  m_gunshotFX: {fileID: 6792108640575744734}
-  m_crosshair: {fileID: 1771575553638233583}
+  m_weapon: {fileID: 0}
 --- !u!4 &1768543415599484557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415442749456168, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
@@ -7130,6 +7203,16 @@ MonoBehaviour:
   WeaponUnlocked: 1
   Type: 5
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1969534029}
   m_barrel: {fileID: 245002621}
   m_gunshotFX: {fileID: 1893159194122482914}
@@ -7277,6 +7360,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1495923212}
   m_barrel: {fileID: 1771376473822795531}
   m_gunshotFX: {fileID: 0}
@@ -7526,6 +7619,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1869207068}
   m_barrel: {fileID: 1862561886}
   m_gunshotFX: {fileID: 0}
@@ -7827,6 +7930,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 125623807}
   m_barrel: {fileID: 1768494652178426057}
   m_gunshotFX: {fileID: 0}
@@ -7993,6 +8106,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1332506505}
   m_barrel: {fileID: 449022694}
   m_gunshotFX: {fileID: 0}
@@ -8384,6 +8507,16 @@ MonoBehaviour:
   WeaponUnlocked: 1
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 477676166}
   m_barrel: {fileID: 2060123841}
   m_gunshotFX: {fileID: 6792108640575744734}
@@ -8646,6 +8779,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1754324178}
   m_barrel: {fileID: 2017965510}
   m_gunshotFX: {fileID: 0}
@@ -8983,6 +9126,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1789588221}
   m_barrel: {fileID: 1768557262135548867}
   m_gunshotFX: {fileID: 0}
@@ -9149,6 +9302,16 @@ MonoBehaviour:
   WeaponUnlocked: 1
   Type: 0
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1446433025}
   m_barrel: {fileID: 1771267375305457689}
   m_gunshotFX: {fileID: 0}
@@ -9293,6 +9456,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 5
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 1834843706}
   m_barrel: {fileID: 42900735}
   m_gunshotFX: {fileID: 0}
@@ -9439,6 +9612,16 @@ MonoBehaviour:
   WeaponUnlocked: 0
   Type: 5
   WeaponFireMode: 0
+  m_hitForce: 20
+  m_damage: 10
+  m_effectiveRange: 100
+  m_cockWeapon: []
+  m_dryFire: []
+  m_ejectMag: []
+  m_insertMag: []
+  m_safetySwitch: []
+  m_shot: []
+  m_slide: []
   m_animator: {fileID: 817474728}
   m_barrel: {fileID: 1771552754417044575}
   m_gunshotFX: {fileID: 0}
@@ -9549,10 +9732,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199428832327523654, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 199629780736139302, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199629780736139302, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab32929843ea40d48ae16ecaa85f794a, type: 3}
 --- !u!4 &2039349647184381670 stripped
@@ -9659,6 +9850,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199160508611648734, guid: c0507a544f1ee7e4caa7785ef90ff92a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 199160574501252804, guid: c0507a544f1ee7e4caa7785ef90ff92a, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -9879,10 +10074,18 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199315634917243540, guid: 07277f9efe2374047bf57bdba847e02b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e823cd5b5d27c0f4b8256e7c12ee3e6d, type: 2}
     - target: {fileID: 199508909343887398, guid: 07277f9efe2374047bf57bdba847e02b, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199508909343887398, guid: 07277f9efe2374047bf57bdba847e02b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 199519327711384246, guid: 07277f9efe2374047bf57bdba847e02b, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -9989,6 +10192,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199811285553872852, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
 --- !u!4 &5308030488710811770 stripped
@@ -10083,6 +10290,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199030177319574186, guid: 9e08e7eea9b67324f9c545b241004b0b, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 199757056052916014, guid: 9e08e7eea9b67324f9c545b241004b0b, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
@@ -10092,11 +10303,6 @@ PrefabInstance:
 --- !u!4 &5847767673192874078 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4869716791573198, guid: 9e08e7eea9b67324f9c545b241004b0b, type: 3}
-  m_PrefabInstance: {fileID: 5851932162477537936}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &6049545743913453068 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 198845034460101788, guid: 9e08e7eea9b67324f9c545b241004b0b, type: 3}
   m_PrefabInstance: {fileID: 5851932162477537936}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6666241815719585950
@@ -10190,6 +10396,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199811285553872852, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b46264f9e12caed4cb53e7c2ad64aa54, type: 3}
 --- !u!4 &6670828705601340368 stripped
@@ -10277,6 +10487,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.size
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 199154096170954130, guid: 1d637701e2c3c514ca904aaddb4cc7f8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
     - target: {fileID: 199372441741929454, guid: 1d637701e2c3c514ca904aaddb4cc7f8, type: 3}
       propertyPath: m_Materials.Array.size
       value: 1
