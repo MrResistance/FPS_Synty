@@ -4,6 +4,7 @@ public class HitscanWeapon : MonoBehaviour
 {
     [SerializeField] private Weapon m_weapon;
 
+    #region Event Subscriptions
     private void Start()
     {
         m_weapon.OnShoot += HitCalculation;
@@ -21,6 +22,8 @@ public class HitscanWeapon : MonoBehaviour
     {
         m_weapon.OnShoot -= HitCalculation;
     }
+    #endregion
+
     private void HitCalculation()
     {
         // Get the center point of the screen

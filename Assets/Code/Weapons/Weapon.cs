@@ -82,6 +82,7 @@ public class Weapon : MonoBehaviour
                 ReceivePrimaryHeldEvents();
                 break;
         }
+        PlayerInputs.Instance.OnReload -= Reload;
         PlayerInputs.Instance.OnReload += Reload;
     }
     protected void OnEnable()
@@ -193,13 +194,13 @@ public class Weapon : MonoBehaviour
         int reloadRequestResult = RequestReload();
         if (reloadRequestResult > 0)
         {
-            if (!GameSettings.Instance.RealisticReloadingAmmoCount)
+            if (GameSettings.Instance.RealisticReloadingAmmoCount)
             {
-                LoseReserveAmmo(reloadRequestResult - m_currentAmmoInClip);
+                LoseReserveAmmo(reloadRequestResult);
             }
             else
             {
-                LoseReserveAmmo(reloadRequestResult);
+                LoseReserveAmmo(reloadRequestResult - m_currentAmmoInClip);
             }
 
             if (m_ejectMag.Count > 0)
