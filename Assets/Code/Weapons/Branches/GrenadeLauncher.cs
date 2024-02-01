@@ -38,9 +38,4 @@ public class GrenadeLauncher : Weapon
         // Optionally, snap to the exact target rotation
         m_grenadeLauncherCylinder.transform.localRotation = m_targetRotation;
     }
-
-    public void Empty()
-    {
-        //This is an empty function for the sole purpose of extending the fire animation for the grenade launcher
-    }
 }
