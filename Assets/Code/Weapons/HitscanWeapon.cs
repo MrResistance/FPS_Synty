@@ -3,7 +3,7 @@ using UnityEngine;
 public class HitscanWeapon : MonoBehaviour
 {
     [SerializeField] private Weapon m_weapon;
-
+    [SerializeField] private bool m_rayFromBarrel = false;
     #region Event Subscriptions
     private void Start()
     {
@@ -26,11 +26,20 @@ public class HitscanWeapon : MonoBehaviour
 
     private void HitCalculation()
     {
-        // Get the center point of the screen
-        Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        Ray ray;
+        if (!m_rayFromBarrel)
+        {
+            // Get the center point of the screen
+            Vector3 screenCenter = new Vector3(Screen.width / 2, Screen.height / 2, 0);
 
-        // Create a ray from the center of the screen
-        Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+            // Create a ray from the center of the screen
+            ray = Camera.main.ScreenPointToRay(screenCenter);
+        }
+        else
+        {
+            ray = new Ray(m_weapon.Barrel.position, m_weapon.transform.forward);
+        }
+        
 
         if (Physics.Raycast(ray, out m_weapon.m_raycastHit, m_weapon.m_effectiveRange, GameSettings.Instance.DamageableLayer))
         {
