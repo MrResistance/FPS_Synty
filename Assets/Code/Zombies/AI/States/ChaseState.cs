@@ -12,14 +12,14 @@ public class ChaseState : IState
         // code that runs when we first enter the state
         m_zombie.CurrentState = Zombie.State.chase;
         m_zombie.Animator.ResetTrigger("Attack");
+        m_zombie.NavMeshAgent.isStopped = false;
     }
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
-
+        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
         RunTowardsCurrentTarget();
-        RotateTowardsTarget();
     }
     public void Exit()
     {
@@ -34,12 +34,5 @@ public class ChaseState : IState
         {
             m_zombie.ZombieStateMachine.TransitionTo(m_zombie.ZombieStateMachine.attackState);
         }
-    }
-
-    private void RotateTowardsTarget()
-    {
-        m_zombie.NavMeshAgent.enabled = true;
-        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
-        m_zombie.transform.LookAt(m_zombie.Target, Vector3.up);
     }
 }
