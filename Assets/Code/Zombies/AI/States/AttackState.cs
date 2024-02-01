@@ -14,20 +14,23 @@ public class AttackState : IState
         // code that runs when we first enter the state
         m_zombie.CurrentState = Zombie.State.attack;
         m_zombie.Animator.SetFloat("MoveSpeed", 0);
+        m_zombie.NavMeshAgent.isStopped = true;
     }
     public void Update()
     {
         // Here we add logic to detect if the conditions exist to
         // transition to another state
-        
+        if (!m_zombie.NavMeshAgent.isStopped)
+        {
+            m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
+        }
 
         if (m_zombie.NavMeshAgent.remainingDistance >= 1.5f)
         {
             m_zombie.ZombieStateMachine.TransitionTo(m_zombie.ZombieStateMachine.chaseState);
             return;
         }
-        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
-        RotateTowardsTarget();
+        
         AttackTarget();
     }
     public void Exit()
@@ -42,10 +45,5 @@ public class AttackState : IState
             m_lastTimeAttacked = Time.time;
             m_zombie.Animator.SetTrigger("Attack");
         }
-    }
-
-    private void RotateTowardsTarget()
-    {
-        m_zombie.transform.LookAt(m_zombie.Target, Vector3.up);
     }
 }

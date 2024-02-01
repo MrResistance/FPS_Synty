@@ -37,6 +37,8 @@ public class Zombie : MonoBehaviour
     public Rigidbody Rigidbody;
     public Damageable Damageable;
     [HideInInspector] public StateMachine ZombieStateMachine;
+    [SerializeField] private GameObject m_detection;
+    [SerializeField] private GameObject m_attackHitbox;
 
     private void Start()
     {
@@ -52,18 +54,22 @@ public class Zombie : MonoBehaviour
     private void OnEnable()
     {
         Damageable.OnDeath += Die;
+        Damageable.OnHit += RequestHit;
     }
     private void OnDisable()
     {
         Damageable.OnDeath -= Die;
+        Damageable.OnHit -= RequestHit;
     }
     private void OnDestroy()
     {
         Damageable.OnDeath -= Die;
+        Damageable.OnHit -= RequestHit;
     }
 
     private void RequestHit()
     {
+        StopNavMeshAgent();
         if (Damageable.HitPosition.x.CompareTo(0) > Damageable.HitPosition.z.CompareTo(0))
         {
             if (Damageable.HitPosition.x > 0)
@@ -93,14 +99,15 @@ public class Zombie : MonoBehaviour
         Rigidbody.AddForceAtPosition(Damageable.HitPosition * 10f, Damageable.HitPosition, ForceMode.Impulse);
         Animator.enabled = false;
         NavMeshAgent.enabled = false;
+        m_detection.SetActive(false);
+        m_attackHitbox.SetActive(false);
     }
 
     private void Update()
     {
-        if (NavMeshAgent.enabled)
+        if (Damageable.CurrentHitPoints > 0)
         {
             ZombieStateMachine.Update();
-            NavMeshAgent.transform.localPosition = Vector3.zero;
         }
         if (TargetTransform != null)
         {
@@ -179,6 +186,22 @@ public class Zombie : MonoBehaviour
     }
 
     #endregion
+
+    public void StartNavMeshAgent()
+    {
+        if (NavMeshAgent.isActiveAndEnabled)
+        {
+            NavMeshAgent.isStopped = false;
+        }
+    }
+
+    public void StopNavMeshAgent()
+    {
+        if (NavMeshAgent.isActiveAndEnabled)
+        {
+            NavMeshAgent.isStopped = true;
+        }
+    }
 
     private void OnDrawGizmosSelected()
     {

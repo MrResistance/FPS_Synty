@@ -12,6 +12,7 @@ public class IdleState : IState
         // code that runs when we first enter the state
         m_zombie.CurrentState = Zombie.State.idle;
         m_zombie.Animator.SetFloat("MoveSpeed", 0);
+        m_zombie.NavMeshAgent.isStopped = true;
     }
     public void Update()
     {

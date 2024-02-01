@@ -22,7 +22,6 @@ public class PatrolState : IState
         // Here we add logic to detect if the conditions exist to
         // transition to another state
         WalkTowardsCurrentTarget();
-        RotateTowardsTarget();
     }
 
     public void Exit()
@@ -62,13 +61,6 @@ public class PatrolState : IState
         }
     }
 
-    private void RotateTowardsTarget()
-    {
-        m_zombie.NavMeshAgent.enabled = true;
-        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
-        m_zombie.transform.rotation = Quaternion.Slerp(m_zombie.transform.rotation, m_zombie.NavMeshAgent.transform.rotation, m_zombie.RotationSpeed / Time.deltaTime);
-    }
-
     private Vector3 GetNextPatrolPoint()
     {
         if (m_zombie.PatrolPoints.Count > 0)
@@ -104,6 +96,8 @@ public class PatrolState : IState
     private void InitialisePatrolSettings()
     {
         m_zombie.CurrentState = Zombie.State.patrol;
+        m_zombie.NavMeshAgent.SetDestination(m_zombie.Target);
+        m_zombie.NavMeshAgent.isStopped = false;
     }
     private void ClearPatrolPoints()
     {
