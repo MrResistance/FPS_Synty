@@ -13,14 +13,20 @@ MonoBehaviour:
   m_Name: SM_Wep_MachineGun_01
   m_EditorClassIdentifier: 
   WeaponName: M249
-  Unlocked: 1
   WeaponType: 2
   FireMode: 1
   HitForce: 100
   Damage: 10
   EffectiveRange: 30
-  FireRateCooldown: 0.1
+  FireRateCooldown: 0.05
   MaxClipSize: 100
   CurrentAmmoInClip: 100
   MaxReserveAmmo: 500
   CurrentReserveAmmo: 500
+  CockWeapon_SFX: []
+  DryFire_SFX: []
+  EjectMag_SFX: []
+  InsertMag_SFX: []
+  SafetySwitch_SFX: []
+  Fire_SFX: []
+  Slide_SFX: []
