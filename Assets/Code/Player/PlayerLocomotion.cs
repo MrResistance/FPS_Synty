@@ -7,8 +7,8 @@ public class PlayerLocomotion : MonoBehaviour
     [SerializeField] private Rigidbody m_rb;
     [SerializeField] private float m_movementSpeed = 10;
     [SerializeField] private float m_jumpForce = 20;
-    private Vector3 moveDirection;
-    private Vector2 inputVector;
+    private Vector3 m_moveDirection;
+    private Vector2 m_inputVector;
 
     private void Start()
     {
@@ -45,14 +45,14 @@ public class PlayerLocomotion : MonoBehaviour
 
     void ProcessInputs()
     {
-        inputVector = PlayerInputs.Instance.moveInput;
-        moveDirection = transform.right * inputVector.x + transform.forward * inputVector.y;
-        moveDirection.Normalize(); // Ensures consistent movement speed in all directions
+        m_inputVector = PlayerInputs.Instance.moveInput;
+        m_moveDirection = transform.right * m_inputVector.x + transform.forward * m_inputVector.y;
+        m_moveDirection.Normalize(); // Ensures consistent movement speed in all directions
     }
 
     void MovePlayer()
     {
-        Vector3 targetVelocity = moveDirection * m_movementSpeed;
+        Vector3 targetVelocity = m_moveDirection * m_movementSpeed;
         // Set the velocity directly without acceleration or deceleration
         m_rb.velocity = new Vector3(targetVelocity.x, m_rb.velocity.y, targetVelocity.z);
     }
