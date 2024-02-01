@@ -7195,19 +7195,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &1766694252320419407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1765924876784420283}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9759b4e8b5cc35e43816b40974690528, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_weapon: {fileID: 1766694252320419403}
 --- !u!114 &1766694252320419403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7245,6 +7232,19 @@ MonoBehaviour:
   m_barrel: {fileID: 1545985550}
   m_gunshotFX: {fileID: 6792108640575744734}
   m_crosshair: {fileID: 1771575553638233583}
+--- !u!114 &1766694252320419407
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765924876784420283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9759b4e8b5cc35e43816b40974690528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_weapon: {fileID: 1766694252320419403}
 --- !u!4 &1768543415599484557 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4415442749456168, guid: 68317e2c4c57a6e45be7063240f91cbb, type: 3}
@@ -8675,7 +8675,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &451427947
+--- !u!114 &1388705644
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8684,7 +8684,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765760792805666679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5ec2bdcbec03a947998eba863017c29, type: 3}
+  m_Script: {fileID: 11500000, guid: 908fe366833fbdb4fb97d09dbaa1f44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPoolerTag: GrenadeLauncherAmmo
+  m_barrel: {fileID: 2060123841}
+--- !u!114 &3716807269777037318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765760792805666679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c1d91111ecc5d884aa6607e82b2efa0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_weaponData: {fileID: 11400000, guid: 53659b506fa87a74baa82d89baa59c9c, type: 2}
@@ -8703,12 +8717,9 @@ MonoBehaviour:
   m_slide: []
   m_animator: {fileID: 477676166}
   m_barrel: {fileID: 2060123841}
-  m_gunshotFX: {fileID: 6792108640575744734}
-  m_crosshair: {fileID: 1768336976684700398}
-  m_grenadeAmmoPrefab: {fileID: 1405211435293244, guid: fe347a2e8265ecb429049be8492d4ff9, type: 3}
-  m_grenadeLauncherCylinder: {fileID: 1771243035763482145}
-  m_barrelRotateSpeed: 300
---- !u!114 &1388705644
+  m_gunshotFX: {fileID: 5111916912804099388}
+  m_crosshair: {fileID: 1771575553638233583}
+--- !u!114 &7007921370119430055
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8717,11 +8728,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1765760792805666679}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 908fe366833fbdb4fb97d09dbaa1f44b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f419f3191be40e4fbc27a23ff856b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectPoolerTag: GrenadeLauncherAmmo
-  m_barrel: {fileID: 2060123841}
+  m_cylinder: {fileID: 1771243035763482145}
+  m_rotateSpeed: 300
 --- !u!4 &1771243035763482145 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4564243695660784, guid: b2db02f91acb81c499a6fe0235afc719, type: 3}
