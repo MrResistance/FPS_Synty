@@ -426,7 +426,7 @@ AnimationClip:
     functionName: RotateCylinder
     data: 
     objectReferenceParameter: {fileID: 0}
-    floatParameter: 50
+    floatParameter: 60
     intParameter: 0
     messageOptions: 0
   - time: 0.06666667
