@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Explosive : MonoBehaviour
 {
+    [SerializeField] private Rigidbody m_rb;
     [SerializeField] private float m_explosionRadius = 2f;
     [SerializeField] private float m_explosionForce = 100f;
     [SerializeField] private float m_explosionUpwardForceModifier = 1.5f;
@@ -11,10 +12,7 @@ public class Explosive : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         ObjectPooler.Instance.SpawnFromPool(m_objectPoolerExplosionTag, transform.position, transform.rotation);
-        if (TryGetComponent(out Rigidbody rb))
-        {
-            rb.velocity = Vector3.zero;
-        }
+        m_rb.velocity = Vector3.zero;
         ExplosionPhysics();
         OnExplode?.Invoke();
         gameObject.SetActive(false);

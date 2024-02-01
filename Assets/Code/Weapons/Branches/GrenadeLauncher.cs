@@ -6,8 +6,6 @@ public class GrenadeLauncher : Weapon
     [Header("Grenade Launcher Settings")]
     [SerializeField] GameObject m_grenadeAmmoPrefab;
     [SerializeField] Transform m_grenadeLauncherCylinder;
-    [SerializeField] float m_grenadeForwardForce = 20f;
-    [SerializeField] float m_grenadeUpwardForce = 5f;
     [SerializeField] float m_barrelRotateSpeed = 300f;
     private Quaternion m_targetRotation;
     private float currentRotationAngle = 0f; // Tracks the cumulative rotation
@@ -39,11 +37,6 @@ public class GrenadeLauncher : Weapon
 
         // Optionally, snap to the exact target rotation
         m_grenadeLauncherCylinder.transform.localRotation = m_targetRotation;
-    }
-
-    public void SpawnGrenade()
-    {
-        ObjectPooler.Instance.SpawnFromPool("GrenadeLauncherAmmo", Barrel.transform.position, Barrel.transform.rotation);
     }
 
     public void Empty()

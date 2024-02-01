@@ -2,7 +2,6 @@ using UnityEngine;
 public class RPG : Weapon
 {
     [SerializeField] private GameObject m_visualRocket;
-    [SerializeField] private float m_RocketForwardForce = 50f;
     public void SpawnRocket()
     {
         m_visualRocket.SetActive(false);
