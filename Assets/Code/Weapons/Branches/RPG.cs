@@ -3,14 +3,10 @@ public class RPG : Weapon
 {
     [SerializeField] private GameObject m_visualRocket;
     [SerializeField] private float m_RocketForwardForce = 50f;
-    public void LaunchRocket()
+    public void SpawnRocket()
     {
         m_visualRocket.SetActive(false);
-        var rocket = ObjectPooler.Instance.SpawnFromPool("RPG_Rocket", m_visualRocket.transform.position, m_visualRocket.transform.rotation);
-        if (rocket.TryGetComponent(out Rigidbody rb))
-        {
-            rb.AddForce(rocket.transform.forward * m_RocketForwardForce, ForceMode.Impulse);
-        }
+        ObjectPooler.Instance.SpawnFromPool("RPG_Rocket", m_visualRocket.transform.position, m_visualRocket.transform.rotation);
     }
 
     public override void ReloadComplete()

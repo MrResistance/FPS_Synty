@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: -1411020899279599121}
   - component: {fileID: 3759110864185347053}
   - component: {fileID: 3529723587192081117}
+  - component: {fileID: -513016866911858355}
   m_Layer: 0
   m_Name: RPG_Rocket
   m_TagString: Untagged
@@ -149,6 +150,21 @@ MonoBehaviour:
   m_areaShape: 0
   m_explosionRadius: 5
   m_baseDamage: 100
+--- !u!114 &-513016866911858355
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7360916113987056730}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11145d11443bdb941a6efe153e0cbda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rb: {fileID: -1411020899279599121}
+  m_upwardForce: 0
+  m_forwardForce: 50
 --- !u!1001 &1504903466928429493
 PrefabInstance:
   m_ObjectHideFlags: 0

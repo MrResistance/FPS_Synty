@@ -163,13 +163,13 @@ AnimationClip:
   m_Events:
   - time: 0.016666668
     functionName: ResetTrigger
-    data: Fire
+    data: Shoot
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 0.05
-    functionName: LaunchGrenade
+    functionName: SpawnGrenade
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

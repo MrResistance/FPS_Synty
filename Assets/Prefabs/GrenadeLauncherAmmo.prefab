@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 2445318699660523179}
   - component: {fileID: 9154970502364564710}
   - component: {fileID: -556090428648093263}
+  - component: {fileID: 522694455779388170}
   m_Layer: 0
   m_Name: GrenadeLauncherAmmo
   m_TagString: Untagged
@@ -130,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_explosionRadius: 2
-  m_explosionForce: 1000
+  m_explosionForce: 100
   m_explosionUpwardForceModifier: 1.5
   m_objectPoolerExplosionTag: SmallExplosion
 --- !u!114 &-556090428648093263
@@ -148,3 +149,18 @@ MonoBehaviour:
   m_areaShape: 0
   m_explosionRadius: 2
   m_baseDamage: 20
+--- !u!114 &522694455779388170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2687956275971646209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11145d11443bdb941a6efe153e0cbda3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_rb: {fileID: 2445318699660523179}
+  m_upwardForce: 5
+  m_forwardForce: 20

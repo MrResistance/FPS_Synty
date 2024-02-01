@@ -41,14 +41,9 @@ public class GrenadeLauncher : Weapon
         m_grenadeLauncherCylinder.transform.localRotation = m_targetRotation;
     }
 
-    public void LaunchGrenade()
+    public void SpawnGrenade()
     {
-        var grenade = ObjectPooler.Instance.SpawnFromPool("GrenadeLauncherAmmo", Barrel.transform.position, Barrel.transform.rotation);
-        if (grenade.TryGetComponent(out Rigidbody rb))
-        {
-            rb.AddForce(transform.forward * m_grenadeForwardForce, ForceMode.Impulse);
-            rb.AddForce(transform.up * m_grenadeUpwardForce, ForceMode.Impulse);
-        }
+        ObjectPooler.Instance.SpawnFromPool("GrenadeLauncherAmmo", Barrel.transform.position, Barrel.transform.rotation);
     }
 
     public void Empty()
