@@ -39,7 +39,6 @@ public class HitscanWeapon : MonoBehaviour
         {
             ray = new Ray(m_weapon.Barrel.position, m_weapon.transform.forward);
         }
-        
 
         if (Physics.Raycast(ray, out m_weapon.m_raycastHit, m_weapon.m_effectiveRange, GameSettings.Instance.DamageableLayer))
         {
@@ -60,5 +59,19 @@ public class HitscanWeapon : MonoBehaviour
                 ObjectPooler.Instance.SpawnFromPool("BloodSplatterSmall", m_weapon.m_raycastHit.point, m_weapon.m_raycastHit.transform.rotation);
             }
         }
+
+        if (Physics.Raycast(ray, out m_weapon.m_raycastHit, m_weapon.m_effectiveRange, GameSettings.Instance.BulletImpactDecalLayer))
+        {
+            // Calculate the direction from the hit point back towards the ray origin
+            Vector3 directionToHitPoint = m_weapon.m_raycastHit.point - ray.origin;
+            directionToHitPoint.Normalize(); // Normalize to get just the direction
+
+            // Calculate the rotation so that the forward vector of the decal points towards the hit point
+            Quaternion rotationTowardsHitPoint = Quaternion.LookRotation(directionToHitPoint);
+
+            // Spawn the BulletImpactDecal with the calculated rotation
+            ObjectPooler.Instance.SpawnFromPool("BulletImpactDecal", m_weapon.m_raycastHit.point, rotationTowardsHitPoint);
+        }
+
     }
 }

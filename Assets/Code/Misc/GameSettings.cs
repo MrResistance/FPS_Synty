@@ -9,6 +9,7 @@ public class GameSettings : MonoBehaviour
     public bool RealisticReloadingAmmoCount = false;
 
     public LayerMask DamageableLayer;
+    public LayerMask BulletImpactDecalLayer;
 
     private void Awake()
     {
